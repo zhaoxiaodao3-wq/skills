@@ -1,0 +1,34 @@
+---
+description: Git 提交信息必须使用中文（含 Cursor 自动生成 commit）
+alwaysApply: true
+---
+
+# Git 提交信息规范（中文）
+
+生成 Git 提交信息时（包括 Source Control 面板的 ✨ 自动生成），**必须全部使用中文**。
+
+## 格式
+
+采用 Conventional Commits，类型用英文前缀，描述用中文：
+
+```
+<type>: <中文描述>
+```
+
+常用 type：`feat`、`fix`、`refactor`、`chore`、`docs`、`style`、`test`、`perf`。
+
+## 要求
+
+1. 冒号后的描述必须是中文，简洁说明「为什么改」。
+2. 不要使用英文句子作为提交说明。
+3. 单行提交为主；需要补充说明时用空行分隔正文。
+4. 与仓库近期中文提交风格保持一致。
+
+## 示例
+
+```
+feat: 在教学资源页新增核心教案分区
+fix: 修复未上传教案时仍可创建 AI 分析的问题
+refactor: 抽取核心教案类型判断为公共 helper
+chore: 更新自动生成导入的类型定义
+```
