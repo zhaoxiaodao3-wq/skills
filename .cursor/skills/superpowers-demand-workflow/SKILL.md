@@ -109,6 +109,8 @@ spec 头部必须包含：
 **Requirement:** [requirements/xxx.md](../requirements/xxx.md)
 ```
 
+**UI/Figma 类 spec 额外要求：** 类型为 `ui-style`，或 `feature` 且 requirements 含 Figma 链接时，spec 须含 `## 样式对照（Figma）`（字号/色/间距等对照表 + 节点）。详见 `HARNESS_RULES.md` 与 `superpowers-harness-run` Step B。
+
 ### ④ writing-plans → dev-plan
 
 基于 `specs/01-dev-spec.md`，产出原子任务：

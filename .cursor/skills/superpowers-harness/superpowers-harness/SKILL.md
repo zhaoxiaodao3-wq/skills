@@ -53,6 +53,22 @@ description: >-
 - `--strict`：有警告时 exit 1
 - 日志：`.harness/warnings.log`
 
+## 交付自检门禁（A → B）
+
+交付阶段 `pnpm harness:check` 会校验 archive / spec 章节存在性（半硬 ⚠️，宽松模式不阻断 git）：
+
+| 顺序 | 检查 | 警告码 | Agent 行为 |
+|------|------|--------|------------|
+| **A** | `*-delivered.md` 须含 `## 一致性自检` | `ARCHIVE_MISSING_CONSISTENCY_CHECK` | 补全后再报 DELIVERED |
+| **B** | 适用 UI 模块（`ui-style`，或 `feature` 且 requirements 含 `figma.com`）的 delivered 须含 `## 还原度自检`（不适用可写「不适用：无 Figma / 非 UI」） | `ARCHIVE_MISSING_FIDELITY_CHECK` | 同上 |
+| spec | `ui-style` 模块的 `specs/01-dev-spec.md` 须含样式对照节（如 `## 样式对照（Figma）`） | `SPEC_MISSING_FIGMA_STYLE_TABLE` | READY_TO_DEV 前补 spec |
+
+**顺序：** 同一交付先完成 A 一致性自检，再完成 B 还原度自检（适用时），再写 archive。**存在上述警告时 Agent 不得声称 DELIVERED**，须补全文档后重跑 `pnpm harness:check`。
+
+详见 `docs/superpowers/HARNESS_RULES.md` 与 `superpowers-harness-run` Step E。
+
+**技能源码根目录：** `E:\code\frontend-local\` — 改流程须同步 `.agents` 与 `.cursor` 两侧副本，勿只改 junction 链接侧。
+
 ## 新项目安装
 
 **Windows：**

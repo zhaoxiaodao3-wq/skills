@@ -11,6 +11,8 @@ description: >-
 
 用户只需描述**要什么**，本技能负责走完整 Harness 工程链路。
 
+**技能源码根目录：** `E:\code\frontend-local\`（`.agents/skills/` 与 `.cursor/skills/` 下副本均从此处维护）。**禁止**只改 `e:\code\frontend\` 的 junction 链接侧而不同步 `frontend-local` 源文件。
+
 **启动时宣告：**「正在使用 superpowers-harness-run 执行 Harness 完整流程。」
 
 ## 核心原则（最高优先级）
@@ -148,7 +150,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
    ```
 
 6. spec 自检（无 TBD、无矛盾）
-7. **P2 暂停**：请用户 review spec，确认后再 Step C
+7. **UI/Figma 样式对照（READY_TO_DEV 前必做）：**
+   - 类型为 `ui-style`，或类型为 `feature` 且 `requirements/` 中含 `figma.com` 链接 → spec **必须**含 `## 样式对照（Figma）`（或同义标题）
+   - 表格至少含：字号/字重/色、间距、圆角/边框、关键尺寸；并注明 Figma 节点
+   - 须用 Figma MCP / `get_design_context` 或截图取值，**禁止**凭印象填表
+   - 缺此节时 `harness:check` 会 ⚠️ `SPEC_MISSING_FIGMA_STYLE_TABLE`；Agent 不得进入 READY_TO_DEV
+8. **P2 暂停**：请用户 review spec，确认后再 Step C
 
 ## Step C：writing-plans（NO_PLAN）
 
@@ -184,8 +191,33 @@ pnpm harness:check
 
 ## Step E：Harness 交付收尾
 
+**顺序强制：先 A 一致性自检 → 再 B 还原度自检（适用时）→ 写 archive → validate → 方可报 DELIVERED。**
+
+禁止在未完成适用自检的情况下声称「已对齐 Figma」或「逻辑已闭环」。
+
+### E.1 A · 一致性自检（全部模块类型）
+
+写 archive **之前**，逐项检查（无关项标 **N/A** 并写原因）：
+
+| 检查项 | 含义 |
+|--------|------|
+| 空态 vs 有数据 | Container/View 空态 hardcode 与 adapter/真数据路径是否一致 |
+| 常量 / mock / 真数据 | 维度常量、mock、接口映射文案/数值是否同源 |
+| 多入口 | A/B 类、列表/详情等是否只改一侧 |
+| 失败 / 缺省 | `--`、0、隐藏与有数据语义是否合理 |
+
+### E.2 B · 还原度自检（条件适用）
+
+**适用：** 类型为 `ui-style`，或类型为 `feature` 且 `requirements/` 含 `figma.com`。
+
+**不适用：** archive 的 `## 还原度自检` 写一行「不适用：无 Figma / 非 UI」。
+
+适用时须对照 spec 的 `## 样式对照（Figma）` 与实现，记录：Figma 节点、对照方式、偏差清单、结论（可交付 / 需返工）。
+
+### E.3 写 archive 并 validate
+
 1. 勾选 `specs/01-dev-spec.md` 验收项
-2. 写 `{模块}/archive/{模块名}-delivered.md`，使用模板：
+2. 写 `{模块}/archive/{模块名}-delivered.md`，使用模板（**必须含**下方两个强制小节）：
 
 ```markdown
 # {模块名} · 交付归档
@@ -209,6 +241,23 @@ pnpm harness:check
 ## 验收结果
 
 - [x] （对应 spec 第 6 节各项）
+
+## 一致性自检
+
+| 检查项 | 结果 | 证据（路径或说明） |
+|--------|------|-------------------|
+| 空态 vs 有数据 | 通过 / N/A | … |
+| 常量/mock/真数据 | 通过 / N/A | … |
+| 多入口 | 通过 / N/A | … |
+| 失败/缺省 | 通过 / N/A | … |
+
+## 还原度自检
+
+（适用 ui-style / 带 Figma 的 feature；否则写：不适用：无 Figma / 非 UI）
+- Figma 节点：…
+- 对照方式：…
+- 偏差清单：无关键偏差 / …
+- 结论：可交付 / 需返工
 
 ## Harness 闭环
 
@@ -237,8 +286,11 @@ pnpm harness:check
 - [ ] requirements / spec / plan 链接正确
 - [ ] 改 src/ 前 validate-harness 已跑
 - [ ] spec 验收项已勾选
+- [ ] 一致性自检已完成并写入 archive
+- [ ] 还原度自检已完成或已注明不适用
 - [ ] archive 交付快照已写
 - [ ] commit 前 validate-harness 已跑
+- [ ] harness:check 无本模块 ARCHIVE_MISSING_* / SPEC_MISSING_FIGMA_STYLE_TABLE 警告（否则不得报 DELIVERED）
 ```
 
 ## 子技能调用顺序

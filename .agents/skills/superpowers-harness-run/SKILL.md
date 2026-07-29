@@ -1,35 +1,21 @@
 ---
 name: superpowers-harness-run
 description: >-
-  Superpowers Harness 完整开发流程唯一入口（含 fix）：create-demand → brainstorming（确认）
-  → writing-plans（确认）→ 开发 → 归档 → validate。任何改 src/ 的任务必须走本技能，
-  且必须经过三次用户确认暂停（P1/P2/P3），fix 也不可跳过。用户说 /harness、修 bug、实现、改页面时必须使用。
-  与 superpowers-harness、brainstorming、writing-plans 配合。
+  Superpowers Harness 完整开发流程一键入口：从需求到交付自动走
+  create-demand → brainstorming → writing-plans → 开发 → 归档 → validate-harness。
+  用户提出新功能、改页面、修 bug、实现需求、对接接口、UI 还原、fix、开发、
+  或描述任何要改 src/ 的任务时，必须优先使用本技能——即使用户没有说
+  「harness」「superpowers」「按流程」。不要直接 /brainstorming 或跳过 spec/plan 改代码。
+  与 superpowers-harness、superpowers-demand-workflow、brainstorming、writing-plans 配合。
 ---
 
 # Superpowers Harness 完整流程
 
 用户只需描述**要什么**，本技能负责走完整 Harness 工程链路。
 
+**技能源码根目录：** `E:\code\frontend-local\`（`.agents/skills/` 与 `.cursor/skills/` 下副本均从此处维护）。**禁止**只改 `e:\code\frontend\` 的 junction 链接侧而不同步 `frontend-local` 源文件。
+
 **启动时宣告：**「正在使用 superpowers-harness-run 执行 Harness 完整流程。」
-
-## 核心原则（最高优先级）
-
-1. **每一次**改 `src/` 的需求（含 fix、纠正、补充）都走**同一套完整流程**，无「快速通道」可跳过用户确认。
-2. **文档与代码不可同轮完成**：未获用户确认前，禁止在同一轮回复里既写 spec/plan 又改 `src/`。
-3. **需求变更 ≠ 直接改代码**：用户纠正/补充需求时，先更新 requirements → 重新走确认 → 再开发。
-
-## 强制暂停点（不可跳过）
-
-| # | 时机 | Agent 必须做什么 | 继续条件 |
-|---|------|------------------|----------|
-| **P1** | 探索代码后、写 spec 前 | 输出推荐方案 + 1 个备选；**末尾明确提问** | 用户回复「确认 / 可以 / 按推荐」等肯定 |
-| **P2** | spec 写完后 | 展示 spec 路径与摘要；**末尾写「请 review spec，确认后我继续写 plan」** | 用户明确确认 spec |
-| **P3** | plan 写完后 | 展示 plan 路径；**让用户选择执行方式**（Subagent / Inline） | 用户选择执行方式 |
-
-**仅当 P1+P2+P3 均满足后**，才可进入 Step D 改 `src/`。
-
-违反 P1–P3 视为未走 Harness，即使文档已存在也不改代码。
 
 ## 何时使用
 
@@ -41,29 +27,7 @@ description: >-
 ## 不要误触发
 
 - 纯问答、代码 review、解释现有逻辑（只读）
-- 用户明确说「跳过文档直接改」→ **仍须 P1 方案确认**；可缩短文档，**不可跳过 P2/P3**
-
-## fix 类型说明（不是捷径）
-
-fix 只意味着**文档可更短**，**不意味着**可跳过流程或暂停点：
-
-| 可精简 | 不可省略 |
-|--------|----------|
-| spec ≤80 行 | P1 方案确认 |
-| plan 1～2 个 Task | P2 spec 确认 |
-| brainstorming 一轮呈现 | P3 执行方式选择 |
-| | requirements / spec / plan / archive / validate |
-
-## 需求变更与纠正（DELIVERED 或开发中）
-
-用户在同一模块上纠正、补充需求（如「其实主要是本地开发问题」）：
-
-1. 新增 `{模块}/requirements/02-xxx.md`（递增编号），**不覆盖** 01
-2. 回到 **P1**：说明变更对 spec 的影响，等用户确认
-3. 更新 spec / plan，再走 **P2 → P3**
-4. 此前已写代码若与新区间冲突，**先说明差异**，用户确认后再改
-
-**禁止**听到纠正后直接 patch `src/`。
+- 用户明确说「跳过文档直接改」→ 警告后按 superpowers-harness 宽松模式处理
 
 ## 执行前必读
 
@@ -81,12 +45,24 @@ pnpm harness:status -- --match "<模块名关键词或路径片段>"
 - 每次回复开头输出状态行：
 
   ```
-  [Harness] fix/模块名 | 阶段: NO_SPEC | 下一步: P1 方案确认（等待用户）
+  [Harness] fix/语言可理解度缺省态数值 | 阶段: READY_TO_DEV | 下一步: 开发 + 交付归档
   ```
 
-## ~~fix 轻量通道~~（已废弃）
+## fix 轻量通道
 
-原「fix 轻量通道」易误解为可跳过确认。**一律按上文「fix 类型说明」执行。**
+同时满足以下条件时，可缩短 brainstorming，**不可跳过 spec/plan/validate/archive**：
+
+- 分类为 `fix`
+- 预计只改 1～2 个文件、无架构决策
+- 用户描述明确（如「缺省态显示 0 不要 0.0」）
+
+轻量做法：
+
+1. 探索相关代码（只读）
+2. 直接呈现推荐方案 + 1 句替代方案，一次确认
+3. spec 可 ≤80 行，但仍须写 `specs/01-dev-spec.md`
+4. plan 可 1～2 个 Task，但仍须写 `plans/01-dev-plan.md`
+5. **validate、交付归档与标准流程相同**
 
 ## 从用户消息解析
 
@@ -117,9 +93,9 @@ docs/superpowers/vX.X/{type}/{模块名}/
 | `NO_SPEC` | 无 spec | Step B：brainstorming |
 | `NO_PLAN` | 无 plan | Step C：writing-plans |
 | `READY_TO_DEV` | spec + plan 齐全 | Step D：开发 |
-| `DELIVERED` | 已有 archive 且需求有变 | 新 requirements + 从 P1 重来 |
+| `DELIVERED` | 已有 archive 交付快照且需求已变 | 新建 requirements 或新模块 |
 
-**改 `src/` 前必须是 `READY_TO_DEV` 且 P1/P2/P3 均已确认。**
+**改 `src/` 前必须是 `READY_TO_DEV`。**
 
 ---
 
@@ -131,7 +107,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 
 - 将用户需求写入 `{模块}/requirements/01-原始需求.md`
 - 回报创建的目录路径
-- 继续 Step B（**停在 P1，不要写 spec**）
+- 继续 Step B
 
 ## Step B：brainstorming（NO_SPEC）
 
@@ -140,15 +116,20 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 1. 探索项目上下文（相关 `src/`、已有 docs）
 2. 一次只问一个澄清问题（必要时）
 3. 提出 2～3 方案 + 推荐
-4. **P1 暂停**：等用户确认方案（见「强制暂停点」）
-5. 用户确认后，写 `{模块}/specs/01-dev-spec.md`，头部：
+4. 分节呈现设计，每节后等用户确认
+5. 写 `{模块}/specs/01-dev-spec.md`，头部：
 
    ```markdown
    **Requirement:** [requirements/01-原始需求.md](../requirements/01-原始需求.md)
    ```
 
 6. spec 自检（无 TBD、无矛盾）
-7. **P2 暂停**：请用户 review spec，确认后再 Step C
+7. **UI/Figma 样式对照（READY_TO_DEV 前必做）：**
+   - 类型为 `ui-style`，或类型为 `feature` 且 `requirements/` 中含 `figma.com` 链接 → spec **必须**含 `## 样式对照（Figma）`（或同义标题）
+   - 表格至少含：字号/字重/色、间距、圆角/边框、关键尺寸；并注明 Figma 节点
+   - 须用 Figma MCP / `get_design_context` 或截图取值，**禁止**凭印象填表
+   - 缺此节时 `harness:check` 会 ⚠️ `SPEC_MISSING_FIGMA_STYLE_TABLE`；Agent 不得进入 READY_TO_DEV
+8. **暂停**：请用户 review spec，确认后再 Step C
 
 ## Step C：writing-plans（NO_PLAN）
 
@@ -157,10 +138,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 1. 基于 spec 写 `{模块}/plans/01-dev-plan.md`
 2. plan 头部含 `**Spec:**` 链接
 3. 任务粒度 2～5 分钟，含具体文件路径与代码片段
-4. **P3 暂停**：提供两种执行方式让用户选：
+4. **暂停**：提供两种执行方式让用户选：
    - Subagent-Driven（推荐）
    - Inline Execution
-5. **用户选定后**才可 Step D
 
 ## Step D：开发（READY_TO_DEV）
 
@@ -184,8 +164,33 @@ pnpm harness:check
 
 ## Step E：Harness 交付收尾
 
+**顺序强制：先 A 一致性自检 → 再 B 还原度自检（适用时）→ 写 archive → validate → 方可报 DELIVERED。**
+
+禁止在未完成适用自检的情况下声称「已对齐 Figma」或「逻辑已闭环」。
+
+### E.1 A · 一致性自检（全部模块类型）
+
+写 archive **之前**，逐项检查（无关项标 **N/A** 并写原因）：
+
+| 检查项 | 含义 |
+|--------|------|
+| 空态 vs 有数据 | Container/View 空态 hardcode 与 adapter/真数据路径是否一致 |
+| 常量 / mock / 真数据 | 维度常量、mock、接口映射文案/数值是否同源 |
+| 多入口 | A/B 类、列表/详情等是否只改一侧 |
+| 失败 / 缺省 | `--`、0、隐藏与有数据语义是否合理 |
+
+### E.2 B · 还原度自检（条件适用）
+
+**适用：** 类型为 `ui-style`，或类型为 `feature` 且 `requirements/` 含 `figma.com`。
+
+**不适用：** archive 的 `## 还原度自检` 写一行「不适用：无 Figma / 非 UI」。
+
+适用时须对照 spec 的 `## 样式对照（Figma）` 与实现，记录：Figma 节点、对照方式、偏差清单、结论（可交付 / 需返工）。
+
+### E.3 写 archive 并 validate
+
 1. 勾选 `specs/01-dev-spec.md` 验收项
-2. 写 `{模块}/archive/{模块名}-delivered.md`，使用模板：
+2. 写 `{模块}/archive/{模块名}-delivered.md`，使用模板（**必须含**下方两个强制小节）：
 
 ```markdown
 # {模块名} · 交付归档
@@ -209,6 +214,23 @@ pnpm harness:check
 ## 验收结果
 
 - [x] （对应 spec 第 6 节各项）
+
+## 一致性自检
+
+| 检查项 | 结果 | 证据（路径或说明） |
+|--------|------|-------------------|
+| 空态 vs 有数据 | 通过 / N/A | … |
+| 常量/mock/真数据 | 通过 / N/A | … |
+| 多入口 | 通过 / N/A | … |
+| 失败/缺省 | 通过 / N/A | … |
+
+## 还原度自检
+
+（适用 ui-style / 带 Figma 的 feature；否则写：不适用：无 Figma / 非 UI）
+- Figma 节点：…
+- 对照方式：…
+- 偏差清单：无关键偏差 / …
+- 结论：可交付 / 需返工
 
 ## Harness 闭环
 
@@ -237,8 +259,11 @@ pnpm harness:check
 - [ ] requirements / spec / plan 链接正确
 - [ ] 改 src/ 前 validate-harness 已跑
 - [ ] spec 验收项已勾选
+- [ ] 一致性自检已完成并写入 archive
+- [ ] 还原度自检已完成或已注明不适用
 - [ ] archive 交付快照已写
 - [ ] commit 前 validate-harness 已跑
+- [ ] harness:check 无本模块 ARCHIVE_MISSING_* / SPEC_MISSING_FIGMA_STYLE_TABLE 警告（否则不得报 DELIVERED）
 ```
 
 ## 子技能调用顺序
@@ -252,15 +277,7 @@ superpowers-harness-run（本技能，总编排）
   └─ executing-plans 或 subagent-driven-development（开发）
 ```
 
-**禁止**在未完成 spec/plan **且未经 P1/P2/P3 用户确认** 时调用 executing-plans 或直接改 `src/`。
-
-## Agent 禁止事项（自查）
-
-- ❌ 探索完代码后直接写 spec + plan + 改 `src/`（同一条回复）
-- ❌ 用户纠正需求后直接改代码
-- ❌ 以「fix 很简单」为由跳过 P1/P2/P3
-- ❌ 用户未选执行方式就开始 Step D
-- ❌ 模块已 DELIVERED 但需求变了，不新建 requirements 直接 patch
+**禁止**在未完成 spec/plan 时调用 executing-plans 或直接改 `src/`。
 
 ## 用户最简用法
 
