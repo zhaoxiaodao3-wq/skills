@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "skills/clone-website/SKILL.md",
       "computedHash": "e27632c6852a32d765d91af33d8f38a6637af4120d4c54f812235e26ca85b27d"
+    },
+    "data-visualization": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "skillPath": "data/skills/data-visualization/SKILL.md",
+      "computedHash": "a238cd5981b2da6bd7ecc24cfb3d7238be993ee5a2ad97acb414f9758aba13dd"
     }
   }
 }
