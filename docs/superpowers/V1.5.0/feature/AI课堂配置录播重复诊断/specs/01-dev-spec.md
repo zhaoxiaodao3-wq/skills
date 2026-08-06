@@ -52,7 +52,7 @@
 
 - [x] 进入 tab：调用查询 mock，写入 `repeatDiagnoseEnabled` 与 `initialRepeatDiagnoseEnabled`
 - [x] 拨动 Switch **仅改本地** `repeatDiagnoseEnabled`，不自动调保存
-- [x] 点击保存：防抖（使用项目已有 `debounceAsync` from `zf-utilz`）
+- [x] 点击保存立即 loading；请求 500ms 内成功则延后到 500ms 提示，超过 500ms 成功即结束
 - [x] 保存中：该保存按钮 `loading=true`
 - [x] 成功：`initialRepeatDiagnoseEnabled = repeatDiagnoseEnabled`，成功 toast，loading 结束
 - [x] 失败：`repeatDiagnoseEnabled = initialRepeatDiagnoseEnabled`（回滚开关），失败 toast，loading 结束
@@ -76,14 +76,14 @@
 
 ## 5. 验收清单
 
-- [ ] Tab 显示「AI课堂配置」
-- [ ] 原 SSO 链接查询/保存仍可用
-- [ ] 新区块默认关（或符合 mock 查询值）；状态文案正确
-- [ ] 未点保存离开再进入：开关仍为上次**已保存**值（mock 持久）
-- [ ] 拨开关后点保存成功：保持新状态
-- [ ] 保存失败（mock）：开关回滚到进入/上次成功值；按钮 loading 结束
-- [ ] 连续快速点保存：防抖生效，无重复并发提交（或后一次覆盖前一次的合理行为）
-- [ ] 教育局配置页无改动
+- [x] Tab 显示「AI课堂配置」
+- [x] 原 SSO 链接查询/保存仍可用
+- [x] 新区块默认关（或符合 mock 查询值）；状态文案正确
+- [x] 未点保存离开再进入：开关仍为上次**已保存**值（mock 持久）
+- [x] 拨开关后点保存成功：保持新状态
+- [x] 保存失败（mock）：开关回滚到进入/上次成功值；按钮 loading 结束
+- [x] 连续快速点保存：保存中忽略重复点击，不重复提交
+- [x] 教育局配置页无改动
 
 ---
 

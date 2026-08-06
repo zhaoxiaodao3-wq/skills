@@ -17,7 +17,7 @@
 | 改 | `src/pages/.../school/list/config.vue` | two/frontend |
 | 改 | `src/pages/.../config/aiLoginConfig.vue`（SSO 仍内联；仅挂载新卡片） | two/frontend |
 | 增 | `src/pages/.../config/ai-classroom/SchoolRepeatDiagnoseCard.vue` | two/frontend |
-| 增 | `src/pages/.../config/ai-classroom/useSchoolRepeatDiagnoseConfig.ts` | two/frontend |
+| 增 | `src/composables/useSchoolRepeatDiagnoseConfig.ts` | two/frontend |
 | 增 | `src/pages/.../config/ai-classroom/types.ts` | two/frontend |
 | 改 | `src/service/baseData.ts` | two/frontend |
 | 增 | `src/service/types/school-repeat-diagnose.ts` | two/frontend |
@@ -31,7 +31,7 @@
 - [x] 新区块 Switch + 状态文案；默认关（mock）
 - [x] 保存使用 `debounceAsync`；按钮 loading；失败回滚 initial
 - [x] 教育局 config 未改
-- [ ] 真接口对接（后续）
+- [x] 真接口对接（后续）：已由 `api-adapter/AI课堂配置录播重复诊断接口对接` 完成（2026-08-06）
 
 ## 一致性自检
 
