@@ -112,6 +112,20 @@
 
 ---
 
+### Task 8：进入页面动画（方案 B · 增量）
+
+**Spec:** [../specs/01-dev-spec.md](../specs/01-dev-spec.md) §12
+**Files:**
+- Modify: `apps/data-cockpit/src/views/preview/mr-teacher-portrait/detail/index.vue`
+
+- [x] Step 1: scoped SCSS 定义 `@keyframes tp-enter-rise`（opacity + translateY，500ms ease-out）
+- [x] Step 2: 页头 / S1～S6 按 §12.1 delay 挂 `animation`，`fill-mode: both`
+- [x] Step 3: `@media (prefers-reduced-motion: reduce)` 关闭动画
+- [x] Step 4: 确认 loading / error 分支无动画（区块仅在数据就绪分支渲染）
+- [x] Step 5: 本地 `/preview/teacher-portrait-detail` 验证三主题错峰浮现顺序
+
+---
+
 ## 执行方式（P3）
 
 1. **Subagent-Driven（推荐）** — 按 Task 0→7 派生子代理；视觉 Task 强制 figma-long-page  

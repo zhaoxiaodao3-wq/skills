@@ -189,3 +189,34 @@ apps/data-cockpit/src/views/preview/mr-teacher-portrait/
 ## 11. 还原度
 
 适用：交付 archive 须含还原度自检（对照 `8030:30782` 与关键节；方式：MCP 截图 + figma-long-page 精修清单）。
+
+---
+
+## 12. 进入页面动画（增量）
+
+**Requirement:** [requirements/02-进入页面动画.md](../requirements/02-进入页面动画.md)
+**方案（已确认）：** B · 区块错峰浮现
+
+### 12.1 动画规则
+
+| 区块 | delay | 属性 |
+|------|-------|------|
+| 页头 `__page-header` | 0ms | opacity 0→1 + translateY(16px)→0 |
+| S1 `__top-row` | 80ms | 同上 |
+| S2 `__row--s2` | 160ms | 同上 |
+| S3 `__row--s3` | 240ms | 同上 |
+| S4 `__row--s4` | 320ms | 同上 |
+| S5 `__row--s5` | 400ms | 同上 |
+| S6 `__row--s6` | 480ms | 同上 |
+
+- 单区块 500ms `ease-out`；`animation-fill-mode: both`，延迟期间保持初始态
+- 只动 `opacity` / `transform: translateY`，不触发重排
+- `@media (prefers-reduced-motion: reduce)`：`animation: none`
+- loading / error 分支不参与浮现
+
+### 12.2 验收标准（追加）
+
+- [x] 数据就绪后页头 + S1～S6 依次错峰淡入上移，顺序与 delay 符合 12.1
+- [x] `prefers-reduced-motion: reduce` 下无动画直接显示
+- [x] loading / error 分支无浮现动画
+- [x] 三主题（model-1/2/3）动画表现一致
