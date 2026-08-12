@@ -1,4 +1,4 @@
-﻿# bootstrap-harness.ps1 — 在 superpowers-demand-workflow 基础上安装 Harness 层
+# bootstrap-harness.ps1 — 在 superpowers-demand-workflow 基础上安装 Harness 层
 param(
     [string]$ProjectRoot = (Get-Location).Path
 )
@@ -41,6 +41,15 @@ $cliContent = $cliContent.Replace('from "../validators/', 'from "./validators/')
 [System.IO.File]::WriteAllText($CliDst, $cliContent, [System.Text.UTF8Encoding]::new($false))
 Write-Host "  [复制] scripts\harness\validate-harness.mjs" -ForegroundColor Green
 
+$StatusSrc = Join-Path $HarnessScripts "status.mjs"
+$StatusDst = Join-Path $TargetHarness "status.mjs"
+if (Test-Path $StatusSrc) {
+    Copy-Item $StatusSrc $StatusDst -Force
+    Write-Host "  [复制] scripts\harness\status.mjs" -ForegroundColor Green
+} else {
+    Write-Host "  [警告] 未找到 status.mjs，跳过" -ForegroundColor Yellow
+}
+
 # Step 3: HARNESS_RULES.md
 $SuperpowersBase = Join-Path $ProjectRoot "docs\superpowers"
 New-Item -ItemType Directory -Force -Path $SuperpowersBase | Out-Null
@@ -82,7 +91,7 @@ if (Test-Path $CursorRules) {
     Write-Host "  [创建] .cursorrules" -ForegroundColor Green
 }
 
-# Step 6: 同步 skill（跳过源目录自身）
+# Step 6: 同步 superpowers-harness skill（跳过源目录自身）
 $HarnessRootResolved = (Resolve-Path $HarnessRoot).Path
 foreach ($Target in @(
     (Join-Path $ProjectRoot ".agents\skills\superpowers-harness"),
@@ -100,22 +109,103 @@ foreach ($Target in @(
     Write-Host "  [同步] $Target" -ForegroundColor Green
 }
 
-# Step 7: package.json pre-commit
+# Step 6b: 同步 superpowers-harness-run 编排技能
+$RunSkillRoot = Join-Path $AgentsSkills "superpowers-harness-run"
+if (Test-Path $RunSkillRoot) {
+    foreach ($Target in @(
+        (Join-Path $ProjectRoot ".agents\skills\superpowers-harness-run"),
+        (Join-Path $ProjectRoot ".cursor\skills\superpowers-harness-run")
+    )) {
+        $Parent = Split-Path $Target -Parent
+        New-Item -ItemType Directory -Force -Path $Parent | Out-Null
+        if (Test-Path $Target) { Remove-Item -Recurse -Force $Target }
+        Copy-Item -Path $RunSkillRoot -Destination $Target -Recurse -Force
+        Write-Host "  [同步] $Target" -ForegroundColor Green
+    }
+} else {
+    Write-Host "  [警告] 未找到 superpowers-harness-run skill，跳过" -ForegroundColor Yellow
+}
+
+# Step 6c: 同步 .cursor/commands/harness.md（/harness 命令）
+$SkillRepoRoot = Split-Path -Parent (Split-Path -Parent $AgentsSkills)
+$CmdSrc = Join-Path $SkillRepoRoot ".cursor\commands\harness.md"
+if (Test-Path $CmdSrc) {
+    $CmdDst = Join-Path $ProjectRoot ".cursor\commands\harness.md"
+    New-Item -ItemType Directory -Force -Path (Split-Path $CmdDst -Parent) | Out-Null
+    Copy-Item $CmdSrc $CmdDst -Force
+    Write-Host "  [同步] .cursor\commands\harness.md" -ForegroundColor Green
+} else {
+    Write-Host "  [警告] 未找到 harness.md 命令，跳过" -ForegroundColor Yellow
+}
+
+# Step 7: package.json harness 脚本 + pre-commit
 $PkgPath = Join-Path $ProjectRoot "package.json"
 if (Test-Path $PkgPath) {
     $Pkg = Get-Content $PkgPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    $hook = 'node scripts/harness/validate-harness.mjs || exit 0'
-    if ($Pkg.'simple-git-hooks'.'pre-commit') {
-        $existing = $Pkg.'simple-git-hooks'.'pre-commit'
-        if ($existing -notmatch 'validate-harness') {
-            $Pkg.'simple-git-hooks'.'pre-commit' = ($existing + ' && ' + $hook)
-        }
-    } else {
-        $Pkg | Add-Member -NotePropertyName 'simple-git-hooks' -NotePropertyValue (@{ 'pre-commit' = $hook }) -Force
+} else {
+    $Pkg = [pscustomobject]@{
+        name    = (Split-Path -Leaf $ProjectRoot)
+        version = '1.0.0'
+        private = $true
+        type    = 'module'
     }
-    $Pkg | ConvertTo-Json -Depth 10 | Set-Content $PkgPath -Encoding UTF8
-    Write-Host "  [更新] package.json pre-commit" -ForegroundColor Green
+    Write-Host "  [创建] package.json" -ForegroundColor Green
 }
+
+$hook = 'node scripts/harness/validate-harness.mjs || exit 0'
+
+if (-not $Pkg.PSObject.Properties['scripts']) {
+    $Pkg | Add-Member -NotePropertyName 'scripts' -NotePropertyValue @{} -Force
+}
+$scripts = $Pkg.scripts
+$harnessScripts = @{
+    'harness:status' = 'node scripts/harness/status.mjs'
+    'harness:check'  = 'node scripts/harness/validate-harness.mjs'
+    'harness:strict' = 'node scripts/harness/validate-harness.mjs --strict'
+}
+foreach ($k in $harnessScripts.Keys) {
+    $hasKey = if ($scripts -is [System.Management.Automation.PSCustomObject]) {
+        [bool]$scripts.PSObject.Properties[$k]
+    } else {
+        $scripts.ContainsKey($k)
+    }
+    if (-not $hasKey) {
+        if ($scripts -is [System.Management.Automation.PSCustomObject]) {
+            $scripts | Add-Member -NotePropertyName $k -NotePropertyValue $harnessScripts[$k] -Force
+        } else {
+            $scripts[$k] = $harnessScripts[$k]
+        }
+    }
+}
+
+if (-not $Pkg.PSObject.Properties['simple-git-hooks']) {
+    $Pkg | Add-Member -NotePropertyName 'simple-git-hooks' -NotePropertyValue @{} -Force
+}
+$sgh = $Pkg.'simple-git-hooks'
+$hasPreCommit = if ($sgh -is [System.Management.Automation.PSCustomObject]) {
+    [bool]$sgh.PSObject.Properties['pre-commit'] -and $sgh.'pre-commit'
+} else {
+    $sgh.ContainsKey('pre-commit') -and $sgh['pre-commit']
+}
+if ($hasPreCommit) {
+    $existing = if ($sgh -is [System.Management.Automation.PSCustomObject]) { $sgh.'pre-commit' } else { $sgh['pre-commit'] }
+    if ($existing -notmatch 'validate-harness') {
+        $merged = "$existing && $hook"
+        if ($sgh -is [System.Management.Automation.PSCustomObject]) {
+            $sgh.'pre-commit' = $merged
+        } else {
+            $sgh['pre-commit'] = $merged
+        }
+    }
+} else {
+    if ($sgh -is [System.Management.Automation.PSCustomObject]) {
+        $sgh | Add-Member -NotePropertyName 'pre-commit' -NotePropertyValue $hook -Force
+    } else {
+        $sgh['pre-commit'] = $hook
+    }
+}
+[System.IO.File]::WriteAllText($PkgPath, ($Pkg | ConvertTo-Json -Depth 10), [System.Text.UTF8Encoding]::new($false))
+Write-Host "  [更新] package.json harness 脚本 + pre-commit" -ForegroundColor Green
 
 # Step 8: .gitignore
 $Gitignore = Join-Path $ProjectRoot ".gitignore"
@@ -125,10 +215,13 @@ if (Test-Path $Gitignore) {
         [System.IO.File]::AppendAllText($Gitignore, "`n.harness/`n", [System.Text.UTF8Encoding]::new($false))
         Write-Host "  [追加] .gitignore .harness/" -ForegroundColor Green
     }
+} else {
+    [System.IO.File]::WriteAllText($Gitignore, ".harness/`n", [System.Text.UTF8Encoding]::new($false))
+    Write-Host "  [创建] .gitignore (.harness/)" -ForegroundColor Green
 }
 
 Write-Host ""
 Write-Host "Harness 安装完成。" -ForegroundColor Green
-Write-Host "  自查: node scripts/harness/validate-harness.mjs"
-Write-Host "  规则: docs\superpowers\HARNESS_RULES.md"
-Write-Host "  技能: superpowers-harness"
+Write-Host "  自查: pnpm harness:status / pnpm harness:check" -ForegroundColor Green
+Write-Host "  规则: docs\superpowers\HARNESS_RULES.md" -ForegroundColor Green
+Write-Host "  技能: superpowers-harness-run (/harness)" -ForegroundColor Green
