@@ -1,7 +1,5 @@
 # Agent 项目地图
 
-<!-- bootstrap 默认值：{{FRAMEWORK}}=Vue 3 + Vite + TypeScript, {{UI_LIB}}=Element Plus, {{STATE}}=Pinia -->
-
 ## 技术栈
 
 - {{FRAMEWORK}}
@@ -19,10 +17,10 @@
 
 ## 开发流程（强制）
 
-1. 读取 `docs/superpowers/HARNESS_RULES.md`
-2. 读取 `docs/superpowers/SUPERPOWERS_RULES.md`
-3. 由 `superpowers-harness` 判断阶段
-4. 完成 spec/plan 后再改 `src/`
+1. 读取 `docs/superpowers/HARNESS_RULES.md` 与 `SUPERPOWERS_RULES.md`
+2. **开发类任务入口**：`superpowers-harness-run` 或 `/harness <需求>`
+3. 改 `src/` 前：`pnpm harness:status` + `pnpm harness:check`
+4. 目录规范由 `superpowers-demand-workflow` 约束；完成 spec/plan 后再改 `src/`
 
 ## 禁止
 
