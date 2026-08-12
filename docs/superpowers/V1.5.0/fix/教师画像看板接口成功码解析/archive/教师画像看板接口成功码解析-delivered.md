@@ -1,0 +1,42 @@
+# 教师画像看板接口成功码解析 · 交付归档
+
+**归档类型：** fix 交付快照
+**归档日期：** 2026-08-11
+**版本：** V1.5.0
+**Requirement:** [../requirements/01-原始需求.md](../requirements/01-原始需求.md)
+**Spec:** [../specs/01-dev-spec.md](../specs/01-dev-spec.md)
+
+## 改动摘要
+
+`use-teacher-style-dashboard.ts` 的 `unwrapPayload` 成功码加入 `200 / '00000'`（与详情页 `isSuccessCode` 一致），接口 `code: 200` 不再被误判失败，`subjectOptions` / `teachers` 真实数据可写入看板。
+
+## 改动文件
+
+| 操作 | 路径 |
+|------|------|
+| 改 | `apps-development-platform/apps/data-cockpit/src/views/preview/mr-teacher-portrait/composables/use-teacher-style-dashboard.ts` |
+
+## 验收结果
+
+- [x] `code: 200` 时 `unwrapPayload.ok = true`
+- [x] `subjectOptions` / `teachers` 来自接口数据，不再回退 mock
+- [x] ESLint 通过
+
+## 一致性自检
+
+| 检查项 | 结果 | 证据 |
+|--------|------|------|
+| 空态 vs 有数据 | 通过 | 接口空数据仍显示空态 |
+| 常量/mock/真数据 | 通过 | 成功码与详情页对齐 |
+| 多入口 | 通过 | 只影响看板两个接口 |
+| 失败/缺省 | 通过 | 非成功码仍判失败 |
+
+## 还原度自检
+
+不适用：接口解析修复，非 UI
+
+## Harness 闭环
+
+- [x] validate 开发前已跑
+- [x] archive 交付快照已写
+- [x] validate 交付后已跑
