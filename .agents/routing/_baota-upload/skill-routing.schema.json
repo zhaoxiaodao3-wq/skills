@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://local.agents/routing/skill-routing.schema.json",
+  "title": "SKILL_ROUTING 机器块 JSON Schema",
+  "description": "校验 SKILL_ROUTING.md 中 SKILL_GRAPH_START/END 之间的权威 JSON 数据。",
+  "type": "object",
+  "required": ["version", "globalConfig", "categories", "skills"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer" },
+    "updatedAt": { "type": "string" },
+    "globalConfig": {
+      "type": "object",
+      "required": ["maxSkillsPerPlan", "minConfidence", "autoActivateRiskLevel"],
+      "additionalProperties": false,
+      "properties": {
+        "maxSkillsPerPlan": { "type": "integer", "minimum": 0 },
+        "minConfidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "autoActivateRiskLevel": { "type": "string", "enum": ["low", "medium", "high"] }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "parentId": {
+            "description": "可选；指向父分类 id。省略/空=顶层（挂在画板 root 下）",
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "categoryId", "name", "path", "triggers"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "categoryId": { "type": "string" },
+          "name": { "type": "string" },
+          "userDescription": { "type": "string" },
+          "systemDescription": { "type": "string" },
+          "path": { "type": "string" },
+          "triggers": { "type": "array", "items": { "type": "string" } },
+          "semanticTags": { "type": "array", "items": { "type": "string" } },
+          "requires": { "type": "array", "items": { "type": "string" } },
+          "before": { "type": "array", "items": { "type": "string" } },
+          "after": { "type": "array", "items": { "type": "string" } },
+          "version": { "type": "string" },
+          "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+          "isIdempotent": { "type": "boolean" },
+          "timeout": { "type": "integer", "minimum": 0 },
+          "retryable": { "type": "boolean" },
+          "inputSchema": { "type": "object" },
+          "outputSchema": { "type": "object" },
+          "status": { "type": "string", "enum": ["draft", "active", "deprecated"] },
+          "replacedBy": { "type": ["string", "null"] },
+          "applicableConditions": { "type": "array", "items": { "type": "string" } },
+          "unsuitableConditions": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "skill-routing",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Skill 路由画板 — 本机读盘 + 可选 Electron 桌面版",
+  "author": "mia-fly",
+  "type": "module",
+  "main": "electron/main.mjs",
+  "scripts": {
+    "build": "npm --prefix panel run build",
+    "start": "node server.mjs",
+    "dev:api": "node server.mjs",
+    "electron:dev": "electron .",
+    "electron:dist": "npm run build && electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "cn.mia-fly.skill-routing",
+    "productName": "Skill路由画板",
+    "directories": {
+      "output": "release",
+      "buildResources": "electron/build"
+    },
+    "files": [
+      "electron/**/*",
+      "server.mjs",
+      "router.mjs",
+      "skill-routing.schema.json",
+      "SKILL_ROUTING.md",
+      "panel/dist/**/*",
+      "panel/scripts/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": ".",
+        "to": "routing",
+        "filter": [
+          "server.mjs",
+          "router.mjs",
+          "skill-routing.schema.json",
+          "SKILL_ROUTING.md",
+          "panel/dist/**/*",
+          "panel/scripts/**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": ["nsis"],
+      "artifactName": "SkillRouting-${version}-setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

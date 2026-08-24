@@ -1,0 +1,4 @@
+local-config.json
+.auth-credentials.txt
+release/
+node_modules/

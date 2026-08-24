@@ -1,0 +1,214 @@
+# Skill 路由规范 (SKILL_ROUTING)
+
+> 本文件是「场景 → skill」路由的**唯一权威来源 (single source of truth)**。
+> 人类可直接编辑；任何 agent / router 直接读取本文件即可，**无需依赖 Vue 画板工程**。
+> `panel/` 只是本文件的可视化编辑器；`router` 只读本文件的机器块。
+> 相对路径均以本文件所在目录（`routing/`）为基准。
+
+## 使用说明
+
+- **模式 A（走 Superpowers 流程）**：writing-plans 阶段读本文件，逐步骤过「必要性测评」（依据每个 skill 的 `applicableConditions` / `unsuitableConditions` + `globalConfig` 阈值），确需才在计划中标注「建议 skill + 置信度」。
+- **模式 B（不走流程）**：自由文本匹配下方各 skill 的 `triggers` 关键词。
+- 机器块（下方注释标记之间）为权威数据；人类可读说明仅供阅读，画板可重新生成。
+
+<!-- SKILL_GRAPH_START -->
+{
+  "version": 1,
+  "updatedAt": "2026-08-21",
+  "globalConfig": {
+    "maxSkillsPerPlan": 5,
+    "minConfidence": 0.7,
+    "autoActivateRiskLevel": "low"
+  },
+  "categories": [
+    {
+      "id": "cat-dev",
+      "name": "开发用"
+    },
+    {
+      "id": "cat-doc",
+      "name": "文档处理"
+    },
+    {
+      "id": "cat-img",
+      "name": "图像处理"
+    },
+    {
+      "id": "cat-video",
+      "name": "视频"
+    }
+  ],
+  "skills": [
+    {
+      "id": "figma-long-page",
+      "categoryId": "cat-dev",
+      "name": "figma-long-page",
+      "userDescription": "figma 还原长页面",
+      "systemDescription": "将超长 Figma Frame 高保真还原为可预览页面（HTML/CSS），强制走多步流水线：token→拆帧→分段 get_design_context→组装→精修关。用于整页/多节长滚动页，非单个小组件。",
+      "path": "../skills/figma-long-page",
+      "triggers": [
+        "figma 长页",
+        "长流程还原",
+        "分段还原",
+        "还原长页面",
+        "figma-long-page",
+        "明犀报告式长页"
+      ],
+      "semanticTags": [
+        "figma",
+        "设计稿还原",
+        "长页面",
+        "前端",
+        "html/css"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [],
+      "version": "1.0.0",
+      "riskLevel": "low",
+      "isIdempotent": true,
+      "timeout": 900,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "存在 Figma 设计稿或长图链接",
+        "目标为整页/长滚动页还原",
+        "用户要求高保真还原"
+      ],
+      "unsuitableConditions": [
+        "目标为单个小组件/按钮",
+        "需要从零重新设计 UI（用 frontend-design）"
+      ]
+    },
+    {
+      "id": "clone-website",
+      "categoryId": "cat-dev",
+      "name": "clone-website",
+      "userDescription": "复刻线上网站",
+      "systemDescription": "逆向工程并 1:1 复刻一个或多个网站：按节提取资源/CSS/内容，并行派发 builder agent 在 worktree 中构建。需浏览器自动化工具。",
+      "path": "../skills/clone-website",
+      "triggers": [
+        "克隆网站",
+        "复刻网站",
+        "仿站",
+        "clone website",
+        "pixel-perfect clone",
+        "复刻这个网站"
+      ],
+      "semanticTags": [
+        "网站克隆",
+        "前端",
+        "逆向工程",
+        "浏览器自动化"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [],
+      "version": "1.0.0",
+      "riskLevel": "medium",
+      "isIdempotent": false,
+      "timeout": 1800,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "用户提供 1 个或多个目标网址",
+        "目标是复刻现有网站外观",
+        "有可用的浏览器自动化工具"
+      ],
+      "unsuitableConditions": [
+        "无目标网址",
+        "无浏览器自动化工具",
+        "目标是真实后端/数据库/登录"
+      ]
+    },
+    {
+      "id": "skill-creator",
+      "categoryId": "cat-dev",
+      "name": "skill-creator",
+      "userDescription": "新建/改进/评估 skill",
+      "systemDescription": "创建、改进、评估 skill：从零新建、优化已有 skill、跑 eval 测试、基准性能分析、优化 description 触发准确性。",
+      "path": "../skills/skill-creator",
+      "triggers": [
+        "新建 skill",
+        "创建技能",
+        "create a skill",
+        "优化 skill",
+        "skill 评估"
+      ],
+      "semanticTags": [
+        "skill",
+        "技能",
+        "元能力",
+        "评估"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [],
+      "version": "1.0.0",
+      "riskLevel": "medium",
+      "isIdempotent": false,
+      "timeout": 1200,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "用户想新建/改进/评估 skill"
+      ],
+      "unsuitableConditions": [
+        "与 skill 创建/优化无关的普通开发任务"
+      ]
+    },
+    {
+      "id": "阿斯顿",
+      "categoryId": "cat-doc",
+      "name": "阿斯顿",
+      "userDescription": "",
+      "systemDescription": "大",
+      "path": "D:\\360Downloads",
+      "triggers": [],
+      "semanticTags": [],
+      "requires": [],
+      "before": [],
+      "after": [],
+      "version": "1.0.0",
+      "riskLevel": "low",
+      "isIdempotent": true,
+      "timeout": 300,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [],
+      "unsuitableConditions": []
+    }
+  ]
+}
+<!-- SKILL_GRAPH_END -->
+
+## 分类与 Skill 明细（人类可读，画板自动重生成）
+
+### 开发用
+- **figma-long-page** — figma 还原长页面
+  - 触发：figma 长页 / 长流程还原 / 分段还原 / 还原长页面 / figma-long-page
+- **clone-website** — 复刻线上网站
+  - 触发：克隆网站 / 复刻网站 / 仿站 / clone website / pixel-perfect clone
+- **skill-creator** — 新建/改进/评估 skill
+  - 触发：新建 skill / 创建技能 / create a skill / 优化 skill / skill 评估
+
+### 文档处理
+- **阿斯顿** — 大
+
+### 图像处理
+- （暂未预置 skill）
+
+### 视频
+- （暂未预置 skill）

@@ -1,0 +1,10 @@
+{
+  "name": "skill-routing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm --prefix panel run build",
+    "start": "node server.mjs",
+    "dev:api": "node server.mjs"
+  }
+}
