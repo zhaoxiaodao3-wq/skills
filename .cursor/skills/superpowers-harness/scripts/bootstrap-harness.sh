@@ -115,6 +115,42 @@ else
   echo "  [警告] 未找到 harness.md 命令，跳过"
 fi
 
+# Step 6d: 复制 .agents/routing/ 最小集（幂等，不覆盖已有文件）
+ROUTING_SRC=""
+for candidate in \
+  "$(cd "$AGENTS_SKILLS/.." && pwd)/routing" \
+  "/e/code/frontend-local/.agents/routing" \
+  "E:/code/frontend-local/.agents/routing"; do
+  if [[ -d "$candidate" ]]; then
+    ROUTING_SRC="$candidate"
+    break
+  fi
+done
+ROUTING_DST="$PROJECT_ROOT/.agents/routing"
+if [[ -n "$ROUTING_SRC" ]]; then
+  mkdir -p "$ROUTING_DST"
+  ROUTING_FILES=("SKILL_ROUTING.md" "router.mjs")
+  if [[ -f "$ROUTING_SRC/skill-routing.schema.json" ]]; then
+    ROUTING_FILES+=("skill-routing.schema.json")
+  fi
+  for f in "${ROUTING_FILES[@]}"; do
+    src="$ROUTING_SRC/$f"
+    dst="$ROUTING_DST/$f"
+    if [[ ! -f "$src" ]]; then
+      printf '  \033[0;33m[警告] routing 源缺少 %s，跳过\033[0m\n' "$f"
+      continue
+    fi
+    if [[ ! -f "$dst" ]]; then
+      cp "$src" "$dst"
+      printf '  \033[0;32m[复制] .agents/routing/%s\033[0m\n' "$f"
+    else
+      printf '  \033[0;90m[跳过] .agents/routing/%s 已存在\033[0m\n' "$f"
+    fi
+  done
+else
+  printf '  \033[0;33m[警告] 未找到 routing 源，跳过 .agents/routing 复制\033[0m\n'
+fi
+
 # Step 7: package.json harness 脚本 + pre-commit（需要 node）
 if command -v node >/dev/null 2>&1; then
   export HARNESS_PROJECT_ROOT="$PROJECT_ROOT"
@@ -168,3 +204,6 @@ echo "Harness 安装完成。"
 echo "  自查: pnpm harness:status / pnpm harness:check"
 echo "  规则: docs/superpowers/HARNESS_RULES.md"
 echo "  技能: superpowers-harness-run (/harness)"
+echo "  Skill 路由: .agents/routing/SKILL_ROUTING.md"
+echo "  业务 skill 仓库请放在 .agents/skills/（或配置 skillsRoot）"
+echo '  CLI: node .agents/routing/router.mjs "<任务>" / --annotate <plan>'

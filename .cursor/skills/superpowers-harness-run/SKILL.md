@@ -1,10 +1,12 @@
 ---
 name: superpowers-harness-run
 description: >-
-  Superpowers Harness 完整开发流程唯一入口（含 fix）：create-demand → brainstorming（确认）
-  → writing-plans（确认）→ 开发 → 归档 → validate。任何改 src/ 的任务必须走本技能，
-  且必须经过三次用户确认暂停（P1/P2/P3），fix 也不可跳过。用户说 /harness、修 bug、实现、改页面时必须使用。
-  与 superpowers-harness、brainstorming、writing-plans 配合。
+  Superpowers Harness 完整开发流程一键入口：从需求到交付自动走
+  create-demand → brainstorming → writing-plans → 开发 → 归档 → validate-harness。
+  用户提出新功能、改页面、修 bug、实现需求、对接接口、UI 还原、fix、开发、
+  或描述任何要改 src/ 的任务时，必须优先使用本技能——即使用户没有说
+  「harness」「superpowers」「按流程」。不要直接 /brainstorming 或跳过 spec/plan 改代码。
+  与 superpowers-harness、superpowers-demand-workflow、brainstorming、writing-plans 配合。
 ---
 
 # Superpowers Harness 完整流程
@@ -14,24 +16,6 @@ description: >-
 **技能源码根目录：** `E:\code\frontend-local\`（`.agents/skills/` 与 `.cursor/skills/` 下副本均从此处维护）。**禁止**只改 `e:\code\frontend\` 的 junction 链接侧而不同步 `frontend-local` 源文件。
 
 **启动时宣告：**「正在使用 superpowers-harness-run 执行 Harness 完整流程。」
-
-## 核心原则（最高优先级）
-
-1. **每一次**改 `src/` 的需求（含 fix、纠正、补充）都走**同一套完整流程**，无「快速通道」可跳过用户确认。
-2. **文档与代码不可同轮完成**：未获用户确认前，禁止在同一轮回复里既写 spec/plan 又改 `src/`。
-3. **需求变更 ≠ 直接改代码**：用户纠正/补充需求时，先更新 requirements → 重新走确认 → 再开发。
-
-## 强制暂停点（不可跳过）
-
-| # | 时机 | Agent 必须做什么 | 继续条件 |
-|---|------|------------------|----------|
-| **P1** | 探索代码后、写 spec 前 | 输出推荐方案 + 1 个备选；**末尾明确提问** | 用户回复「确认 / 可以 / 按推荐」等肯定 |
-| **P2** | spec 写完后 | 展示 spec 路径与摘要；**末尾写「请 review spec，确认后我继续写 plan」** | 用户明确确认 spec |
-| **P3** | plan 写完后 | 展示 plan 路径；**让用户选择执行方式**（Subagent / Inline） | 用户选择执行方式 |
-
-**仅当 P1+P2+P3 均满足后**，才可进入 Step D 改 `src/`。
-
-违反 P1–P3 视为未走 Harness，即使文档已存在也不改代码。
 
 ## 何时使用
 
@@ -43,34 +27,26 @@ description: >-
 ## 不要误触发
 
 - 纯问答、代码 review、解释现有逻辑（只读）
-- 用户明确说「跳过文档直接改」→ **仍须 P1 方案确认**；可缩短文档，**不可跳过 P2/P3**
-
-## fix 类型说明（不是捷径）
-
-fix 只意味着**文档可更短**，**不意味着**可跳过流程或暂停点：
-
-| 可精简 | 不可省略 |
-|--------|----------|
-| spec ≤80 行 | P1 方案确认 |
-| plan 1～2 个 Task | P2 spec 确认 |
-| brainstorming 一轮呈现 | P3 执行方式选择 |
-| | requirements / spec / plan / archive / validate |
-
-## 需求变更与纠正（DELIVERED 或开发中）
-
-用户在同一模块上纠正、补充需求（如「其实主要是本地开发问题」）：
-
-1. 新增 `{模块}/requirements/02-xxx.md`（递增编号），**不覆盖** 01
-2. 回到 **P1**：说明变更对 spec 的影响，等用户确认
-3. 更新 spec / plan，再走 **P2 → P3**
-4. 此前已写代码若与新区间冲突，**先说明差异**，用户确认后再改
-
-**禁止**听到纠正后直接 patch `src/`。
+- 用户明确说「跳过文档直接改」→ 警告后按 superpowers-harness 宽松模式处理
 
 ## 执行前必读
 
 1. `docs/superpowers/HARNESS_RULES.md`
 2. `docs/superpowers/SUPERPOWERS_RULES.md`
+
+## Skill 路由（业务能力）
+
+Harness 流程 skill（brainstorming / writing-plans / harness）负责**工程编排**；业务能力 skill（如 echarts、接口适配等）由 **Skill 路由**按任务匹配，二者不互相替代。
+
+| 配置 | 约定 |
+|------|------|
+| **默认路由 MD** | 项目内 `.agents/routing/SKILL_ROUTING.md`；若不存在则回退 `E:\code\frontend-local\.agents\routing\SKILL_ROUTING.md` |
+| **Skills 根** | 项目 `.agents/skills/`，或相对 routing 目录的 `../skills` |
+| **模式 A** | writing-plans 对每个 Task 做必要性测评并标注建议 skill |
+| **模式 B** | 对需求/任务自由文本做路由初筛（brainstorming 用） |
+| **CLI（可选）** | `node .agents/routing/router.mjs "<task>"`；标注 plan：`node .agents/routing/router.mjs --annotate <plan文件>` |
+
+`globalConfig`（见路由 MD）：`minConfidence: 0.7`、`maxSkillsPerPlan: 5`。置信度低于阈值标「可选」、不强制 Read；单 plan 建议 skill 总数不超过上限。
 
 ## Step 0：机械阶段查询（每次启动必做）
 
@@ -83,12 +59,24 @@ pnpm harness:status -- --match "<模块名关键词或路径片段>"
 - 每次回复开头输出状态行：
 
   ```
-  [Harness] fix/模块名 | 阶段: NO_SPEC | 下一步: P1 方案确认（等待用户）
+  [Harness] fix/语言可理解度缺省态数值 | 阶段: READY_TO_DEV | 下一步: 开发 + 交付归档
   ```
 
-## ~~fix 轻量通道~~（已废弃）
+## fix 轻量通道
 
-原「fix 轻量通道」易误解为可跳过确认。**一律按上文「fix 类型说明」执行。**
+同时满足以下条件时，可缩短 brainstorming，**不可跳过 spec/plan/validate/archive**：
+
+- 分类为 `fix`
+- 预计只改 1～2 个文件、无架构决策
+- 用户描述明确（如「缺省态显示 0 不要 0.0」）
+
+轻量做法：
+
+1. 探索相关代码（只读）
+2. 直接呈现推荐方案 + 1 句替代方案，一次确认
+3. spec 可 ≤80 行，但仍须写 `specs/01-dev-spec.md`
+4. plan 可 1～2 个 Task，但仍须写 `plans/01-dev-plan.md`
+5. **validate、交付归档与标准流程相同**
 
 ## 从用户消息解析
 
@@ -119,9 +107,9 @@ docs/superpowers/vX.X/{type}/{模块名}/
 | `NO_SPEC` | 无 spec | Step B：brainstorming |
 | `NO_PLAN` | 无 plan | Step C：writing-plans |
 | `READY_TO_DEV` | spec + plan 齐全 | Step D：开发 |
-| `DELIVERED` | 已有 archive 且需求有变 | 新 requirements + 从 P1 重来 |
+| `DELIVERED` | 已有 archive 交付快照且需求已变 | 新建 requirements 或新模块 |
 
-**改 `src/` 前必须是 `READY_TO_DEV` 且 P1/P2/P3 均已确认。**
+**改 `src/` 前必须是 `READY_TO_DEV`。**
 
 ---
 
@@ -133,7 +121,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 
 - 将用户需求写入 `{模块}/requirements/01-原始需求.md`
 - 回报创建的目录路径
-- 继续 Step B（**停在 P1，不要写 spec**）
+- 继续 Step B
 
 ## Step B：brainstorming（NO_SPEC）
 
@@ -142,8 +130,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 1. 探索项目上下文（相关 `src/`、已有 docs）
 2. 一次只问一个澄清问题（必要时）
 3. 提出 2～3 方案 + 推荐
-4. **P1 暂停**：等用户确认方案（见「强制暂停点」）
-5. 用户确认后，写 `{模块}/specs/01-dev-spec.md`，头部：
+4. 分节呈现设计，每节后等用户确认
+5. 写 `{模块}/specs/01-dev-spec.md`，头部：
 
    ```markdown
    **Requirement:** [requirements/01-原始需求.md](../requirements/01-原始需求.md)
@@ -155,7 +143,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
    - 表格至少含：字号/字重/色、间距、圆角/边框、关键尺寸；并注明 Figma 节点
    - 须用 Figma MCP / `get_design_context` 或截图取值，**禁止**凭印象填表
    - 缺此节时 `harness:check` 会 ⚠️ `SPEC_MISSING_FIGMA_STYLE_TABLE`；Agent 不得进入 READY_TO_DEV
-8. **P2 暂停**：请用户 review spec，确认后再 Step C
+8. **Skill 路由初筛（必做，在暂停 review 之前）：**
+   - Read 路由 MD 机器块（或 `node .agents/routing/router.mjs --list` / 列举 skills）
+   - 用需求摘要做 **模式 B** 初筛（Agent 手评或 `router.mjs "<需求摘要>"`）
+   - spec **必须**含 `## Skill 路由初筛` 表，列：场景摘要、建议 skill、置信度、仓库路径、备注
+   - 无达阈值 skill 时写一行：「本需求无达阈值 skill」
+9. **暂停**：请用户 review spec，确认后再 Step C
 
 ## Step C：writing-plans（NO_PLAN）
 
@@ -164,10 +157,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 1. 基于 spec 写 `{模块}/plans/01-dev-plan.md`
 2. plan 头部含 `**Spec:**` 链接
 3. 任务粒度 2～5 分钟，含具体文件路径与代码片段
-4. **P3 暂停**：提供两种执行方式让用户选：
+4. **Skill 路由表（写完 Task 后必做）：**
+   - 对每个 Task 做 **模式 A** 必要性测评（Agent 手评或 `router.mjs --annotate <plan>`）
+   - plan **必须**含 `## Skill 路由表`，列：Task、步骤摘要、建议 skill、置信度、必读、skill 路径；无达阈值则注明
+   - 相关 Task 内增加一行：`**建议 skill：** \`id\`（置信度 x）→ 开发前 Read \`path/SKILL.md\``
+   - 遵守路由 MD `globalConfig`：`minConfidence` 0.7、`maxSkillsPerPlan` 5；低于阈值标「可选」、不标「必读」
+5. **暂停**：提供两种执行方式让用户选：
    - Subagent-Driven（推荐）
    - Inline Execution
-5. **用户选定后**才可 Step D
 
 ## Step D：开发（READY_TO_DEV）
 
@@ -184,6 +181,7 @@ pnpm harness:check
 **开发期间：**
 
 - 严格按 plan 执行；连续执行，仅在 plan 规定的确认点暂停
+- **Skill 路由：** 执行标「必读」的 Task 前，**必须**先 Read 对应业务 skill 的 `SKILL.md`；流程 skill（brainstorming / writing-plans / harness）≠ 业务路由 skill，不可互相替代
 - 每完成一个 Task 做 lint / 相关测试
 - **禁止**扩大 scope（不顺手重构无关代码）
 
@@ -284,6 +282,7 @@ pnpm harness:check
 ```
 - [ ] 模块目录四层齐全
 - [ ] requirements / spec / plan 链接正确
+- [ ] plan 含 Skill 路由表（或注明无达阈值 skill）
 - [ ] 改 src/ 前 validate-harness 已跑
 - [ ] spec 验收项已勾选
 - [ ] 一致性自检已完成并写入 archive
@@ -304,15 +303,7 @@ superpowers-harness-run（本技能，总编排）
   └─ executing-plans 或 subagent-driven-development（开发）
 ```
 
-**禁止**在未完成 spec/plan **且未经 P1/P2/P3 用户确认** 时调用 executing-plans 或直接改 `src/`。
-
-## Agent 禁止事项（自查）
-
-- ❌ 探索完代码后直接写 spec + plan + 改 `src/`（同一条回复）
-- ❌ 用户纠正需求后直接改代码
-- ❌ 以「fix 很简单」为由跳过 P1/P2/P3
-- ❌ 用户未选执行方式就开始 Step D
-- ❌ 模块已 DELIVERED 但需求变了，不新建 requirements 直接 patch
+**禁止**在未完成 spec/plan 时调用 executing-plans 或直接改 `src/`。
 
 ## 用户最简用法
 

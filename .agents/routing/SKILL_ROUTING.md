@@ -27,7 +27,7 @@
     },
     {
       "id": "cat-dev-misc",
-      "name": "22",
+      "name": "skill通用",
       "parentId": "cat-dev"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "id": "cat-fe-design",
-      "name": "前端·设计还原",
+      "name": "前端·figma长页面还原",
       "parentId": "cat-fe"
     },
     {
@@ -442,8 +442,8 @@
 ### 开发
 - （暂未预置 skill）
 
-### 22
- - **skill-creator** — 新建/改进/评估 skill
+### skill通用
+- **skill-creator** — 新建/改进/评估 skill
   - 触发：新建 skill / 创建技能 / create a skill / 优化 skill / skill 评估
 
 ### 前端
@@ -469,7 +469,7 @@
 - **accessibility** — Audit and improve web accessibility following WCAG 2.2 guidelines. Use when asked to "improve accessibility", "a11y audit", "WCAG compliance", "screen reader support", "keyboard navigation", or "make accessible".
   - 触发：无障碍 / a11y / accessibility / WCAG / 可访问性
 
-### 前端·设计还原
+### 前端·figma长页面还原
 - **figma-long-page** — figma 还原长页面
   - 触发：figma 长页 / 长流程还原 / 分段还原 / 还原长页面 / figma-long-page
 
@@ -478,7 +478,7 @@
   - 触发：克隆网站 / 复刻网站 / 仿站 / clone website / pixel-perfect clone
 
 ### 文档处理
-- **阿斯顿** — 大
+- **阿1斯顿** — 大
 
 ### 图像处理
 - （暂未预置 skill）

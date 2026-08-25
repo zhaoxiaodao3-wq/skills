@@ -13,7 +13,7 @@
     },
     {
       "id": "cat-dev-misc",
-      "name": "22",
+      "name": "skill通用",
       "parentId": "cat-dev"
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "id": "cat-fe-design",
-      "name": "前端·设计还原",
+      "name": "前端·figma长页面还原",
       "parentId": "cat-fe"
     },
     {
@@ -398,7 +398,7 @@
     {
       "id": "阿斯顿",
       "categoryId": "cat-doc",
-      "name": "阿斯顿",
+      "name": "阿1斯顿",
       "userDescription": "",
       "systemDescription": "大",
       "path": "D:\\360Downloads",

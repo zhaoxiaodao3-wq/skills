@@ -138,6 +138,43 @@ if (Test-Path $CmdSrc) {
     Write-Host "  [警告] 未找到 harness.md 命令，跳过" -ForegroundColor Yellow
 }
 
+# Step 6d: 复制 .agents/routing/ 最小集（幂等，不覆盖已有文件）
+$RoutingSrc = $null
+foreach ($candidate in @(
+    (Join-Path (Split-Path $AgentsSkills -Parent) "routing"),
+    "E:\code\frontend-local\.agents\routing"
+)) {
+    if (Test-Path $candidate) {
+        $RoutingSrc = $candidate
+        break
+    }
+}
+$RoutingDst = Join-Path $ProjectRoot ".agents\routing"
+if ($RoutingSrc) {
+    New-Item -ItemType Directory -Force -Path $RoutingDst | Out-Null
+    $routingFiles = @("SKILL_ROUTING.md", "router.mjs")
+    $schemaSrc = Join-Path $RoutingSrc "skill-routing.schema.json"
+    if (Test-Path $schemaSrc) {
+        $routingFiles += "skill-routing.schema.json"
+    }
+    foreach ($f in $routingFiles) {
+        $src = Join-Path $RoutingSrc $f
+        $dst = Join-Path $RoutingDst $f
+        if (-not (Test-Path $src)) {
+            Write-Host "  [警告] routing 源缺少 $f，跳过" -ForegroundColor Yellow
+            continue
+        }
+        if (-not (Test-Path $dst)) {
+            Copy-Item $src $dst
+            Write-Host "  [复制] .agents\routing\$f" -ForegroundColor Green
+        } else {
+            Write-Host "  [跳过] .agents\routing\$f 已存在" -ForegroundColor DarkGray
+        }
+    }
+} else {
+    Write-Host "  [警告] 未找到 routing 源，跳过 .agents\routing 复制" -ForegroundColor Yellow
+}
+
 # Step 7: package.json harness 脚本 + pre-commit
 $PkgPath = Join-Path $ProjectRoot "package.json"
 if (Test-Path $PkgPath) {
@@ -225,3 +262,6 @@ Write-Host "Harness 安装完成。" -ForegroundColor Green
 Write-Host "  自查: pnpm harness:status / pnpm harness:check" -ForegroundColor Green
 Write-Host "  规则: docs\superpowers\HARNESS_RULES.md" -ForegroundColor Green
 Write-Host "  技能: superpowers-harness-run (/harness)" -ForegroundColor Green
+Write-Host "  Skill 路由: .agents\routing\SKILL_ROUTING.md" -ForegroundColor Green
+Write-Host "  业务 skill 仓库请放在 .agents\skills\（或配置 skillsRoot）" -ForegroundColor Green
+Write-Host '  CLI: node .agents/routing/router.mjs "<任务>" / --annotate <plan>' -ForegroundColor Green

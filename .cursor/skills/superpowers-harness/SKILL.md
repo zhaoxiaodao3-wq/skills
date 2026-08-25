@@ -79,6 +79,7 @@ description: >-
 - `docs/superpowers/HARNESS_RULES.md`、`AGENTS.md`、`.cursorrules`
 - `superpowers-harness-run` 编排技能（`.agents` + `.cursor`）
 - `.cursor/commands/harness.md`（`/harness` 命令）
+- `.agents/routing/`：`SKILL_ROUTING.md` + `router.mjs`（幂等，已存在不覆盖；源为技能旁 `routing/` 或 `frontend-local/.agents/routing`）
 - `package.json`：`harness:status` / `harness:check` / `harness:strict`
 
 **Windows：**
@@ -100,4 +101,4 @@ bash .agents/skills/superpowers-harness/scripts/bootstrap-harness.sh
 - [ ] 未 READY_TO_DEV 时不改 src/
 - [ ] 文档写入 current/ 下正确子目录
 - [ ] commit 前提示运行 validate-harness 自查
-- [ ] 新项目安装后已具备 superpowers-harness-run 与 /harness 命令
+- [ ] 新项目安装后已具备 superpowers-harness-run、/harness 命令与 `.agents/routing/`

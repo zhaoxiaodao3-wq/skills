@@ -34,6 +34,20 @@ description: >-
 1. `docs/superpowers/HARNESS_RULES.md`
 2. `docs/superpowers/SUPERPOWERS_RULES.md`
 
+## Skill 路由（业务能力）
+
+Harness 流程 skill（brainstorming / writing-plans / harness）负责**工程编排**；业务能力 skill（如 echarts、接口适配等）由 **Skill 路由**按任务匹配，二者不互相替代。
+
+| 配置 | 约定 |
+|------|------|
+| **默认路由 MD** | 项目内 `.agents/routing/SKILL_ROUTING.md`；若不存在则回退 `E:\code\frontend-local\.agents\routing\SKILL_ROUTING.md` |
+| **Skills 根** | 项目 `.agents/skills/`，或相对 routing 目录的 `../skills` |
+| **模式 A** | writing-plans 对每个 Task 做必要性测评并标注建议 skill |
+| **模式 B** | 对需求/任务自由文本做路由初筛（brainstorming 用） |
+| **CLI（可选）** | `node .agents/routing/router.mjs "<task>"`；标注 plan：`node .agents/routing/router.mjs --annotate <plan文件>` |
+
+`globalConfig`（见路由 MD）：`minConfidence: 0.7`、`maxSkillsPerPlan: 5`。置信度低于阈值标「可选」、不强制 Read；单 plan 建议 skill 总数不超过上限。
+
 ## Step 0：机械阶段查询（每次启动必做）
 
 ```bash
@@ -129,7 +143,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
    - 表格至少含：字号/字重/色、间距、圆角/边框、关键尺寸；并注明 Figma 节点
    - 须用 Figma MCP / `get_design_context` 或截图取值，**禁止**凭印象填表
    - 缺此节时 `harness:check` 会 ⚠️ `SPEC_MISSING_FIGMA_STYLE_TABLE`；Agent 不得进入 READY_TO_DEV
-8. **暂停**：请用户 review spec，确认后再 Step C
+8. **Skill 路由初筛（必做，在暂停 review 之前）：**
+   - Read 路由 MD 机器块（或 `node .agents/routing/router.mjs --list` / 列举 skills）
+   - 用需求摘要做 **模式 B** 初筛（Agent 手评或 `router.mjs "<需求摘要>"`）
+   - spec **必须**含 `## Skill 路由初筛` 表，列：场景摘要、建议 skill、置信度、仓库路径、备注
+   - 无达阈值 skill 时写一行：「本需求无达阈值 skill」
+9. **暂停**：请用户 review spec，确认后再 Step C
 
 ## Step C：writing-plans（NO_PLAN）
 
@@ -138,7 +157,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 1. 基于 spec 写 `{模块}/plans/01-dev-plan.md`
 2. plan 头部含 `**Spec:**` 链接
 3. 任务粒度 2～5 分钟，含具体文件路径与代码片段
-4. **暂停**：提供两种执行方式让用户选：
+4. **Skill 路由表（写完 Task 后必做）：**
+   - 对每个 Task 做 **模式 A** 必要性测评（Agent 手评或 `router.mjs --annotate <plan>`）
+   - plan **必须**含 `## Skill 路由表`，列：Task、步骤摘要、建议 skill、置信度、必读、skill 路径；无达阈值则注明
+   - 相关 Task 内增加一行：`**建议 skill：** \`id\`（置信度 x）→ 开发前 Read \`path/SKILL.md\``
+   - 遵守路由 MD `globalConfig`：`minConfidence` 0.7、`maxSkillsPerPlan` 5；低于阈值标「可选」、不标「必读」
+5. **暂停**：提供两种执行方式让用户选：
    - Subagent-Driven（推荐）
    - Inline Execution
 
@@ -157,6 +181,7 @@ pnpm harness:check
 **开发期间：**
 
 - 严格按 plan 执行；连续执行，仅在 plan 规定的确认点暂停
+- **Skill 路由：** 执行标「必读」的 Task 前，**必须**先 Read 对应业务 skill 的 `SKILL.md`；流程 skill（brainstorming / writing-plans / harness）≠ 业务路由 skill，不可互相替代
 - 每完成一个 Task 做 lint / 相关测试
 - **禁止**扩大 scope（不顺手重构无关代码）
 
@@ -257,6 +282,7 @@ pnpm harness:check
 ```
 - [ ] 模块目录四层齐全
 - [ ] requirements / spec / plan 链接正确
+- [ ] plan 含 Skill 路由表（或注明无达阈值 skill）
 - [ ] 改 src/ 前 validate-harness 已跑
 - [ ] spec 验收项已勾选
 - [ ] 一致性自检已完成并写入 archive
