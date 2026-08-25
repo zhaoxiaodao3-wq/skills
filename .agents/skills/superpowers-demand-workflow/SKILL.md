@@ -78,7 +78,9 @@ bash "<技能路径>/scripts/bootstrap.sh"
 ⑦ 交付归档                    → archive/vN-delivered/
 ```
 
-**开发类任务用户入口：** `superpowers-harness-run`（或 `/harness`）自动串联 ②～⑦ 与 Harness 门禁。
+**开发类任务用户入口：** `superpowers-harness-run`（或 `/harness`）自动串联 ②～⑦ 与 Harness 门禁。  
+**入口后先分档：** 轻量 / 标准 / 全量（见 `HARNESS_RULES.md` §3）；轻量可不强制完整 spec/plan；标准/全量须 `READY_TO_DEV` 才改 `src/`。  
+**官方 skill：** brainstorming / writing-plans / SDD 等以插件为准，不落仓库副本。
 
 ### ① 建模块目录
 

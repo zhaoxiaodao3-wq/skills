@@ -42,33 +42,77 @@ pnpm harness:status -- --match "<模块名关键词或路径片段>"
 
 - 无匹配 → `NO_MODULE`，从 Step A 开始
 - 有匹配 → 以 CLI 输出的 `阶段` / `下一步` 为准，**不要凭印象猜**
-- 每次回复开头输出状态行：
+- 每次回复开头输出状态行（**必须含档位**）：
 
   ```
-  [Harness] fix/语言可理解度缺省态数值 | 阶段: READY_TO_DEV | 下一步: 开发 + 交付归档
+  [Harness] 模块名 | 档位: 标准 | 阶段: READY_TO_DEV | 下一步: 开发 + 交付归档
   ```
 
-## fix 轻量通道
+---
 
-同时满足以下条件时，可缩短 brainstorming，**不可跳过 spec/plan/validate/archive**：
+## 档位分类（Step 0 之后、建目录/写文档之前必做）
 
-- 分类为 `fix`
-- 预计只改 1～2 个文件、无架构决策
-- 用户描述明确（如「缺省态显示 0 不要 0.0」）
+在 Step 0 状态查询之后、建目录或写文档之前：
 
-轻量做法：
+1. **分类**并**口头宣告**档位（轻量 / 标准 / 全量）
+2. 允许用户一句话改档
+3. 按下方对应档位分支执行
 
-1. 探索相关代码（只读）
-2. 直接呈现推荐方案 + 1 句替代方案，一次确认
-3. spec 可 ≤80 行，但仍须写 `specs/01-dev-spec.md`
-4. plan 可 1～2 个 Task，但仍须写 `plans/01-dev-plan.md`
-5. **validate、交付归档与标准流程相同**
+| 本地档位 | 官方 6.3 | 典型场景 |
+|----------|----------|----------|
+| 轻量 | spike | 可行性、探查、答案为主、产物可丢 |
+| 标准 | bounded | 边界清晰的小改（含小 fix / 小改动）；已有代码路径可改 |
+| 全量 | architectural | 新能力、多文件、接口/UI、有设计决策 |
+
+### 硬约束（三档共用）
+
+- **禁止**写入扁平 `docs/superpowers/specs/` 等路径；必须落在 `docs/superpowers/{version}/{type}/{模块名}/specs|plans|requirements|archive/`
+- 官方 brainstorming / writing-plans 若指引扁平路径，**必须改写**到上述模块四层路径
+- **三档在改正式业务 `src/` 实现前都必须用户确认**
+
+---
+
+## 轻量档
+
+- 可 `create-demand` 建模块，写入 `requirements/`；结论可写入 `archive/`（如 `spike-结论.md`）
+- **不强制**完整 `01-dev-spec.md` / `01-dev-plan.md`
+- **默认不改**正式业务 `src/`；若必须写探针代码，须标明可丢，且实现前仍须用户确认
+- 可不进入 `READY_TO_DEV`；状态行标明 `档位: 轻量`
+
+---
+
+## 标准档（原 fix 轻量通道）
+
+触发不再仅限 `type=fix`。满足 **标准档**（描述明确、改动面小、无架构决策）即可走本分支。原 fix 轻量条件（`type=fix` + 预计只改 1～2 个文件、无架构决策 + 用户描述明确）是标准档的**充分条件之一**。
+
+仍须：
+
+1. 探索相关代码（只读）→ 短方案 + 1 句替代方案 → **一次确认（对齐官方「实现前批准」）**；P1 可与短方案合并为一次确认
+2. 写短 `specs/01-dev-spec.md`（建议 ≤80 行）+ 短 `plans/01-dev-plan.md`（1～2 Task）
+3. skill 路由标注（可极简）
+4. `harness:check`；改 `src/` 前必须 `READY_TO_DEV`
+5. 交付：一致性自检 + archive（还原度不适用则注明）；validate / archive **不可跳过**
+
+暂停点：P1 可与短方案合并一次；P2 对短 spec 确认可合并或极短但仍存在；P3 执行方式仍问一次（可默认推荐 Inline）。
+
+---
+
+## 全量档
+
+现有完整链（Step A～E）不变：create-demand → brainstorming（读官方 skill，落盘按本地路径）→ writing-plans → skill 路由 → P3 → 开发 → 交付自检 A→B → archive。
+
+- UI/Figma 样式对照等本地门禁不变
+- **P1 / P2 / P3 全开**
+- 状态行标明 `档位: 全量`
+
+---
 
 ## 从用户消息解析
 
 | 字段 | 推断规则 |
 |------|----------|
 | **分类 type** | 新页面/能力→`feature`；UI/Figma→`ui-style`；接口/字段→`api-adapter`；bug/小修→`fix` |
+| **档位** | 探查/可行性/可丢→轻量；描述明确、改动面小、无架构决策→标准；新能力/多文件/有设计决策→全量 |
 | **模块名** | 用户给的名称；或从 `src/` 路径推断；2～20 字中文 |
 | **需求摘要** | 写入 `requirements/01-原始需求.md` 的正文 |
 | **关联路径** | 用户提到的组件/页面路径，用于 fuzzy 匹配已有模块 |
@@ -95,7 +139,7 @@ docs/superpowers/vX.X/{type}/{模块名}/
 | `READY_TO_DEV` | spec + plan 齐全 | Step D：开发 |
 | `DELIVERED` | 已有 archive 交付快照且需求已变 | 新建 requirements 或新模块 |
 
-**改 `src/` 前必须是 `READY_TO_DEV`。**
+**改 `src/` 前必须是 `READY_TO_DEV`**（轻量档默认不改正式 `src/`；若例外实现则仍须用户确认）。
 
 ---
 
@@ -107,11 +151,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 
 - 将用户需求写入 `{模块}/requirements/01-原始需求.md`
 - 回报创建的目录路径
-- 继续 Step B
+- 继续 Step B（轻量档可在 requirements / archive 结论后结束，不强制进完整 Step B～C）
 
 ## Step B：brainstorming（NO_SPEC）
 
-**必须读取并遵循 `brainstorming` 技能**，不得跳过设计确认直接写代码。
+**必须读取并遵循插件内最新 `brainstorming` 技能**（以官方插件版本为准，**不**在仓库落副本）；本地只覆盖路径与门禁。不得跳过设计确认直接写代码。
 
 1. 探索项目上下文（相关 `src/`、已有 docs）
 2. 一次只问一个澄清问题（必要时）
@@ -129,15 +173,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
    - 表格至少含：字号/字重/色、间距、圆角/边框、关键尺寸；并注明 Figma 节点
    - 须用 Figma MCP / `get_design_context` 或截图取值，**禁止**凭印象填表
    - 缺此节时 `harness:check` 会 ⚠️ `SPEC_MISSING_FIGMA_STYLE_TABLE`；Agent 不得进入 READY_TO_DEV
-8. **暂停**：请用户 review spec，确认后再 Step C
+8. **暂停（P2）**：请用户 review spec，确认后再 Step C
 
 ## Step C：writing-plans（NO_PLAN）
 
-**必须读取并遵循 `writing-plans` 技能。**
+**必须读取并遵循插件内最新 `writing-plans` 技能**（以官方插件版本为准，**不**在仓库落副本）；本地只覆盖路径与门禁。
 
 1. 基于 spec 写 `{模块}/plans/01-dev-plan.md`
-2. plan 头部含 `**Spec:**` 链接
-3. 任务粒度 2～5 分钟，含具体文件路径与代码片段
+2. plan 头部**强制**含 `**Spec:**` 链接，指向本模块 `specs/01-dev-spec.md`（硬规则）
+3. 任务粒度 2～5 分钟，含具体文件路径与代码片段；同形微任务可在 plan 标 `Batch:`（SDD 时可一次派发）
 4. **Skill 路由（Mode A · 强制）：**
    - 读 `.agents/routing/SKILL_ROUTING.md`
    - 运行：
@@ -146,9 +190,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
      ```
    - 对每个 Task 做必要性测评，将 CLI 输出 + 人工复核结论写入 plan（`> **Skill:** … 置信度 …`）
    - `riskLevel: high` 或「需人工确认」时暂停确认后再进入 Step D
-5. **暂停**：提供两种执行方式让用户选：
+5. **暂停（P3）**：提供两种执行方式让用户选：
    - Subagent-Driven（推荐）
    - Inline Execution
+
+选择 **Subagent-Driven** 时，遵循下方「Subagent-Driven（6.3 SDD）」约束。
 
 ## Step D：开发（READY_TO_DEV）
 
@@ -168,6 +214,18 @@ pnpm harness:check
 - 连续执行，仅在 plan 规定的确认点暂停
 - 每完成一个 Task 做 lint / 相关测试
 - **禁止**扩大 scope（不顺手重构无关代码）
+
+### Subagent-Driven（6.3 SDD）
+
+仅在用户选择 **Subagent-Driven** 或 plan 明确走 SDD 时强制；**Inline 不强制官方 ledger**，仍按 plan + skill 标注执行。
+
+| 约束 | 要求 |
+|------|------|
+| 官方 SDD | 跟插件内最新 `subagent-driven-development`（ledger、单评审双结论、证据重读等）；本地只引用不复制实现 |
+| 禁嵌套子代理 | 实现者 / 评审者**不得**再派子代理；仅 harness 控制器派发 |
+| 显式模型 | 每次 Task / 子代理派发须写明模型（禁止静默继承最贵） |
+| `Batch:` | plan 已标同形微任务时，SDD 可一次派发 |
+| 冲突 | 非灾难冲突可记录裁决后继续；破坏性 / 不可逆须停人 |
 
 **开发完成后 → Step E**
 
@@ -281,13 +339,15 @@ pnpm harness:check
 superpowers-harness-run（本技能，总编排）
   ├─ superpowers-harness（阶段判断、门禁规则）
   ├─ superpowers-demand-workflow（目录规范）
-  ├─ brainstorming（spec）
-  ├─ writing-plans（plan）
+  ├─ brainstorming（spec；插件最新版，不落仓库副本）
+  ├─ writing-plans（plan；插件最新版，不落仓库副本）
   ├─ .agents/routing/router.mjs --annotate（plan 内 skill 标注）
-  └─ executing-plans 或 subagent-driven-development（开发，按 plan skill 标注）
+  └─ executing-plans 或 subagent-driven-development（开发；插件最新版；按 plan skill 标注）
 ```
 
-**禁止**在未完成 spec/plan 时调用 executing-plans 或直接改 `src/`。
+**官方 skill 以插件最新版为准，不落仓库副本；本地只覆盖路径与门禁。**
+
+**禁止**在未完成 spec/plan 时调用 executing-plans 或直接改 `src/`（轻量档默认不改正式 `src/` 除外）。
 
 ## 用户最简用法
 
@@ -303,7 +363,7 @@ superpowers-harness-run（本技能，总编排）
 /harness 语言可理解度 gauge 缺省态显示整数 0
 ```
 
-Agent 自动推断 `fix` + 模块名 + 走全流程。
+Agent 自动推断 `fix` + 档位（通常为标准）+ 模块名 + 走对应流程。
 
 ## 分类默认值
 

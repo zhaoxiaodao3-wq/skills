@@ -97,9 +97,11 @@ bash .agents/skills/superpowers-harness/scripts/bootstrap-harness.sh
 ## AI 检查清单
 
 - [ ] 已读 HARNESS_RULES + SUPERPOWERS_RULES
+- [ ] 已宣告档位（轻量 / 标准 / 全量）
 - [ ] 已判断阶段并路由到正确技能
 - [ ] writing-plans 后已完成 skill routing 标注 plan（`router.mjs --annotate`）
-- [ ] 未 READY_TO_DEV 时不改 src/
+- [ ] 未 READY_TO_DEV 时不改 src/（标准/全量；轻量默认不改正式 src/）
 - [ ] 文档写入 current/ 下正确子目录
 - [ ] commit 前提示运行 validate-harness 自查
 - [ ] 新项目安装后已具备 superpowers-harness-run、/harness 命令与 `.agents/routing/`
+- [ ] 未将官方 skill 的 SKILL.md 拷进仓库

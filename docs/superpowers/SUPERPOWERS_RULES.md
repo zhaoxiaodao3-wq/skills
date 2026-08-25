@@ -59,19 +59,22 @@ docs/superpowers/current/{type}/{中文模块名}/
 
 ## 4. 开发流程
 
-> **开发类任务入口：** `superpowers-harness-run` 技能或 `/harness <需求>`（内含本流程 + Harness 门禁 + Skill 路由）。
+> **开发类任务入口：** `superpowers-harness-run` 技能或 `/harness <需求>`（内含本流程 + Harness 门禁 + Skill 路由）。  
+> **入口后先分档：** 轻量 / 标准 / 全量（映射官方 spike / bounded / architectural；细则见 `HARNESS_RULES.md` §3）。  
+> **官方 skill：** 以插件为准，升插件更新，**不**把官方 `SKILL.md` 落仓。  
+> **禁止扁平路径：** 官方若指引 `docs/superpowers/specs/` 等，必须改写到 `docs/superpowers/{version}/{type}/{模块}/…`（见 §1）。
 
 ```
 ① create-demand          建目录
 ② 原始需求 → requirements/
 ③ brainstorming          → specs/01-dev-spec.md
 ④ writing-plans          → plans/01-dev-plan.md
-④½ skill routing         → 读 SKILL_ROUTING.md，router 标注 plan 内建议 skill（见 HARNESS_RULES.md §5）
+④½ skill routing         → 读 SKILL_ROUTING.md，router 标注 plan 内建议 skill（见 HARNESS_RULES.md §8）
 ⑤ 按计划开发              → src/...（遵循 plan 内 skill 标注）
 ⑥ 交付归档               → archive/vN-delivered/
 ```
 
-改 `src/` 前须 `pnpm harness:status` + `pnpm harness:check`（阶段为 `READY_TO_DEV`）。
+改 `src/` 前须 `pnpm harness:status` + `pnpm harness:check`（阶段为 `READY_TO_DEV`；标准 / 全量强制；轻量默认不改正式 `src/`）。
 
 ## 5. 文件命名
 
@@ -116,4 +119,4 @@ docs/superpowers/current/{type}/{中文模块名}/
 | Skill 路由图 | `.agents/routing/SKILL_ROUTING.md` | 场景 → skill 唯一权威来源 |
 | Router CLI | `.agents/routing/router.mjs` | `--annotate` 标注 plan；Mode B 自由文本路由 |
 
-**强制：** writing-plans 完成后、开发前，须完成 plan 内 skill 标注（详见 `HARNESS_RULES.md` §5）。
+**强制：** writing-plans 完成后、开发前，须完成 plan 内 skill 标注（详见 `HARNESS_RULES.md` §8）。

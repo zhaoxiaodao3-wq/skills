@@ -12,10 +12,11 @@
 
 开发类任务（新功能、改页面、修 bug、实现需求）：
 
-1. **用户入口**：`superpowers-harness-run` 技能或 `/harness <需求>`
+1. **用户入口**：`superpowers-harness-run` 技能或 `/harness <需求>`；入口后先做需求分析分档（轻量 / 标准 / 全量）
 2. 读取 `docs/superpowers/HARNESS_RULES.md` 与 `SUPERPOWERS_RULES.md`
 3. 流程：`create-demand → brainstorming → writing-plans → skill routing 标注 plan → 开发 → 交付归档`
 4. **writing-plans 后**：读 `.agents/routing/SKILL_ROUTING.md`，运行 `node .agents/routing/router.mjs --annotate <plan>`，将建议 skill 写入 plan 各 Task
 5. 改 `src/` 前运行 `pnpm harness:status` 与 `pnpm harness:check`（须 `READY_TO_DEV`）
 6. 开发时遵循 plan 内 skill 标注；目录规范遵循 `superpowers-demand-workflow`
 7. 禁止写入 `docs/superpowers/specs/` 等旧扁平路径
+8. **官方 skill**：升插件更新，不把官方 `SKILL.md` 拷进仓库

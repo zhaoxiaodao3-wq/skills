@@ -20,13 +20,15 @@
 
 3. **开发准备与执行**
    ```
+   分档（轻量/标准/全量）→ 见 HARNESS_RULES §3
    brainstorming     → specs/01-dev-spec.md
    writing-plans     → plans/01-dev-plan.md
-   skill routing     → plan 内标注建议 skill（HARNESS_RULES §5）
-   开发               → src/...（按 plan + skill 标注）
+   skill routing     → plan 内标注建议 skill（HARNESS_RULES §8）
+   开发               → src/...（按 plan + skill 标注；标准/全量须 READY_TO_DEV）
    ```
 
-   **推荐入口：** `superpowers-harness-run` 或 `/harness <需求>`（自动串联上述步骤 + Harness 门禁）。
+   **推荐入口：** `superpowers-harness-run` 或 `/harness <需求>`（自动串联上述步骤 + Harness 门禁）。  
+   **官方 skill**（brainstorming / writing-plans / SDD 等）以插件为准，升插件更新，不落仓库副本。
 
 正式产物路径：
 
@@ -40,13 +42,21 @@ docs/superpowers/current/feature/登录注册功能/
 
 ---
 
-## Harness + Skill 路由
+## Harness + 三档 + Skill 路由
 
 | 文件 | 说明 |
 |------|------|
-| `docs/superpowers/HARNESS_RULES.md` | 阶段门禁、交付 A/B 自检、skill 路由 Mode A 细则 |
+| `docs/superpowers/HARNESS_RULES.md` | 三档分档、阶段门禁、交付 A/B 自检、SDD、skill 路由 Mode A |
 | `.agents/routing/SKILL_ROUTING.md` | 路由图权威来源（机器块 JSON） |
 | `.agents/routing/router.mjs` | CLI：`--annotate` 标注 plan；Mode B 自由文本 |
+
+**入口后先分档（HARNESS_RULES §3）：**
+
+| 档位 | 场景 | 改 `src/` |
+|------|------|-----------|
+| 轻量 | 探查 / 可行性 / 产物可丢 | 默认不改正式业务代码 |
+| 标准 | 边界清晰的小改（含小 fix） | 须短 spec/plan + `READY_TO_DEV` |
+| 全量 | 新能力 / 多文件 / 设计决策 | 完整链 + P1/P2/P3 + `READY_TO_DEV` |
 
 **writing-plans 完成后必做：**
 
@@ -56,7 +66,7 @@ node .agents/routing/router.mjs --annotate docs/superpowers/current/{type}/{模�
 
 将输出写入 plan 各 Task（`> **Skill:** …`），开发阶段读取并遵循对应 skill。
 
-**开发前门禁：**
+**开发前门禁（标准 / 全量）：**
 
 ```bash
 pnpm harness:status -- --match "<模块名>"
