@@ -115,7 +115,7 @@ async function save() {
 </script>
 
 <template>
-  <el-drawer v-model="open" title="Skill 配置" size="420px">
+  <el-drawer v-model="open" title="Skill 配置" size="420px" append-to-body :z-index="5000">
     <el-form label-position="top">
       <el-form-item label="路由文件（SKILL_ROUTING.md）">
         <el-input v-model="routingMdPath" type="textarea" :rows="2" placeholder="绝对路径" />

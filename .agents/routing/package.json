@@ -49,12 +49,9 @@
       }
     ],
     "win": {
-      "target": ["nsis"],
-      "artifactName": "SkillRouting-${version}-setup.${ext}"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "target": ["portable", "dir"],
+      "signAndEditExecutable": false,
+      "artifactName": "SkillRouting-${version}.${ext}"
     }
   }
 }

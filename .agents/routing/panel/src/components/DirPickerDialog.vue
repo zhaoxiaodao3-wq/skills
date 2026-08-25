@@ -22,6 +22,9 @@ const emit = defineEmits<{
     :model-value="visible"
     title="选择 skill 所在文件夹"
     width="560px"
+    append-to-body
+    :z-index="10000"
+    destroy-on-close
     @update:model-value="(v: boolean) => (!v ? emit('cancel') : emit('update:visible', v))"
   >
     <div class="dir-head">

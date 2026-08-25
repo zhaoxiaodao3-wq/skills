@@ -70,6 +70,24 @@ async function onSettingsSaved() {
   await bootGraph()
 }
 
+const refreshing = ref(false)
+
+/** 重新读取路由文件 / skills，无需重启服务 */
+async function refreshGraph() {
+  if (refreshing.value) return
+  refreshing.value = true
+  try {
+    await flushPending()
+    await config.load()
+    await bootGraph()
+    ElMessage.success('已从磁盘重新加载路由')
+  } catch (e) {
+    ElMessage.error(String(e) || '刷新失败')
+  } finally {
+    refreshing.value = false
+  }
+}
+
 function onSelect(node: Parameters<typeof selection.onSelect>[0]) {
   selection.onSelect(node)
 }
@@ -157,6 +175,14 @@ async function pickForSettingsPanel(setPath: (p: string) => void, seed?: string)
       <span v-if="store.ok" class="meta">{{ store.categories.length }} 分类 · {{ store.skills.length }} skill</span>
       <div class="actions">
         <button class="active" @click="settingsVisible = true">设置</button>
+        <button
+          class="active"
+          :disabled="!config.loaded || refreshing"
+          :title="refreshing ? '刷新中…' : '重新读取路由文件（改 md 后点这里，无需重启）'"
+          @click="refreshGraph"
+        >
+          {{ refreshing ? '刷新中…' : '刷新' }}
+        </button>
         <button class="active" :disabled="!store.ok" @click="newCategory">新建分类</button>
         <button class="active" :disabled="!store.ok" @click="drawerVisible = true">新建 Skill</button>
         <button class="active" :disabled="!store.ok" @click="renameSelected">重命名选中</button>
