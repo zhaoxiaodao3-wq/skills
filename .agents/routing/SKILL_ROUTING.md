@@ -26,6 +26,11 @@
       "name": "开发"
     },
     {
+      "id": "cat-dev-superpowers",
+      "name": "Superpowers·Harness",
+      "parentId": "cat-dev"
+    },
+    {
       "id": "cat-dev-misc",
       "name": "skill通用",
       "parentId": "cat-dev"
@@ -79,6 +84,133 @@
     }
   ],
   "skills": [
+    {
+      "id": "superpowers-harness-run",
+      "categoryId": "cat-dev-superpowers",
+      "name": "superpowers-harness-run",
+      "userDescription": "Superpowers Harness 完整开发流程一键入口",
+      "systemDescription": "从需求到交付：create-demand → brainstorming → writing-plans → skill routing → 开发 → 归档 → validate-harness。开发类任务必须优先使用。",
+      "path": "../skills/superpowers-harness-run",
+      "triggers": [
+        "harness",
+        "superpowers",
+        "开发流程",
+        "实现需求",
+        "修 bug",
+        "改页面",
+        "/harness"
+      ],
+      "semanticTags": [
+        "harness",
+        "superpowers",
+        "工作流",
+        "编排"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [
+        "superpowers-demand-workflow",
+        "brainstorming",
+        "writing-plans"
+      ],
+      "version": "1.0.0",
+      "riskLevel": "low",
+      "isIdempotent": true,
+      "timeout": 3600,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "任何会改动 src/ 的开发类任务",
+        "新功能、改页面、修 bug、对接接口"
+      ],
+      "unsuitableConditions": [
+        "纯问答、只读 code review",
+        "用户明确跳过文档且已警告"
+      ]
+    },
+    {
+      "id": "superpowers-harness",
+      "categoryId": "cat-dev-superpowers",
+      "name": "superpowers-harness",
+      "userDescription": "Harness 门禁：阶段判断、validate-harness、bootstrap",
+      "systemDescription": "在 demand-workflow 之上叠加流程门禁与机械校验；harness-run 内部调用，或安装 bootstrap、单独跑 validate。",
+      "path": "../skills/superpowers-harness",
+      "triggers": [
+        "harness 门禁",
+        "validate-harness",
+        "bootstrap harness",
+        "harness:check",
+        "harness:status"
+      ],
+      "semanticTags": [
+        "harness",
+        "门禁",
+        "validate"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [],
+      "version": "1.0.0",
+      "riskLevel": "low",
+      "isIdempotent": true,
+      "timeout": 600,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "判断需求阶段",
+        "commit 前 validate 自查",
+        "新项目安装 harness"
+      ],
+      "unsuitableConditions": [
+        "用户仅需端到端编排（应用 harness-run）"
+      ]
+    },
+    {
+      "id": "superpowers-demand-workflow",
+      "categoryId": "cat-dev-superpowers",
+      "name": "superpowers-demand-workflow",
+      "userDescription": "Superpowers 需求目录与文档落位规范",
+      "systemDescription": "版本化目录 requirements/archive/specs/plans；create-demand、brainstorming、writing-plans、归档。",
+      "path": "../skills/superpowers-demand-workflow",
+      "triggers": [
+        "新建需求",
+        "create-demand",
+        "superpowers 流程",
+        "需求目录",
+        "建模块"
+      ],
+      "semanticTags": [
+        "superpowers",
+        "需求",
+        "目录"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [],
+      "version": "1.0.0",
+      "riskLevel": "low",
+      "isIdempotent": true,
+      "timeout": 600,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "新建业务需求模块",
+        "原始需求落地",
+        "梳理 spec/plan 目录"
+      ],
+      "unsuitableConditions": [
+        "纯代码问答不涉及需求文档"
+      ]
+    },
     {
       "id": "skill-creator",
       "categoryId": "cat-dev-misc",
@@ -441,6 +573,14 @@
 
 ### 开发
 - （暂未预置 skill）
+
+### Superpowers·Harness
+- **superpowers-harness-run** — Superpowers Harness 完整开发流程一键入口
+  - 触发：harness / superpowers / 开发流程 / 实现需求 / 修 bug
+- **superpowers-harness** — Harness 门禁：阶段判断、validate-harness、bootstrap
+  - 触发：harness 门禁 / validate-harness / bootstrap harness / harness:check
+- **superpowers-demand-workflow** — Superpowers 需求目录与文档落位规范
+  - 触发：新建需求 / create-demand / superpowers 流程 / 需求目录 / 建模块
 
 ### skill通用
 - **skill-creator** — 新建/改进/评估 skill

@@ -73,9 +73,12 @@ bash "<技能路径>/scripts/bootstrap.sh"
 ③ 原始需求 → requirements/
 ④ brainstorming              → specs/01-dev-spec.md
 ⑤ writing-plans              → plans/01-dev-plan.md
-⑥ 按计划开发                  → 源码
+⑤½ skill routing             → 读 SKILL_ROUTING.md + router --annotate，写入 plan
+⑥ 按计划开发                  → 源码（遵循 plan 内 skill 标注）
 ⑦ 交付归档                    → archive/vN-delivered/
 ```
+
+**开发类任务用户入口：** `superpowers-harness-run`（或 `/harness`）自动串联 ②～⑦ 与 Harness 门禁。
 
 ### ① 建模块目录
 
@@ -123,6 +126,12 @@ plan 头部必须包含：
 **Spec:** [specs/01-dev-spec.md](../specs/01-dev-spec.md)
 ```
 
+**Skill 路由（writing-plans 收尾 · 强制）：**
+
+1. 读 `.agents/routing/SKILL_ROUTING.md`
+2. `node .agents/routing/router.mjs --annotate {模块}/plans/01-dev-plan.md`
+3. 将建议 skill 写入各 Task（详见 `HARNESS_RULES.md` §5）
+
 ### ⑤ 开发与归档
 
 - 按 `plans/` 逐项实现
@@ -146,7 +155,7 @@ plan 头部必须包含：
 
 - [ ] 读取项目 `docs/superpowers/SUPERPOWERS_RULES.md`（不存在则先 bootstrap）
 - [ ] 确认模块目录已存在（否则运行 create-demand）
-- [ ] 确认当前阶段：requirements / spec / plan / 开发 / 归档
+- [ ] 确认当前阶段：requirements / spec / plan / skill routing / 开发 / 归档
 - [ ] 文档写入正确子目录，不混放
 - [ ] 不覆盖已有文件（归档旧版再写新版）
 
@@ -169,6 +178,11 @@ plan 头部必须包含：
 | 执行开发 | `executing-plans` 或直接按 plan 开发 |
 
 本技能管**目录与文档落位**；brainstorming / writing-plans 管**内容生成**。
+
+## 与 Harness 衔接
+
+开发类任务**用户入口**为 `superpowers-harness-run`（或 `/harness`）；本技能提供目录与文档落位规范，由 harness-run 内部调用。
+不得在未完成 spec/plan 时引导修改 `src/`。门禁见 `docs/superpowers/HARNESS_RULES.md`。
 
 ## 对话模板
 

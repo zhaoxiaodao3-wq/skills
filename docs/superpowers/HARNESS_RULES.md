@@ -32,7 +32,7 @@ node scripts/harness/status.mjs --match "<模块名>"
 推荐顺序：
 
 ```
-create-demand → brainstorming → writing-plans → 开发 → 交付自检(A→B) → archive → validate
+create-demand → brainstorming → writing-plans → skill routing 标注 plan → 开发 → 交付自检(A→B) → archive → validate
 ```
 
 阶段枚举：
@@ -99,15 +99,54 @@ archive 必须含二级标题：`## 一致性自检`（含结果表与证据）�
 | 建目录 | `superpowers-demand-workflow` |
 | 写 spec | `brainstorming` |
 | 写 plan | `writing-plans` |
-| 执行开发 | `executing-plans` 或按 plan 开发 |
+| **plan 内 skill 标注** | 读 `.agents/routing/SKILL_ROUTING.md` + `router.mjs --annotate`（见 §7） |
+| 执行开发 | `executing-plans` 或按 plan 开发（遵循 plan 内 skill 标注） |
 
-## 5. 禁止事项
+## 5. Skill 路由（Mode A · Superpowers 流程内）
+
+> 权威路由图：`.agents/routing/SKILL_ROUTING.md`（机器块 JSON + 人类说明）  
+> 可视化编辑：`.agents/routing/panel/`（可选，非执行依赖）
+
+**触发时机：** `writing-plans` 写完 `plans/01-dev-plan.md` 之后、`READY_TO_DEV` 之前（Harness Step C 收尾）。
+
+**Agent 必做：**
+
+1. 阅读 `SKILL_ROUTING.md` 使用说明与 `globalConfig`（`maxSkillsPerPlan` / `minConfidence` / `autoActivateRiskLevel`）
+2. 对 plan 中**每个 Task** 做必要性测评：结合 Task 描述 + 各 skill 的 `applicableConditions` / `unsuitableConditions`
+3. 运行机械辅助（输出建议 skill 与置信度）：
+
+   ```bash
+   node .agents/routing/router.mjs --annotate docs/superpowers/current/{type}/{模块}/plans/01-dev-plan.md
+   ```
+
+4. 将 CLI 结果（及人工复核结论）写入 plan 各 Task 下，例如：
+
+   ```markdown
+   ### Task 2: 实现 gauge 缺省态
+
+   > **Skill:** echarts · 置信度 0.85 · 自动激活
+   > **理由:** 步骤含图表缺省态展示
+   ```
+
+5. **Step D 开发**时：读取 Task 内标注，**必须先读并遵循**对应 skill；`riskLevel: high` 或标注「需人工确认」时暂停确认
+
+**Mode B（不走 Superpowers 流程）：** 自由文本匹配 triggers：
+
+```bash
+node .agents/routing/router.mjs "任务描述"
+node .agents/routing/router.mjs --list      # 列出路由图 skill
+node .agents/routing/router.mjs --validate  # 校验 SKILL_ROUTING.md 机器块
+```
+
+**维护：** 新增/调整 skill 时更新 `SKILL_ROUTING.md` 机器块；Harness bootstrap 会幂等安装 `.agents/routing/`。
+
+## 6. 禁止事项
 
 - 写入 `docs/superpowers/specs/`、`plans/`、`archive/`、`reports/` 等旧扁平路径
 - 未完成 spec/plan 时主动引导修改 `src/`（宽松模式下用户坚持则警告后继续）
 - 未完成适用的 A/B 自检就声称「逻辑已闭环」或「已对齐 Figma」
 
-## 6. 升级路径
+## 7. 升级路径
 
 1. **Phase 1（当前）**：宽松模式，积累 `.harness/warnings.log`
 2. **Phase 2**：启用 `--strict`；fix 类型可配置豁免

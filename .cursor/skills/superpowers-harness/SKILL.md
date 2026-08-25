@@ -98,6 +98,7 @@ bash .agents/skills/superpowers-harness/scripts/bootstrap-harness.sh
 
 - [ ] 已读 HARNESS_RULES + SUPERPOWERS_RULES
 - [ ] 已判断阶段并路由到正确技能
+- [ ] writing-plans 后已完成 skill routing 标注 plan（`router.mjs --annotate`）
 - [ ] 未 READY_TO_DEV 时不改 src/
 - [ ] 文档写入 current/ 下正确子目录
 - [ ] commit 前提示运行 validate-harness 自查

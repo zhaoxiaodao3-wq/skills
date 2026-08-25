@@ -1,3 +1,13 @@
+# 项目 AI 上下文
+
+## Git 提交信息（强制中文）
+
+为本仓库生成 Git commit message 时（含 Cursor Source Control 的 ✨ 自动生成），必须遵守：
+
+1. 格式：`<type>: <中文描述>`（type 用 feat/fix/refactor/chore 等英文前缀）
+2. 冒号后必须是中文，说明改动目的，不要用英文描述
+3. 示例：`feat: 新增核心教案只读预览页`、`fix: 修复课堂信息章节字段未显示`
+
 ## Superpowers + Harness + Skill 路由（开发流程）
 
 开发类任务（新功能、改页面、修 bug、实现需求）：

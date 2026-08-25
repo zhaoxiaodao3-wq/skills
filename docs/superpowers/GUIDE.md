@@ -20,10 +20,13 @@
 
 3. **开发准备与执行**
    ```
-   brainstorming  → specs/01-dev-spec.md
-   writing-plans  → plans/01-dev-plan.md
-   开发            → src/...
+   brainstorming     → specs/01-dev-spec.md
+   writing-plans     → plans/01-dev-plan.md
+   skill routing     → plan 内标注建议 skill（HARNESS_RULES §5）
+   开发               → src/...（按 plan + skill 标注）
    ```
+
+   **推荐入口：** `superpowers-harness-run` 或 `/harness <需求>`（自动串联上述步骤 + Harness 门禁）。
 
 正式产物路径：
 
@@ -34,6 +37,33 @@ docs/superpowers/current/feature/登录注册功能/
   plans/01-dev-plan.md               # 执行计划
   archive/                           # 历史与交付归档
 ```
+
+---
+
+## Harness + Skill 路由
+
+| 文件 | 说明 |
+|------|------|
+| `docs/superpowers/HARNESS_RULES.md` | 阶段门禁、交付 A/B 自检、skill 路由 Mode A 细则 |
+| `.agents/routing/SKILL_ROUTING.md` | 路由图权威来源（机器块 JSON） |
+| `.agents/routing/router.mjs` | CLI：`--annotate` 标注 plan；Mode B 自由文本 |
+
+**writing-plans 完成后必做：**
+
+```bash
+node .agents/routing/router.mjs --annotate docs/superpowers/current/{type}/{模块}/plans/01-dev-plan.md
+```
+
+将输出写入 plan 各 Task（`> **Skill:** …`），开发阶段读取并遵循对应 skill。
+
+**开发前门禁：**
+
+```bash
+pnpm harness:status -- --match "<模块名>"
+pnpm harness:check
+```
+
+阶段须为 `READY_TO_DEV` 方可改 `src/`。
 
 ---
 
