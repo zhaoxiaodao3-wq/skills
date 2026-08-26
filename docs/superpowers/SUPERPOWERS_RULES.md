@@ -67,14 +67,17 @@ docs/superpowers/current/{type}/{中文模块名}/
 ```
 ① create-demand          建目录
 ② 原始需求 → requirements/
-③ brainstorming          → specs/01-dev-spec.md
+③ brainstorming          → specs/01-dev-spec.md  → **P2 确认**
 ④ writing-plans          → plans/01-dev-plan.md
-④½ skill routing         → 读 SKILL_ROUTING.md，router 标注 plan 内建议 skill（见 HARNESS_RULES.md §8）
-⑤ 按计划开发              → src/...（遵循 plan 内 skill 标注）
+④½ skill routing         → 读 SKILL_ROUTING.md，router 标注 plan
+④¾ **P3 确认**执行方式   → 仅此之后可改实现
+⑤ 按计划开发              → 实现文件（遵循 plan 内 skill 标注）
 ⑥ 交付归档               → archive/vN-delivered/
 ```
 
-改 `src/` 前须 `pnpm harness:status` + `pnpm harness:check`（阶段为 `READY_TO_DEV`；标准 / 全量强制；轻量默认不改正式 `src/`）。
+> **边界（强制）：** 详见 `HARNESS_RULES.md` §3.1。P1 方案/范围修订 ≠ 可开发；须 **先文档后实现**；「只改 HTML/模板」不豁免。
+
+改实现前须 `pnpm harness:status` + `pnpm harness:check`（阶段为 `READY_TO_DEV`；标准 / 全量强制；轻量默认不改正式实现）。
 
 ## 5. 文件命名
 

@@ -68,7 +68,34 @@ pnpm harness:status -- --match "<模块名关键词或路径片段>"
 
 - **禁止**写入扁平 `docs/superpowers/specs/` 等路径；必须落在 `docs/superpowers/{version}/{type}/{模块名}/specs|plans|requirements|archive/`
 - 官方 brainstorming / writing-plans 若指引扁平路径，**必须改写**到上述模块四层路径
-- **三档在改正式业务 `src/` 实现前都必须用户确认**
+- **三档在改正式实现文件前都必须用户确认**（见下方「实现」定义与暂停点）
+- **强制顺序：先文档后实现**；详规见 `docs/superpowers/HARNESS_RULES.md` **§3.1**
+
+### 何谓「实现」（禁止在文档门禁前做）
+
+- 本仓 `src/`、业务样式/测试
+- **外链工程业务产物**（如 `lessonTemplates` HTML、旁路服务模板/VO 等）
+- **不因「只改 HTML / 只改模板 / 很小」而豁免**
+
+### 暂停点边界（标准 / 全量 · 硬门禁）
+
+| 点 | 确认内容 | 放行后允许 |
+|----|----------|------------|
+| **P1** | 方案 / 范围修订 | 仅写 requirements + 短 spec/plan；**仍禁止改实现** |
+| **P2** | 已落盘 `specs/01-dev-spec.md` | 写/改 plan + skill annotate；**仍禁止改实现** |
+| **P3** | Inline / Subagent-Driven | 且 `harness:status`=`READY_TO_DEV` 后才改实现 |
+
+**误判表（禁止）：**
+
+- 「只改 HTML / 字段跟 web 一致」→ 这是 **P1 修订**，不是开发放行
+- 「确认 / 方案 OK」→ 只确认**当前暂停点**；未明示 P3 则**必须再问 P3**
+- 官方 brainstorming **Bounded**「对话短设计即可写代码」→ **被本仓库覆盖**；本地仍须短 spec/plan 落盘
+
+**同回合禁令：**
+
+1. 禁止先改实现再补 requirements/spec/plan
+2. 禁止同一回合首次改实现并写 `*-delivered.md` 报 DELIVERED
+3. 未 `READY_TO_DEV` + 未 P3 → 禁止对实现文件调用编辑工具
 
 ---
 
@@ -87,13 +114,13 @@ pnpm harness:status -- --match "<模块名关键词或路径片段>"
 
 仍须：
 
-1. 探索相关代码（只读）→ 短方案 + 1 句替代方案 → **一次确认（对齐官方「实现前批准」）**；P1 可与短方案合并为一次确认
-2. 写短 `specs/01-dev-spec.md`（建议 ≤80 行）+ 短 `plans/01-dev-plan.md`（1～2 Task）
-3. skill 路由标注（可极简）
-4. `harness:check`；改 `src/` 前必须 `READY_TO_DEV`
+1. 探索相关代码（只读）→ 短方案 + 1 句替代方案 → **P1 确认**（范围修订也是 P1，确认后**只更新文档**）
+2. **先**写短 `requirements/` + `specs/01-dev-spec.md` → **P2 确认**（建议用户回复含 `spec OK`）
+3. **先**写短 `plans/01-dev-plan.md` + skill 路由标注 → **P3 确认**（建议用户回复含 `Inline` 或 `SDD`）
+4. `harness:status` 为 `READY_TO_DEV` 后才改实现；`harness:check`
 5. 交付：一致性自检 + archive（还原度不适用则注明）；validate / archive **不可跳过**
 
-暂停点：P1 可与短方案合并一次；P2 对短 spec 确认可合并或极短但仍存在；P3 执行方式仍问一次（可默认推荐 Inline）。
+暂停点：**不可合并跳过**。P1 可与短方案同屏，但 **P2、P3 必须在文档落盘后单独获得确认** 再改实现。
 
 ---
 
@@ -198,7 +225,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create-demand.ps1 -T
 
 ## Step D：开发（READY_TO_DEV）
 
-**改 `src/` 之前：**
+**进入本步前硬检查（缺一不可）：**
+
+- [ ] P2 已确认（用户对已落盘 spec 表态）
+- [ ] P3 已确认（Inline / SDD）
+- [ ] `pnpm harness:status` 本模块为 `READY_TO_DEV`
+- [ ] 本回合尚未擅自改过实现文件
+
+**改实现文件之前：**
 
 ```bash
 pnpm harness:status -- --match "<模块名>"
@@ -214,6 +248,7 @@ pnpm harness:check
 - 连续执行，仅在 plan 规定的确认点暂停
 - 每完成一个 Task 做 lint / 相关测试
 - **禁止**扩大 scope（不顺手重构无关代码）
+- **禁止**边写实现边补写首次 spec/plan；文档缺口须先停实现去补文档并重新走暂停点
 
 ### Subagent-Driven（6.3 SDD）
 

@@ -46,17 +46,19 @@ docs/superpowers/current/feature/登录注册功能/
 
 | 文件 | 说明 |
 |------|------|
-| `docs/superpowers/HARNESS_RULES.md` | 三档分档、阶段门禁、交付 A/B 自检、SDD、skill 路由 Mode A |
+| `docs/superpowers/HARNESS_RULES.md` | 三档、**§3.1 暂停点边界**、交付 A/B、SDD、skill 路由 |
 | `.agents/routing/SKILL_ROUTING.md` | 路由图权威来源（机器块 JSON） |
 | `.agents/routing/router.mjs` | CLI：`--annotate` 标注 plan；Mode B 自由文本 |
 
 **入口后先分档（HARNESS_RULES §3）：**
 
-| 档位 | 场景 | 改 `src/` |
-|------|------|-----------|
-| 轻量 | 探查 / 可行性 / 产物可丢 | 默认不改正式业务代码 |
-| 标准 | 边界清晰的小改（含小 fix） | 须短 spec/plan + `READY_TO_DEV` |
+| 档位 | 场景 | 改实现 |
+|------|------|--------|
+| 轻量 | 探查 / 可行性 / 产物可丢 | 默认不改正式实现 |
+| 标准 | 边界清晰的小改（含小 fix） | 短 spec/plan + **P2/P3** + `READY_TO_DEV` |
 | 全量 | 新能力 / 多文件 / 设计决策 | 完整链 + P1/P2/P3 + `READY_TO_DEV` |
+
+**强制边界（§3.1）：** 先文档后实现；「确认 / 只改 HTML」≠ 可开发；P2 宜 `spec OK`，P3 宜 `Inline`/`SDD`。
 
 **writing-plans 完成后必做：**
 
@@ -73,7 +75,7 @@ pnpm harness:status -- --match "<模块名>"
 pnpm harness:check
 ```
 
-阶段须为 `READY_TO_DEV` 方可改 `src/`。
+阶段须为 `READY_TO_DEV` 且 **P3 已确认** 方可改实现。
 
 ---
 

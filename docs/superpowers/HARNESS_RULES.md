@@ -58,11 +58,69 @@ docs/superpowers/{version}/{type}/{模块名}/specs|plans|requirements|archive/
 | 标准 | bounded | 边界清晰的小改（含小 fix）；已有代码路径可改 | 须短 spec/plan + skill 标注；**改 `src/` 前须 `READY_TO_DEV`** |
 | 全量 | architectural | 新能力、多文件、接口/UI、有设计决策 | 完整链 + P1/P2/P3；**改 `src/` 前须 `READY_TO_DEV`** |
 
-> **门禁关系：** 标准 / 全量须达到 `READY_TO_DEV` 才改 `src/`；轻量默认不改正式 `src/`。
+> **门禁关系：** 标准 / 全量须达到 `READY_TO_DEV` 才改实现文件；轻量默认不改正式实现。
 
-## 4. P2 · Subagent-Driven（SDD）约束
+## 3.1 暂停点边界（强制 · 防「先改代码后补文档」）
 
-仅在用户选择 **Subagent-Driven** 或 plan 明确走 SDD 时强制；Inline 不强制官方 ledger。
+> **Agent 层硬门禁**（与 git hook 是否宽松无关）：违反则本回合视为流程失败，须停手并复盘，不得继续改实现或报 DELIVERED。
+
+### 什么算「实现」
+
+下列任一操作都算进入开发，**必须先满足 §5 `READY_TO_DEV` + 用户 P3 放行**：
+
+- 改本仓 `src/`、样式、测试中的业务断言
+- 改外链/旁路工程中的业务产物（如 PDF/HTML 模板、`lessonTemplates`、后端 VO 接线等）——**不因「只改 HTML / 只改模板」而豁免文档门禁**
+
+下列**不算**实现（可在 READY_TO_DEV 前做）：只读探查、写/改 `docs/superpowers/.../{requirements,specs,plans}`、跑 `harness:status` / `router --annotate`、口头方案。
+
+### P1 / P2 / P3 分别是什么
+
+| 暂停点 | 用户在确认什么 | **不**等于 |
+|--------|----------------|------------|
+| **P1** | 方案 / 设计方向（可含收窄范围、改字段规则） | ≠ 可以写 spec 后立刻改代码；≠ 可以跳过 plan |
+| **P2** | 已落盘的 `specs/01-dev-spec.md`（短 spec 也须明示确认） | ≠ 可以开始改实现 |
+| **P3** | 执行方式（Inline / Subagent-Driven） | 仅此之后才允许改实现 |
+
+### 明确禁止的误判
+
+| 用户说法（示例） | 正确理解 | 错误理解 |
+|------------------|----------|----------|
+| 「只改 HTML / 只改模板 / 字段跟 web 一致」 | **P1 方案修订** → 更新 requirements/spec，**停**，再要 P2/P3 | 当成可直接改文件 |
+| 「确认」「方案 OK」「可以」 | 默认只确认**当前停在的那一档**（P1 或 P2）；若未点名 P3，**仍须问 P3** | 当成 P1+P2+P3 一次性放行 |
+| 「帮我操作」「直接改」 | 仍走完整暂停点；用户坚持跳过则按宽松模式**警告**后继续 | 静默跳过文档 |
+
+### 强制顺序（标准 / 全量）
+
+```
+① 只读探查 + P1 方案（对话）     ← 禁止改实现
+② create-demand + requirements
+③ 写 specs/01-dev-spec.md → P2   ← 禁止改实现
+④ 写 plans/01-dev-plan.md
+⑤ router --annotate → 写入 plan
+⑥ P3 执行方式确认
+⑦ harness:status 为 READY_TO_DEV
+⑧ 改实现文件
+⑨ 交付自检 A→B → archive → validate
+```
+
+**同回合禁令：**
+
+1. **禁止**在同一助手回合内：先改实现文件，再补写 requirements/spec/plan  
+2. **禁止**在同一助手回合内：首次改实现 + 写 `*-delivered.md` 并报 DELIVERED（须先完成实现与自检，再单独收尾或明确分步）  
+3. **禁止**用官方 brainstorming 的 Bounded「对话短设计、不写 spec」绕过本仓库 Harness：本地标准/全量**仍须**短 spec/plan 落盘  
+
+### 官方 Bounded vs 本地标准档
+
+| | 官方 brainstorming Bounded | 本仓库 Harness 标准档 |
+|--|---------------------------|----------------------|
+| 设计形态 | 可在对话给短设计 | 短设计 = P1，确认后**仍须**落盘 spec/plan |
+| 实现门禁 | 设计获批后可实现 | **仅** P2+P3 + `READY_TO_DEV` 后可实现 |
+
+**冲突时以本文件 + harness-run 为准**（见 §2）。
+
+## 4. Subagent-Driven（SDD）约束
+
+> 仅在 **P3 选择 Subagent-Driven** 或 plan 明确走 SDD 时强制；Inline 不强制官方 ledger。
 
 | 约束 | 要求 |
 |------|------|
@@ -78,17 +136,19 @@ docs/superpowers/{version}/{type}/{模块名}/specs|plans|requirements|archive/
 推荐顺序：
 
 ```
-create-demand → brainstorming → writing-plans → skill routing 标注 plan → 开发 → 交付自检(A→B) → archive → validate
+create-demand → P1 → spec(P2) → plan → skill routing → P3 → READY_TO_DEV → 开发 → 交付自检(A→B) → archive → validate
 ```
+
+> 细则与「何谓实现 / 禁止先改后补文档」见 **§3.1**。
 
 阶段枚举：
 
 | 阶段 | 条件 | 动作 |
 |------|------|------|
 | `NO_MODULE` | current/ 下无对应模块 | create-demand |
-| `NO_SPEC` | 有 requirements，无 specs/01-dev-spec.md | brainstorming |
-| `NO_PLAN` | 有 spec，无 plans/01-dev-plan.md | writing-plans |
-| `READY_TO_DEV` | 有 spec 且有 plan | 允许改 src/（标准 / 全量） |
+| `NO_SPEC` | 有 requirements，无 specs/01-dev-spec.md | brainstorming → **停在 P2** |
+| `NO_PLAN` | 有 spec，无 plans/01-dev-plan.md | writing-plans + annotate → **停在 P3** |
+| `READY_TO_DEV` | 有 spec 且有 plan | **仅在 P3 已确认后**允许改实现文件（标准 / 全量） |
 
 ## 6. 交付自检门禁（A 一致性 / B 还原度）
 
@@ -189,9 +249,12 @@ node .agents/routing/router.mjs --validate  # 校验 SKILL_ROUTING.md 机器块
 ## 9. 禁止事项
 
 - 写入 `docs/superpowers/specs/`、`plans/`、`archive/`、`reports/` 等旧扁平路径
-- 未完成 spec/plan 时主动引导修改 `src/`（宽松模式下用户坚持则警告后继续）
+- **先改实现、后补** requirements/spec/plan（含「只改 HTML/模板」）
+- 将「确认 / 方案 OK / 只改某某」误判为 P2+P3 已放行
+- 未完成 spec/plan / P3 时主动引导修改实现文件（宽松模式下用户坚持则**警告**后继续）
 - 未完成适用的 A/B 自检就声称「逻辑已闭环」或「已对齐 Figma」
 - 将官方 skill 的 `SKILL.md` 拷贝进仓库（须通过升插件更新）
+- 用官方 Bounded「对话短设计即可实现」绕过本仓库短 spec/plan 落盘要求
 
 ## 10. 升级路径
 

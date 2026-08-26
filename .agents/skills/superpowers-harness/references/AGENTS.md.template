@@ -1,4 +1,4 @@
-# Agent 项目地图
+﻿# Agent 项目地图
 
 ## 技术栈
 
@@ -13,22 +13,21 @@
 | src/pages/ | 页面组件 |
 | src/components/ | 公共组件 |
 | docs/superpowers/current/ | 当前版本需求文档 |
-| docs/superpowers/HARNESS_RULES.md | Harness 门禁 + 三档分档 + Skill 路由规则 |
+| docs/superpowers/HARNESS_RULES.md | Harness 门禁 + §3.1 暂停点边界 + Skill 路由 |
 | scripts/harness/ | Harness 校验器 |
 | .agents/routing/SKILL_ROUTING.md | Skill 路由图（权威来源） |
 | .agents/routing/router.mjs | Skill 路由 CLI（`--annotate` / Mode B） |
 
 ## 开发流程（强制）
 
-1. 读取 `docs/superpowers/HARNESS_RULES.md` 与 `SUPERPOWERS_RULES.md`
-2. **开发类任务入口**：`superpowers-harness-run` 或 `/harness <需求>`
-3. **入口后先分档**：轻量 / 标准 / 全量（见 HARNESS_RULES §3）
-4. 完整链路（标准/全量）：`create-demand → brainstorming → writing-plans → skill routing 标注 plan → 开发 → 交付归档`
-5. **writing-plans 后**：读 `SKILL_ROUTING.md`，运行 `node .agents/routing/router.mjs --annotate <plan>`，将建议 skill 写入 plan
-6. 改 `src/` 前：`pnpm harness:status` + `pnpm harness:check`（标准/全量须 `READY_TO_DEV`）
-7. 目录规范由 `superpowers-demand-workflow` 约束；官方 skill 升插件更新，不落仓库副本
+1. 读取 `HARNESS_RULES.md`（尤其 §3.1）与 `SUPERPOWERS_RULES.md`
+2. 入口：`superpowers-harness-run` 或 `/harness`；先分档
+3. 标准/全量：`P1 → spec(P2) → plan → annotate → P3 → READY_TO_DEV → 开发`
+4. **先文档后实现**；「确认 / 只改 HTML」≠ 可开发
+5. 官方 Bounded 短设计不能绕过本仓短 spec/plan
 
 ## 禁止
 
-- 写入 `docs/superpowers/specs/` 等旧扁平路径
-- 跳过 brainstorming / writing-plans / skill routing 直接写代码（标准/全量）
+- 先改实现再补文档
+- 跳过 P2/P3 改实现
+- 写入旧扁平 `docs/superpowers/specs/` 等路径
