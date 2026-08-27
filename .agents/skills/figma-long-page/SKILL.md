@@ -69,3 +69,18 @@ https://www.figma.com/design/xxx/Name?node-id=1-2
 - 目录：`mingxi-report/`  
 - 文件：`vmbLwcwclGPoT3fWJWv7de`，根节点约 `7487:12170`  
 - 文档镜像：`docs/FIGMA_LONG_PAGE_WORKFLOW.md`（与本 skill 同步维护）
+
+## 课堂教学内容分析 A2（Web 轨）
+
+**PDF 静态 HTML 不走本 skill** → 用 `ccar-pdf-static-html`（mock → `gen-ccar-a2`）。
+
+| 项 | 路径 |
+|----|------|
+| 页面 | `ReportTypeA2View.vue` |
+| Block | `ReportA2BlockRenderer.vue` + `ReportA2*.vue` |
+| 类型 | `types/classroom-content-analysis-a2-report.ts` |
+| Mock | `mock/classroom-content-analysis-a2.mock.ts`、`mock/a2-data/` |
+| 结构单测 | `mock/classroom-content-analysis-a2-structure.spec.ts` |
+| Figma Web | 按章节 node 分批 `get_design_context` |
+
+Web 交付后 mock/block 稳定，再开 PDF 子轨（Harness 模块 `ui-style/课堂教学内容分析A2`）。

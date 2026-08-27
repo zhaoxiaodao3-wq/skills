@@ -14,7 +14,7 @@
 <!-- SKILL_GRAPH_START -->
 {
   "version": 1,
-  "updatedAt": "2026-08-25",
+  "updatedAt": "2026-08-27",
   "globalConfig": {
     "maxSkillsPerPlan": 5,
     "minConfidence": 0.7,
@@ -494,7 +494,58 @@
       ],
       "unsuitableConditions": [
         "目标为单个小组件/按钮",
-        "需要从零重新设计 UI（用 frontend-design）"
+        "需要从零重新设计 UI（用 frontend-design）",
+        "目标是 PDF 静态 HTML 生成（用 ccar-pdf-static-html）"
+      ]
+    },
+    {
+      "id": "ccar-pdf-static-html",
+      "categoryId": "cat-fe-design",
+      "name": "ccar-pdf-static-html",
+      "userDescription": "CCAR 报告 PDF 静态 HTML",
+      "systemDescription": "从 Web mock 生成课例内容分析 PDF 静态 HTML（gen-ccar-a2 / gen-ccar），Review Batch 分批交付，含 @media print 回归。内容源 mock，UI 源 Figma PDF 稿。",
+      "path": "../skills/ccar-pdf-static-html",
+      "triggers": [
+        "gen:ccar:a2",
+        "gen:ccar",
+        "CCAR PDF",
+        "PDF 静态 HTML",
+        "Web 转 PDF",
+        "打印回归",
+        "Review Batch",
+        "ccar-pdf-static-html",
+        "ClassroomContentAnalysisReport"
+      ],
+      "semanticTags": [
+        "pdf",
+        "html",
+        "报告",
+        "打印",
+        "ccar",
+        "mock"
+      ],
+      "requires": [],
+      "before": [],
+      "after": [
+        "figma-long-page"
+      ],
+      "version": "1.0.0",
+      "riskLevel": "medium",
+      "isIdempotent": true,
+      "timeout": 1200,
+      "retryable": true,
+      "inputSchema": {},
+      "outputSchema": {},
+      "status": "active",
+      "replacedBy": null,
+      "applicableConditions": [
+        "已有 Web mock / block 类型",
+        "目标为 PDF 静态 HTML 或打印样式",
+        "使用 gen-ccar 生成器"
+      ],
+      "unsuitableConditions": [
+        "仅改 Vue 报告页 UI",
+        "无 mock 需先建 Web 轨"
       ]
     },
     {
@@ -610,8 +661,10 @@
   - 触发：无障碍 / a11y / accessibility / WCAG / 可访问性
 
 ### 前端·figma长页面还原
-- **figma-long-page** — figma 还原长页面
-  - 触发：figma 长页 / 长流程还原 / 分段还原 / 还原长页面 / figma-long-page
+- **figma-long-page** — figma 还原长页面（**Web 轨**；含 A2 课堂报告 Vue/mock）
+  - 触发：figma 长页 / 长流程还原 / 分段还原 / 还原长页面 / figma-long-page / A2 报告 Web
+- **ccar-pdf-static-html** — CCAR 报告 PDF 静态 HTML（**PDF 轨**；gen-ccar / 打印回归）
+  - 触发：gen:ccar:a2 / CCAR PDF / PDF 静态 HTML / Web 转 PDF / 打印回归 / Review Batch
 
 ### 前端·网站复刻
 - **clone-website** — 复刻线上网站
