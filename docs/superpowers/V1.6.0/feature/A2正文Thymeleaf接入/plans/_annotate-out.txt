@@ -1,0 +1,16 @@
+# Skill 路由 CLI 摘要
+
+- Mode A steps: 162, needsSkill: 5
+- Skill hit counts: {"ccar-pdf-static-html":5}
+- Mode B top: ccar-pdf-static-html@1.00
+
+[1] **Goal:** 在不改样式/DOM 骨架的前提下，为 `ClassroomContentAnalysisReportA2.html` 全量接入 Thymeleaf，字段与 Web `PostCla
+  -> ccar-pdf-static-html conf=0.70 risk=medium 触发词命中: ClassroomContentAnalysisReport
+[11] - **禁止**改 `<style>` / class / 布局；禁止 `pnpm gen:ccar:a2` 覆盖已接线模板（除非随后重跑本 plan）
+  -> ccar-pdf-static-html conf=0.70 risk=medium 触发词命中: gen:ccar:a2 / gen:ccar
+[18] | Modify: `src/report/report/A2/ClassroomContentAnalysisReportA2.html` | 唯一实现主体 |
+  -> ccar-pdf-static-html conf=0.70 risk=medium 触发词命中: ClassroomContentAnalysisReport
+[23] | Read: `E:/code/muban/.../A1/ClassroomContentAnalysisReportA.html` | 表达式范式 |
+  -> ccar-pdf-static-html conf=0.70 risk=medium 触发词命中: ClassroomContentAnalysisReport
+[27] - Modify: `src/report/report/A2/ClassroomContentAnalysisReportA2.html`（`<html>` + 各 `<section>` 根）
+  -> ccar-pdf-static-html conf=0.70 risk=medium 触发词命中: ClassroomContentAnalysisReport

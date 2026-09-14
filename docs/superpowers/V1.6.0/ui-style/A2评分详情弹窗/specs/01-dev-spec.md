@@ -156,3 +156,46 @@ type A2ScoreDetailTotal = {
 | 长内容（~4500px）性能/滚动 | body 滚动；表格用语义 table 或稳定 flex 行 |
 | Figma 与第十章分数不一致 | 规格已声明以弹窗 mock 为准 |
 | EP Dialog 默认样式冲突 | scoped 覆盖 header/body padding，对齐稿 20/40 |
+
+---
+
+## 10. 对/错图标补缺（2026-09-10 追加）
+
+**Requirement:** [requirements/02-对错图标补缺.md](../requirements/02-对错图标补缺.md)
+**P1:** 方案 A「抽公共 + 复用 SvgIcon」已确认
+**Figma 节点:** `8674:33311` (`mr-general-check circle`) · `8674:33320` (`mr-general-close circle`)
+
+### 10.1 问题陈述
+
+`ReportA2ScoreDetailDialog.vue` 内联实现"对/错"图标，与 Figma 不一致：
+
+| 维度 | Figma | 当前 |
+|---|---|---|
+| 错颜色 | `#FF2A2A` | `#F53F3F` ❌ |
+| 对/错结构 | 单 path `fill-rule="evenodd"` 一体 | 双 path（circle + 内 stroke）❌ |
+
+### 10.2 范围
+
+1. 新建 `src/icons/svg/check-circle.svg`（Figma 真实 SVG，绿 `#00B42A`）
+2. 新建 `src/icons/svg/close-circle.svg`（Figma 真实 SVG，红 `#FF2A2A`）
+3. `ReportA2ScoreDetailDialog.vue` 内联 SVG 改 `<SvgIcon :src="..." :size="N" />` 引用
+4. SCSS 同步：删 `&__icon--pass/fail`，保留 `&__icon` 容器与 `&__icon-dash`
+
+### 10.3 图标规范
+
+| 字段 | check-circle | close-circle |
+|---|---|---|
+| viewBox | `0 0 20 20` | `0 0 20 20` |
+| 颜色 | `#00B42A`（Figma `VariableID 903:39`） | `#FF2A2A` |
+| 结构 | 单 `<path fill-rule="evenodd" clip-rule="evenodd">` | 单 `<path fill-rule="evenodd" clip-rule="evenodd">` |
+| 用法（行 20） | `<SvgIcon :src="ICON_CHECK" :size="20" />` | `<SvgIcon :src="ICON_CLOSE" :size="20" />` |
+| 用法（行 14） | `<SvgIcon :src="ICON_CHECK" :size="14" />` | `<SvgIcon :src="ICON_CLOSE" :size="14" />` |
+
+### 10.4 验收
+
+- [ ] 弹窗内"对"图标视觉与 Figma `8674:33311` 一致（颜色 + 单 path 结构）
+- [ ] 弹窗内"错"图标视觉与 Figma `8674:33320` 一致（颜色 `#FF2A2A` 修正 + 单 path 结构）
+- [ ] 14px（判定徽章）/ 20px（结果列）两个尺寸均显示正常
+- [ ] `resultKind` 为 `pass` / `fail` 之外的场景仍走"-"兜底
+- [ ] 不影响 dialog 其它区域
+- [ ] 公共 SVG 在 `src/icons/svg/` 下，命名 `check-circle.svg` / `close-circle.svg`，与 `close.svg` 同级

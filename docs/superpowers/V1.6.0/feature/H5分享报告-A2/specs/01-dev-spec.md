@@ -55,7 +55,7 @@ Shell：`useShareReportSession`（失效/分享）；开发无 token 时走 mock
 | 适用范围 | Cover、总览（含报告模板/时长/科目…、总评分、等级文案）、后续所有 blocks 字段值 |
 | 实现 | 公共 `displayValue(v)`；组件禁止裸绑可能为空的字符串 |
 | 评分空态 | 总评分为空时不显示「分」单位；等级 label 空则不显示副文案 |
-| 测试开关 | 页面右下角 **空态 ON/OFF**（`A2EmptyProbeToggle`，仅联调，交付前删除） |
+| 测试开关 | 页面右下角 **空态 ON/OFF**（`A2EmptyProbeToggle`，联调保留，正式上线前删除） |
 | 非本规则 | 整章/整节「不适用」仍用 flags + NotApplicable；失效页仍用分享 status |
 
 ### 4.2 正文换行（强制）
@@ -123,12 +123,12 @@ Shell：`useShareReportSession`（失效/分享）；开发无 token 时走 mock
 
 ## 7. 验收
 
-- [ ] registry 含 a2；路由自动生成；Family a OG 映射正确
-- [ ] mock 可完整滚完一～十；结构对齐 Web A2 章节
-- [ ] adapter 单入口；切换 API 不改组件树（本阶段可不联真 token）
-- [ ] 每个 UI Task 有审查记录（对话确认即可）
-- [ ] a1/b1/b2/画像回归无回归
-- [ ] 多机型：至少 375 / 390 / 414 宽度抽检无横向滚动
+- [x] registry 含 a2；路由自动生成；Family a OG 映射正确
+- [x] mock 可完整滚完一～十；结构对齐 Web A2 章节
+- [x] adapter 单入口；切换 API 不改组件树（本阶段可不联真 token）
+- [x] 每个 UI Task 有审查记录（对话确认即可）
+- [x] a1/b1/b2/画像回归无回归
+- [x] 多机型：至少 375 / 390 / 414 宽度抽检无横向滚动
 
 ## 8. 非目标（本阶段）
 
