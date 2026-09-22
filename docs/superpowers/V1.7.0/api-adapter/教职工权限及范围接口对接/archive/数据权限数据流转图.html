@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V1.7.0 数据权限 · 交互式数据流转</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f5f0;
+  --panel: #ffffff;
+  --line: #e9e3d6;
+  --line-soft: #f0ebde;
+  --text: #14171e;
+  --text-mid: #3a4256;
+  --text-muted: #7c7a72;
+  --primary: #2f6f5e;
+  --primary-soft: #e8f0ec;
+  --primary-bg: #f1f7f3;
+  --accent: #c97b3f;
+  --accent-soft: #f7ede3;
+  --accent-bg: #fbf3ea;
+  --danger: #b06367;
+  --danger-soft: #f5e8e9;
+  --highlight: #fef3c7;
+  --highlight-border: #d97706;
+  --shadow: 0 4px 16px rgba(31,41,55,0.06);
+  --shadow-lg: 0 12px 32px rgba(31,41,55,0.10);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: linear-gradient(135deg, #f7f5f0 0%, #efeae0 100%);
+  color: var(--text);
+  font-family: 'Outfit', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+button { font-family: inherit; cursor: pointer; border: none; background: none; padding: 0; color: inherit; }
+code { font-family: 'JetBrains Mono', monospace; font-size: 12px; background: var(--line-soft); padding: 1px 5px; border-radius: 3px; }
+.app { display: grid; grid-template-rows: auto auto 1fr auto; min-height: 100dvh; }
+
+/* ============ HEADER ============ */
+.header {
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.brand .tag {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.subtitle { font-size: 12px; color: var(--text-muted); margin-left: 8px; }
+
+/* ============ TYPE TABS ============ */
+.type-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.type-tab {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--text-mid);
+  border: 1px solid var(--line);
+  transition: all 0.18s;
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+}
+.type-tab:hover { background: var(--line-soft); }
+.type-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+.type-tab.ccs.active { background: var(--accent); border-color: var(--accent); }
+.type-tab.ccs-multi.active { background: var(--danger); border-color: var(--danger); }
+.type-tab.edit.active { background: #4a5568; border-color: #4a5568; }
+
+/* ============ MAIN ============ */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 0;
+  background: var(--bg);
+  min-height: 0;
+  overflow: hidden;
+}
+.canvas-wrap {
+  position: relative;
+  padding: 20px 24px;
+  overflow: auto;
+  display: flex;
+}
+.canvas {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.canvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.canvas-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.canvas-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* SWIMLANES */
+.swimlanes {
+  position: relative;
+  flex: 1;
+  min-height: 380px;
+}
+.lane {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 130px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 12px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.lane.active { background: var(--primary-bg); border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); }
+.lane-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  text-align: center;
+  line-height: 1.3;
+}
+.lane-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-mid);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.lane.active .lane-icon { background: var(--primary); color: white; border-color: var(--primary); }
+.lane-target { background: var(--accent-bg); border-color: var(--accent); }
+.lane-target .lane-icon { background: var(--accent); color: white; border-color: var(--accent); }
+.lane-target.active { background: var(--accent-bg); border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+
+/* SVG ARROWS */
+.svg-arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+}
+.svg-arrows svg { width: 100%; height: 100%; overflow: visible; }
+.arrow-path {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.arrow-path.active {
+  opacity: 1;
+  stroke: var(--primary);
+  stroke-width: 2.5;
+}
+.arrow-path.reverse.active { stroke: var(--accent); }
+.arrow-head {
+  fill: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.arrow-head.active { opacity: 1; fill: var(--primary); }
+.arrow-head.reverse.active { fill: var(--accent); }
+
+/* ANIMATED PACKET */
+.packet {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--primary-soft), 0 0 16px var(--primary);
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 5;
+}
+.packet.active { opacity: 1; }
+.packet.accent { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft), 0 0 16px var(--accent); }
+
+/* STEP LABEL ON ARROW */
+.arrow-label {
+  position: absolute;
+  background: var(--primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+}
+.arrow-label.active { opacity: 1; }
+.arrow-label.reverse { background: var(--accent); }
+.arrow-label .method {
+  font-size: 9px;
+  opacity: 0.8;
+  margin-right: 4px;
+  text-transform: uppercase;
+}
+
+/* LANE 位置 —— 业务流程顺序：用户 → 列表 → 图1 → 图2 → 后端 */
+.lane.user { left: 0; }
+.lane.list { left: 20%; }
+.lane.figure1 { left: 40%; }
+.lane.figure2 { left: 60%; }
+.lane.backend { left: 80%; }
+
+/* ============ SIDEBAR ============ */
+.sidebar {
+  background: var(--panel);
+  border-left: 1px solid var(--line);
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(100dvh - 180px);
+}
+.sidebar-section { margin-bottom: 18px; }
+.sidebar-section:last-child { margin-bottom: 0; }
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.step-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: var(--primary);
+  color: white;
+  margin-bottom: 8px;
+}
+.step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+.step-desc {
+  font-size: 12.5px;
+  color: var(--text-mid);
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+.detail-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.detail-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  align-items: baseline;
+}
+.detail-row:last-child { margin-bottom: 0; }
+.detail-key { color: var(--text-muted); flex-shrink: 0; min-width: 56px; }
+.detail-val { color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 11px; word-break: break-all; }
+.payload-box {
+  background: #1f1f1f;
+  color: #e8f0ec;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-top: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.payload-key { color: #c97b3f; }
+.payload-string { color: #8fd99f; }
+.payload-num { color: #d99fae; }
+
+/* ============ FOOTER CONTROL ============ */
+.controls {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--line-soft);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  width: 0;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+}
+.progress-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 64px;
+}
+.btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  transition: all 0.18s;
+}
+.btn:hover { background: var(--line-soft); }
+.btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
+.btn-primary:hover { background: #245c4d; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* INTRO OVERLAY */
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(247,245,240,0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 14px;
+  z-index: 10;
+  text-align: center;
+  padding: 40px;
+  transition: opacity 0.4s;
+}
+.intro-overlay.hidden { opacity: 0; pointer-events: none; }
+.intro-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--primary);
+  color: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+.intro-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.intro-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  max-width: 480px;
+  margin-bottom: 22px;
+}
+.intro-controls {
+  display: flex;
+  gap: 8px;
+}
+
+/* HIGHLIGHTED UI MOCK */
+.ui-mock {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--text-mid);
+  text-align: center;
+  position: relative;
+}
+.ui-mock.highlight {
+  background: var(--highlight);
+  border-color: var(--highlight-border);
+  color: var(--text);
+  box-shadow: 0 0 0 3px rgba(217,119,6,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .main { grid-template-columns: 1fr; }
+  .sidebar { max-height: 400px; border-left: none; border-top: 1px solid var(--line); }
+  .swimlanes { height: 380px; }
+  .lane { width: 100px; }
+  .svg-arrows { left: 100px; right: 100px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="brand">数据权限数据流转<span class="tag">V1.7.0 · INTERACTIVE</span></div>
+  <div class="subtitle">点击 ▶ 启动逐步动画 · 每步展示一次接口调用与数据流</div>
+</header>
+
+<!-- TYPE TABS -->
+<div class="type-tabs">
+  <button class="type-tab active" data-type="campus">campus</button>
+  <button class="type-tab" data-type="css">campus_stage_subject</button>
+  <button class="type-tab" data-type="cgs">campus_grade_subject</button>
+  <button class="type-tab" data-type="cg">campus_grade</button>
+  <button class="type-tab" data-type="cc">campus_class</button>
+  <button class="type-tab ccs" data-type="ccs">campus_class_subject · 1对1</button>
+  <button class="type-tab ccs-multi" data-type="ccs_multi">campus_class_subject · 多对多</button>
+  <button class="type-tab edit" data-type="edit">edit · 编辑（1对1）</button>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- CANVAS -->
+<div class="canvas-wrap">
+  <div class="canvas">
+    <div class="canvas-header">
+      <div>
+        <div class="canvas-title" id="canvasTitle">校区 (campus)</div>
+        <div class="canvas-subtitle" id="canvasSubtitle">5 步调用 · 1 对 1 模式</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted);">
+        <span id="stepCount">0</span> / <span id="totalSteps">0</span>
+      </div>
+    </div>
+
+    <div class="swimlanes">
+      <div class="lane user" data-lane="user">
+        <div class="lane-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="lane-label">用户</div>
+      </div>
+
+      <div class="lane list" data-lane="list">
+        <div class="lane-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div class="lane-label">列表页</div>
+      </div>
+
+      <div class="lane figure1" data-lane="figure1">
+        <div class="lane-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        </div>
+        <div class="lane-label">图1 弹框</div>
+      </div>
+
+      <div class="lane figure2" data-lane="figure2">
+        <div class="lane-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 4v16"/></svg>
+        </div>
+        <div class="lane-label">图2 弹框</div>
+      </div>
+
+      <div class="lane backend" data-lane="backend">
+        <div class="lane-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+        </div>
+        <div class="lane-label">后端 API</div>
+      </div>
+
+      <div class="svg-arrows" id="arrowsLayer">
+        <svg id="arrowsSvg"></svg>
+      </div>
+
+      <div class="packet" id="packet"></div>
+      <div class="arrow-label" id="arrowLabel"></div>
+    </div>
+
+    <div class="intro-overlay" id="introOverlay">
+      <div class="intro-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <div class="intro-title">准备好了？</div>
+      <div class="intro-desc">点击启动，逐步播放每个接口调用与数据流。从点击【分配岗位】到列表刷新，全链路 5-12 步。</div>
+      <div class="intro-controls">
+        <button class="btn btn-primary" id="startBtn">▶ 启动演示</button>
+        <button class="btn" id="skipIntroBtn">跳过</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="step-badge" id="sidebarStep">STEP 0</div>
+    <div class="step-title" id="sidebarTitle">点击启动</div>
+    <div class="step-desc" id="sidebarDesc">右侧会显示每一步的接口调用、入参和说明。</div>
+  </div>
+
+  <div class="sidebar-section" id="detailsSection" style="display:none;">
+    <div class="sidebar-title">📡 接口</div>
+    <div class="detail-card" id="methodCard">
+      <div class="detail-row">
+        <span class="detail-key">方法</span>
+        <span class="detail-val" id="methodVal">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">路径</span>
+        <span class="detail-val" id="pathVal">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">来源</span>
+        <span class="detail-val" id="fromVal">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">去向</span>
+        <span class="detail-val" id="toVal">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-section" id="payloadSection" style="display:none;">
+    <div class="sidebar-title">📦 数据</div>
+    <div class="payload-box" id="payloadBox">—</div>
+  </div>
+
+  <div class="sidebar-section" id="noteSection" style="display:none;">
+    <div class="sidebar-title">💡 提示</div>
+    <div class="detail-card" id="noteCard" style="background: var(--accent-bg); border-color: var(--accent); color: var(--text);">
+      <div id="noteText" style="font-size: 12px; line-height: 1.5;"></div>
+    </div>
+  </div>
+</aside>
+
+</main>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="btn btn-icon" id="prevBtn" title="上一步" disabled>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="btn btn-primary" id="playBtn">▶ 启动</button>
+  <button class="btn" id="nextBtn">下一步 →</button>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-text" id="progressText">0 / 0</div>
+  <button class="btn btn-icon" id="resetBtn" title="重播">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+  </button>
+</div>
+
+</div>
+
+<script>
+// ============ FLOW DATA ============
+const FLOW = {
+  campus: {
+    title: '校区 (campus)',
+    subtitle: '5 步调用 · 1 对 1 · 单层多选',
+    steps: [
+      {
+        from: 'user', to: 'list', method: 'CLICK', path: '',
+        label: '点击【分配岗位】',
+        title: '用户点击【分配岗位】',
+        desc: '在主表页面点【分配岗位】按钮，触发三层守门（resetSingleAssignForm + editingRow=null + skipResetOnOpen=false）。',
+        note: '三层守门防止「上一步/下次打开」状态串台。'
+      },
+      {
+        from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList',
+        label: '加载岗位列表',
+        title: '加载岗位下拉项',
+        desc: '图1 弹框调用 service.operate.postList 拉取可分配岗位。',
+        payload: { tenantId: 'SCHOOL001', state: 1, topSign: 0, faculty: 1 },
+        note: '该接口本来就存在，不属于本次对接范围。'
+      },
+      {
+        from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx',
+        label: '加载数据权限枚举',
+        title: '选岗位 → 加载数据权限下拉',
+        desc: '岗位变化触发，按 postId 取该岗位配置的数据权限枚举子集（自动排除 full）。',
+        payload: { postId: 'POST001' },
+        response: [
+          { code: 'campus', name: '校区', disabled: false },
+          { code: 'campus_grade', name: '校区+年级', disabled: true }
+        ],
+        note: '不同岗位返回不同枚举子集；后端新增功能是本次对接核心接口。'
+      },
+      {
+        from: 'figure1', to: 'figure2', method: 'CLICK', path: '',
+        label: '下一步 → 图2',
+        title: '图1 点【下一步】→ 打开图2',
+        desc: '用户选完岗位 + 数据权限 + 点【下一步】，skipNextResetFlag=true 保留图1 表单，图2 弹框打开。',
+        note: 'CSS 类型会再多显示一个【设置方式】单选。'
+      },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/school/schoolCampusList',
+        label: '加载校区列表',
+        title: '图2 拉校区（多选 checkbox）',
+        desc: '调 getSchoolCampusList 拉所有校区，用户勾选若干',
+        payload: { schoolId: 'SCHOOL001', state: 1 },
+        response: [{ id: 'c1', name: '东校区' }, { id: 'c2', name: '西校区' }]
+      },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost',
+        label: '提交分配',
+        title: '点【确定】→ 提交分配',
+        desc: '用户点【确定】，调 saveSchoolTenantUserPost，1 对 1 类型传新字段 dataPermissionType + permissionScopeList。',
+        payload: {
+          tenantUserId: 'USER001',
+          tenantPostId: 'POST001',
+          dataPermissionType: 'campus',
+          permissionScopeList: [{ campusId: 'c1' }, { campusId: 'c2' }]
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '后端当前不消费新字段。等后端实现后才会落主表。；错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      },
+      {
+        from: 'list', to: 'backend', method: 'POST', path: '/backstage/schoolFacultyPermission/facultyPermissionPage',
+        label: '刷新列表',
+        title: '列表刷新：facultyPermissionPage',
+        desc: '关闭弹框后列表自动刷新（去掉之前的旧 defer 改回真接口）。',
+        payload: { tenantUserId: 'USER001', page: 1, size: 10 },
+        response: { list: [{ id: 'PERMISSION001', dataPermissionType: 'campus' }], total: 1 }
+      },
+      {
+        from: 'list', to: 'backend', method: 'GET', path: '/backstage/schoolFacultyPermissionScope/queryDataScopeList?facultyPermissionId=xxx',
+        label: '每行并发拉 scopes',
+        title: '列表二次拉 scopes',
+        desc: '每行并发调 queryDataScopeList 拿 5 维度字段，注入 row.scopes。',
+        payload: { facultyPermissionId: 'PERMISSION001' },
+        response: [{ id: 'SCOPE001', campusId: 'c1' }],
+        note: '实际请求数 = 行数 N（每行 1 次）。'
+      }
+    ]
+  },
+  css: {
+    title: '校区 + 学段 + 科目 (campus_stage_subject)',
+    subtitle: '8 步调用 · 1 对 1 · 3 级 ElTree',
+    steps: [
+      { from: 'user', to: 'list', method: 'CLICK', label: '点击【分配岗位】', title: '用户点击【分配岗位】', desc: '主表按钮触发三层守门。' },
+      { from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList', label: '加载岗位', title: '加载岗位下拉', desc: 'postList 拉岗位列表。' },
+      { from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx', label: '加载枚举', title: '选岗位 → 加载数据权限', desc: 'schoolList 按 postId 返回枚举子集。', payload: { postId: 'POST001' } },
+      { from: 'figure1', to: 'figure2', method: 'CLICK', label: '下一步', title: '图1 → 图2', desc: '点【下一步】打开图2 ElTree 弹框。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/school/schoolCampusList', label: 'LV0 校区', title: 'level 0：校区', desc: '拉校区。', payload: { schoolId: 'SCHOOL001' } },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolStageList', label: 'LV1 学段', title: 'level 1：学段', desc: '按校区拉学段。', payload: { schoolId: 'SCHOOL001', campusId: 'c1' } },
+      { from: 'figure2', to: 'backend', method: 'GET', path: '/backstage/subject/queryAllowSubjectsList', label: 'LV2 科目', title: 'level 2：科目（按学段）', desc: '按学段筛科目。', payload: { stageId: 's1' } },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost',
+        label: '提交', title: '提交分配', desc: 'CSS 1 对 1 传 3 字段。',
+        payload: {
+          tenantUserId: 'USER001', tenantPostId: 'POST001',
+          dataPermissionType: 'campus_stage_subject',
+          permissionScopeList: [{ campusId: 'c1', stageId: 's1', subjectId: 'sub1' }]
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      }
+    ]
+  },
+  cgs: {
+    title: '校区 + 年级 + 科目 (campus_grade_subject)',
+    subtitle: '9 步调用 · 1 对 1 · 4 级 ElTree',
+    steps: [
+      { from: 'user', to: 'list', method: 'CLICK', label: '点击【分配岗位】', title: '点击【分配岗位】', desc: '三层守门。' },
+      { from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList', label: '岗位', title: '加载岗位', desc: 'postList。' },
+      { from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx', label: '枚举', title: '加载枚举', desc: 'schoolList。' },
+      { from: 'figure1', to: 'figure2', method: 'CLICK', label: '下一步', title: '图1 → 图2', desc: 'ElTree 4 级。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/school/schoolCampusList', label: 'LV0 校区', title: 'LV0: 校区', desc: '校区。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolStageList', label: 'LV1 学段', title: 'LV1: 学段', desc: '学段。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/currentGradeList', label: 'LV2 年级', title: 'LV2: 年级（当前学年）', desc: '用 currentGradeList 拿当前学年年级，不传 yearId。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolGradeSubjectsList', label: 'LV3 科目', title: 'LV3: 科目（按年级）', desc: '按年级筛科目。', payload: { baseGradeId: 'g1', stageId: 's1' } },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost', label: '提交',
+        title: '提交分配', desc: 'CGS 传 3 字段。',
+        payload: {
+          tenantUserId: 'USER001', tenantPostId: 'POST001',
+          dataPermissionType: 'campus_grade_subject',
+          permissionScopeList: [{ campusId: 'c1', gradeId: 'g1', subjectId: 'sub1' }]
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      }
+    ]
+  },
+  cg: {
+    title: '校区 + 年级 (campus_grade)',
+    subtitle: '8 步 · 1 对 1 · 3 级（学段折叠）',
+    steps: [
+      { from: 'user', to: 'list', method: 'CLICK', label: '点击【分配岗位】', title: '点击【分配岗位】', desc: '三层守门。' },
+      { from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList', label: '岗位', title: '加载岗位', desc: 'postList。' },
+      { from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx', label: '枚举', title: '加载枚举', desc: 'schoolList。' },
+      { from: 'figure1', to: 'figure2', method: 'CLICK', label: '下一步', title: '图1 → 图2', desc: 'ElTree 3 级。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/school/schoolCampusList', label: 'LV0 校区', title: 'LV0: 校区', desc: '校区。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolStageList', label: 'LV1 学段', title: 'LV1: 学段（折叠）', desc: '学段层在 UI 上不展示。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/currentGradeList', label: 'LV2 年级', title: 'LV2: 年级', desc: '当前学年年级。' },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost', label: '提交', title: '提交分配', desc: 'CG 传 2 字段。',
+        payload: {
+          tenantUserId: 'USER001', tenantPostId: 'POST001',
+          dataPermissionType: 'campus_grade',
+          permissionScopeList: [{ campusId: 'c1', gradeId: 'g1' }]
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      }
+    ]
+  },
+  cc: {
+    title: '校区 + 班级 (campus_class)',
+    subtitle: '9 步 · 1 对 1 · 4 级 · 含 classType 字典',
+    steps: [
+      { from: 'user', to: 'list', method: 'CLICK', label: '点击【分配岗位】', title: '点击【分配岗位】', desc: '三层守门。' },
+      { from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList', label: '岗位', title: '加载岗位', desc: 'postList。' },
+      { from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx', label: '枚举', title: '加载枚举', desc: 'schoolList。' },
+      { from: 'figure1', to: 'figure2', method: 'CLICK', label: '下一步', title: '图1 → 图2', desc: 'ElTree 4 级。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/school/schoolCampusList', label: 'LV0 校区', title: 'LV0: 校区', desc: '校区。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolStageList', label: 'LV1 学段', title: 'LV1: 学段', desc: '学段。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/currentGradeList', label: 'LV2 年级', title: 'LV2: 年级', desc: '当前学年年级。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolClass/schoolClassList', label: 'LV3 班级', title: 'LV3: 班级（行政班/教学班）', desc: 'schoolClassList 入参含 classType 字典值。', payload: { schoolId: 'SCHOOL001', campusId: 'c1', stageId: 's1', yearId: 'y1', gradeId: 'g1', classType: 'admin' } },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost', label: '提交', title: '提交分配', desc: 'CC 传 2 字段。',
+        payload: {
+          tenantUserId: 'USER001', tenantPostId: 'POST001',
+          dataPermissionType: 'campus_class',
+          permissionScopeList: [{ campusId: 'c1', classId: 'cl1' }]
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      }
+    ]
+  },
+  ccs: {
+    title: '校区 + 班级 + 科目 (campus_class_subject) · 1 对 1',
+    subtitle: '10 步 · 5 级 ElTree · 链路接口',
+    steps: [
+      { from: 'user', to: 'list', method: 'CLICK', label: '点击【分配岗位】', title: '点击【分配岗位】', desc: '三层守门。' },
+      { from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList', label: '岗位', title: '加载岗位', desc: 'postList。' },
+      { from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx', label: '枚举', title: '加载枚举', desc: 'schoolList。CCS 在这里多显示一个【设置方式】radio，1对1 模式。' },
+      { from: 'figure1', to: 'figure2', method: 'CLICK', label: '下一步', title: '图1 → 图2', desc: 'ElTree 5 级（最深级联）。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/school/schoolCampusList', label: 'LV0 校区', title: 'LV0: 校区', desc: '校区。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolStageList', label: 'LV1 学段', title: 'LV1: 学段', desc: '学段。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/currentGradeList', label: 'LV2 年级', title: 'LV2: 年级', desc: '当前学年年级。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolClass/schoolClassList', label: 'LV3 班级', title: 'LV3: 班级（教学班）', desc: 'classType=teaching（任课教师对应教学班）。', payload: { schoolId: 'SCHOOL001', campusId: 'c1', stageId: 's1', yearId: 'y1', gradeId: 'g1', classType: 'teaching' } },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolSubjectsPage', label: 'LV4 科目', title: 'LV4: 科目（按学校全量）', desc: '注意：科目按学校全量拉，不按 class 拿（项目里没有按 class 拿科目的接口）。', payload: { schoolId: 'SCHOOL001', page: 1, size: 100 } },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost', label: '提交', title: '提交分配', desc: 'CCS 1 对 1 传 3 字段。',
+        payload: {
+          tenantUserId: 'USER001', tenantPostId: 'POST001',
+          dataPermissionType: 'campus_class_subject',
+          permissionScopeList: [{ campusId: 'c1', classId: 'cl1', subjectId: 'sub1' }]
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      }
+    ]
+  },
+  ccs_multi: {
+    title: '校区 + 班级 + 科目 (campus_class_subject) · 多对多',
+    subtitle: '8 步 · 复用 SelectClassListDialog + SelectSubjectListDialog',
+    steps: [
+      { from: 'user', to: 'list', method: 'CLICK', label: '点击【分配岗位】', title: '点击【分配岗位】', desc: '三层守门。' },
+      { from: 'figure1', to: 'backend', method: 'POST', path: '/backstage/tenantPost/postList', label: '岗位', title: '加载岗位', desc: 'postList。CCS 选设置方式=多对多。' },
+      { from: 'figure1', to: 'backend', method: 'GET', path: '/backstage/dataPermissionEnum/schoolList?postId=xxx', label: '枚举', title: '加载枚举', desc: 'schoolList。' },
+      { from: 'figure1', to: 'figure2', method: 'CLICK', label: '下一步', title: '图1 → 图2 (复用)', desc: '不走 ElTree，复用 SelectClassListDialog + SelectSubjectListDialog。' },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolClass/schoolClassPage', label: 'Step A 班级', title: 'Step A: SelectClassListDialog 选班级', desc: '复用现成组件，多选班级 + 校验同校区。', payload: { schoolId: 'SCHOOL001', baseYearId: 'y1', campusId: 'c1', gradeId: '', classType: 'teaching' }, response: [{ id: 'cl1', name: '高一(1)班' }, { id: 'cl2', name: '高一(2)班' }] },
+      { from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolConfig/schoolSubjectsPage', label: 'Step B 科目', title: 'Step B: SelectSubjectListDialog 选科目', desc: '复用现成组件，多选科目。', payload: { schoolId: 'SCHOOL001', page: 1, size: 100 }, response: [{ id: 'sub1', name: '数学' }, { id: 'sub2', name: '物理' }] },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/tenantUserPost/saveSchoolTenantUserPost', label: '提交（多对多）', title: '提交分配（走老字段，不传 dataPermissionType）', desc: 'CCS 多对多走老路径：classIds + subjectIds，不传 dataPermissionType。',
+        payload: {
+          tenantUserId: 'USER001', tenantPostId: 'POST001',
+          classIds: ['cl1', 'cl2'],
+          subjectIds: ['sub1', 'sub2'],
+          saveFacultyPermission: true
+        },
+        response: { code: 200, data: 'USER_POST001' },
+        note: '⚠️ 没有 dataPermissionType 字段。多对多走老路径，业务上不需要 5 维度精确描述。；错误/警告/成功文案统一由后端在 res.message 返回，前端只展示。'
+      },
+      { from: 'list', to: 'backend', method: 'POST', path: '/backstage/schoolFacultyPermission/facultyPermissionPage', label: '刷新列表', title: '列表刷新', desc: '列表 + 二次拉 scopes。' },
+      { from: 'list', to: 'backend', method: 'GET', path: '/backstage/schoolFacultyPermissionScope/queryDataScopeList', label: '二次拉 scopes', title: '列表二次拉 scopes', desc: '每行并发拉 scopes。', note: 'CCS 多对多行的 scopes 可能是空的（取决于后端存什么）' }
+    ]
+  },
+  edit: {
+    title: '编辑流程（1对1 · 通用）',
+    subtitle: '5 步调用 · 行点【数据权限】直接打开 detail 弹框 · 编辑不经过图1',
+    steps: [
+      {
+        from: 'user', to: 'list', method: 'CLICK', path: '',
+        label: '点行【数据权限】',
+        title: '用户点行【数据权限】',
+        desc: '在主表点某一行的【数据权限】按钮，进入编辑模式。',
+        note: '编辑入口（区别于分配 / 删除）。'
+      },
+      {
+        from: 'list', to: 'backend', method: 'GET', path: '/backstage/schoolFacultyPermissionScope/queryDataScopeList',
+        label: '回填 scopes',
+        title: 'queryDataScopeList 回填',
+        desc: '按行 id 调 queryDataScopeList 拿当前 5 维度 scopes，用于 detail 弹框预选节点。',
+        payload: { facultyPermissionId: 'PERMISSION001' },
+        response: [
+          { id: 'SCOPE001', campusId: 'c1', subjectId: 'sub1', scopeName: '东校区 / 数学' }
+        ],
+        note: '回填由 queryDataScopeList 承担，不再依赖 facultyPermissionPage.stageList（后端未填）。'
+      },
+      {
+        from: 'list', to: 'figure2', method: 'CLICK', path: '',
+        label: '打开 detail 弹框',
+        title: '直接打开 detail 弹框（按 dataPermissionType）',
+        desc: 'useFacultyDataPermissionSession.openEdit() 调用 forceOpenDetailByKind(strategy.kind)，按类型直接打开对应的 picker / cascader 弹框，**完全不经过图1**。editingRow 守门防止状态串台。',
+        note: '⚠️ 与分配流程的核心差异：不打开图1，不选岗位/数据权限（这些已定），直接画 detail 弹框。'
+      },
+      {
+        from: 'figure2', to: 'backend', method: 'POST', path: '/backstage/schoolFacultyPermissionScope/updateDataScope',
+        label: '保存',
+        title: 'updateDataScope 保存',
+        desc: '用户点【确定】（只有确定/取消，没有上一步），调 updateDataScope 全量替换 scopes。后端落库后，列表刷新即生效。',
+        payload: {
+          facultyPermissionId: 'PERMISSION001',
+          permissionScopeList: [
+            { campusId: 'c1', subjectId: 'sub1' }
+          ]
+        },
+        response: { code: 200 },
+        note: '⚠️ 1对1（campus/CGS/CSS/CG/CC/CCS·one_to_one）走 updateDataScope。CCS·多对多编辑走老接口 updateFacultyPermission。'
+      },
+      {
+        from: 'list', to: 'backend', method: 'POST', path: '/backstage/schoolFacultyPermission/facultyPermissionPage',
+        label: '刷新列表',
+        title: '列表刷新 + 二次拉 scopes',
+        desc: '关闭弹框后列表自动刷新 + 每行并发拉 queryDataScopeList，三列重新渲染。',
+        payload: { tenantUserId: 'USER001', page: 1, size: 10 },
+        response: { list: [{ id: 'PERMISSION001', dataPermissionType: 'campus' }], total: 1 }
+      }
+    ]
+  }
+};
+
+// ============ STATE ============
+let currentType = 'campus';
+let currentStep = -1;
+let isPlaying = false;
+let playTimer = null;
+
+const $ = (id) => document.getElementById(id);
+const lanes = ['user', 'list', 'figure1', 'figure2', 'backend'];
+
+// ============ LANE POSITIONS (relative to swimlanes container) ============
+function getLaneCenterX(laneName) {
+  const laneEl = document.querySelector(`.lane.${laneName}`);
+  if (!laneEl) return 0;
+  const rect = laneEl.getBoundingClientRect();
+  const parentRect = document.querySelector('.swimlanes').getBoundingClientRect();
+  return rect.left - parentRect.left + rect.width / 2;
+}
+function getLaneCenterY() {
+  // swimlanes 高度自适应 canvas 剩余空间；箭头画在垂直中线
+  const swimlanes = document.querySelector('.swimlanes');
+  return swimlanes ? swimlanes.offsetHeight / 2 : 190;
+}
+
+// ============ RENDER ============
+function renderArrows() {
+  const svg = $('arrowsSvg');
+  svg.innerHTML = '';
+  const containerW = $('arrowsLayer').offsetWidth;
+  const containerH = $('arrowsLayer').offsetHeight;
+  svg.setAttribute('viewBox', `0 0 ${containerW} ${containerH}`);
+  svg.setAttribute('preserveAspectRatio', 'none');
+
+  const steps = FLOW[currentType].steps;
+  steps.forEach((step, idx) => {
+    const x1 = getLaneCenterX(step.from);
+    const x2 = getLaneCenterX(step.to);
+    if (x1 === 0 || x2 === 0) return;
+    const y = getLaneCenterY();
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const midX = (x1 + x2) / 2;
+    const d = `M ${x1} ${y} C ${midX} ${y - 30}, ${midX} ${y + 30}, ${x2} ${y}`;
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'arrow-path');
+    path.setAttribute('id', `arrow-${idx}`);
+    svg.appendChild(path);
+
+    // Arrow head
+    const headSize = 8;
+    const angle = Math.atan2(y - y, x2 - midX);
+    const head = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    const hx1 = x2 - headSize * Math.cos(angle - Math.PI / 6);
+    const hy1 = y - headSize * Math.sin(angle - Math.PI / 6);
+    const hx2 = x2 - headSize * Math.cos(angle + Math.PI / 6);
+    const hy2 = y - headSize * Math.sin(angle + Math.PI / 6);
+    head.setAttribute('points', `${x2},${y} ${hx1},${hy1} ${hx2},${hy2}`);
+    head.setAttribute('class', 'arrow-head');
+    head.setAttribute('id', `head-${idx}`);
+    svg.appendChild(head);
+  });
+}
+
+function updateLaneStates() {
+  lanes.forEach(lane => {
+    const el = document.querySelector(`.lane.${lane}`);
+    if (!el) return;
+    el.classList.remove('active', 'lane-target');
+  });
+  if (currentStep < 0) return;
+  const step = FLOW[currentType].steps[currentStep];
+  if (!step) return;
+  document.querySelector(`.lane.${step.from}`).classList.add('active');
+  document.querySelector(`.lane.${step.to}`).classList.add('active', 'lane-target');
+}
+
+function showPacket() {
+  if (currentStep < 0) {
+    $('packet').classList.remove('active', 'accent');
+    $('arrowLabel').classList.remove('active', 'reverse');
+    return;
+  }
+  const step = FLOW[currentType].steps[currentStep];
+  const x1 = getLaneCenterX(step.from);
+  const x2 = getLaneCenterX(step.to);
+  const packet = $('packet');
+  const midX = (x1 + x2) / 2;
+  packet.style.left = midX + 'px';
+  packet.style.top = (getLaneCenterY() - 6) + 'px';
+  packet.classList.add('active');
+  if (step.from === 'backend') packet.classList.add('accent'); else packet.classList.remove('accent');
+
+  const label = $('arrowLabel');
+  label.style.left = midX + 'px';
+  label.style.top = (getLaneCenterY() + 36) + 'px';
+  label.innerHTML = step.method && step.method !== 'CLICK' ? `<span class="method">${step.method}</span>${step.label}` : step.label;
+  label.classList.add('active');
+  if (step.from === 'backend') label.classList.add('reverse'); else label.classList.remove('reverse');
+}
+
+function renderStep() {
+  const steps = FLOW[currentType].steps;
+  if (currentStep < 0 || currentStep >= steps.length) {
+    $('sidebarStep').textContent = 'STEP 0';
+    $('sidebarTitle').textContent = '点击 ▶ 启动演示';
+    $('sidebarDesc').textContent = '点右下角 ▶ 启动按钮，逐步播放。';
+    $('detailsSection').style.display = 'none';
+    $('payloadSection').style.display = 'none';
+    $('noteSection').style.display = 'none';
+    $('progressFill').style.width = '0%';
+    $('progressText').textContent = `0 / ${steps.length}`;
+    $('stepCount').textContent = '0';
+    return;
+  }
+  const step = steps[currentStep];
+  $('sidebarStep').textContent = `STEP ${currentStep + 1}`;
+  $('sidebarTitle').textContent = step.title;
+  $('sidebarDesc').textContent = step.desc;
+  $('stepCount').textContent = currentStep + 1;
+
+  if (step.method) {
+    $('detailsSection').style.display = 'block';
+    $('methodVal').textContent = step.method === 'CLICK' ? '— 用户操作 —' : step.method;
+    $('pathVal').textContent = step.path || '—';
+    $('fromVal').textContent = laneLabel(step.from);
+    $('toVal').textContent = laneLabel(step.to);
+  } else {
+    $('detailsSection').style.display = 'none';
+  }
+
+  if (step.payload || step.response) {
+    $('payloadSection').style.display = 'block';
+    let html = '';
+    if (step.payload) html += syntaxHighlight(step.payload, 'request');
+    if (step.response) html += '\n\n' + syntaxHighlight(step.response, 'response');
+    $('payloadBox').textContent = html;
+  } else {
+    $('payloadSection').style.display = 'none';
+  }
+
+  if (step.note) {
+    $('noteSection').style.display = 'block';
+    $('noteText').textContent = step.note;
+  } else {
+    $('noteSection').style.display = 'none';
+  }
+
+  const pct = ((currentStep + 1) / steps.length) * 100;
+  $('progressFill').style.width = pct + '%';
+  $('progressText').textContent = `${currentStep + 1} / ${steps.length}`;
+
+  updateLaneStates();
+  showPacket();
+
+  $('prevBtn').disabled = currentStep <= 0;
+  $('nextBtn').disabled = currentStep >= steps.length - 1;
+}
+
+function laneLabel(l) {
+  return { user: '用户', list: '列表页', figure1: '图1 弹框', figure2: '图2 弹框', backend: '后端 API' }[l] || l;
+}
+
+function syntaxHighlight(obj, label) {
+  const json = JSON.stringify(obj, null, 2);
+  return json
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"([^"]+)":/g, '<span class="payload-key">"$1"</span>:')
+    .replace(/: "([^"]+)"/g, ': <span class="payload-string">"$1"</span>')
+    .replace(/: (\d+)/g, ': <span class="payload-num">$1</span>');
+}
+
+// ============ CONTROLS ============
+function setType(type, { showIntro = false } = {}) {
+  currentType = type;
+  // init / reset 时 showIntro=true → currentStep=-1 显示引导层
+  // 切换 tab 时 showIntro=false（默认）→ 直接进入 step 0，不挡视线
+  currentStep = showIntro ? -1 : 0;
+  stopPlay();
+  $('canvasTitle').textContent = FLOW[type].title;
+  $('canvasSubtitle').textContent = FLOW[type].subtitle;
+  $('totalSteps').textContent = FLOW[type].steps.length;
+  document.querySelectorAll('.type-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.type === type);
+  });
+  $('introOverlay').classList.toggle('hidden', !showIntro);
+  renderArrows();
+  renderStep();
+}
+
+function nextStep() {
+  const total = FLOW[currentType].steps.length;
+  if (currentStep < total - 1) {
+    currentStep++;
+    renderStep();
+  } else {
+    stopPlay();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 0) {
+    currentStep--;
+    renderStep();
+  } else if (currentStep === 0) {
+    currentStep = -1;
+    renderStep();
+    updateLaneStates();
+    showPacket();
+  }
+}
+
+function resetStep() {
+  currentStep = -1;
+  stopPlay();
+  renderStep();
+  updateLaneStates();
+  showPacket();
+  // 重播场景：显示 intro 让用户重新点 ▶ 启动
+  $('introOverlay').classList.remove('hidden');
+}
+
+function startPlay() {
+  if (currentStep === -1) currentStep = 0;
+  $('introOverlay').classList.add('hidden');
+  isPlaying = true;
+  $('playBtn').innerHTML = '⏸ 暂停';
+  renderStep();
+  playTimer = setInterval(() => {
+    const total = FLOW[currentType].steps.length;
+    if (currentStep < total - 1) {
+      currentStep++;
+      renderStep();
+    } else {
+      stopPlay();
+    }
+  }, 1200);
+}
+
+function stopPlay() {
+  isPlaying = false;
+  clearInterval(playTimer);
+  playTimer = null;
+  $('playBtn').innerHTML = '▶ 启动';
+}
+
+// ============ BIND ============
+document.querySelectorAll('.type-tab').forEach(tab => {
+  tab.addEventListener('click', () => setType(tab.dataset.type));
+});
+
+$('startBtn').addEventListener('click', startPlay);
+$('skipIntroBtn').addEventListener('click', () => $('introOverlay').classList.add('hidden'));
+$('playBtn').addEventListener('click', () => {
+  if (isPlaying) stopPlay();
+  else startPlay();
+});
+$('nextBtn').addEventListener('click', () => { stopPlay(); nextStep(); });
+$('prevBtn').addEventListener('click', () => { stopPlay(); prevStep(); });
+$('resetBtn').addEventListener('click', () => { stopPlay(); resetStep(); });
+
+window.addEventListener('resize', () => { renderArrows(); showPacket(); });
+
+// ============ INIT ============
+setType('campus', { showIntro: true });
+</script>
+</body>
+</html>
