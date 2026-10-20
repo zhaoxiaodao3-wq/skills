@@ -1,0 +1,673 @@
+[FRAME] Frame 1427325706 [4245,3250 1000x1163] fills=[{"type":"SOLID","color":"#FFFFFF"}] r=8 layout=VERTICAL
+  [FRAME] Frame 1940698610 [4245,3250 1000x62] fills=[{"type":"SOLID","color":"#FFFFFF"}] layout=VERTICAL
+    [FRAME] Frame 1427325697 [4245,3250 1000x62] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=20,20,20,20 gap=10 layout=HORIZONTAL
+      [TEXT] 教师对比（2025–2026 下学期） [4265,3270 240x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="教师对比（2025–2026 下学期）" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+      [FRAME] Frame 1427325698 [5209,3273 16x16] gap=10 layout=VERTICAL
+        [VECTOR] Shape [5211,3275 12x12] fills=[{"type":"SOLID","color":"#777777"}]
+  [FRAME] Frame 1940699004 [4245,3312 1000x1101] gap=20 layout=VERTICAL
+    [FRAME] Frame 1940699074 [4245,3332 1000x49] pad=40,40,undefined,undefined gap=10 layout=VERTICAL
+      [FRAME] Frame 1940700401 [4285,3332 920x49] gap=10 layout=HORIZONTAL
+        [TEXT] 对比对象： [4285,3332 80x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="对比对象：" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Frame 1940700411 [4375,3332 860x49] gap=5 layout=HORIZONTAL
+          [FRAME] Frame 1940699002 [4375,3332 136x22] layout=HORIZONTAL
+            [TEXT] 李涛 [4375,3332 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·语文） [4407,3332 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699003 [4516,3332 136x22] layout=HORIZONTAL
+            [TEXT] 王芳 [4516,3332 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="王芳" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·数学） [4548,3332 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·数学）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699004 [4657,3332 136x22] layout=HORIZONTAL
+            [TEXT] 张伟 [4657,3332 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="张伟" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·英语） [4689,3332 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·英语）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699005 [4798,3332 136x22] layout=HORIZONTAL
+            [TEXT] 刘婷 [4798,3332 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="刘婷" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·物理） [4830,3332 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·物理）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699006 [4939,3332 136x22] layout=HORIZONTAL
+            [TEXT] 陈晨 [4939,3332 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="陈晨" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·历史） [4971,3332 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·历史）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699007 [5080,3332 136x22] layout=HORIZONTAL
+            [TEXT] 杨宇 [5080,3332 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="杨宇" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·地理） [5112,3332 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·地理）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699008 [4375,3359 136x22] layout=HORIZONTAL
+            [TEXT] 赵静 [4375,3359 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="赵静" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·政治） [4407,3359 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·政治）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699009 [4516,3359 136x22] layout=HORIZONTAL
+            [TEXT] 王伟 [4516,3359 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="王伟" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·历史） [4548,3359 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·历史）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699010 [4657,3359 136x22] layout=HORIZONTAL
+            [TEXT] 李梅 [4657,3359 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李梅" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·数学） [4689,3359 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·数学）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+          [FRAME] Frame 1940699011 [4798,3359 136x22] layout=HORIZONTAL
+            [TEXT] 陈涛 [4798,3359 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="陈涛" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+            [TEXT] （初二·科学） [4830,3359 104x22] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·科学）" 16px/400 [{"type":"SOLID","color":"#777777"}] lh=22.399999618530273
+    [FRAME] Frame 1940699011 [4245,3401 1000x480] pad=40,40,undefined,undefined gap=10 layout=VERTICAL
+      [FRAME] Frame 1940699001 [4285,3401 120x22] gap=5 layout=HORIZONTAL
+        [RECTANGLE] Rectangle 34625643 [4285,3406 3x12] fills=[{"type":"SOLID","color":"#027AFF"}]
+        [TEXT] 评分均分周趋势 [4293,3401 112x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="评分均分周趋势" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+      [FRAME] Frame 1940698628 [4285,3433 920x416] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}] r=8 pad=20,20,20,20 gap=10 layout=VERTICAL
+        [FRAME] Frame [4305,3453 880x376] fills=[{"type":"SOLID","color":"#FFFFFF"}]
+          [FRAME] 行 [4305,3453 880x360] gap=20 layout=VERTICAL
+            [FRAME] Frame 1940698857 [4305,3453 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 100 [4305,3462 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="100" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3470 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+            [FRAME] Frame 1940698855 [4305,3507 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 90 [4305,3516 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="90" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3524 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+            [FRAME] Frame 1940698858 [4305,3562 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 80 [4305,3570 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="80" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3579 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+            [FRAME] Frame 1940698855 [4305,3616 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 70 [4305,3625 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="70" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3633 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+            [FRAME] Frame 1940698850 [4305,3670 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 60 [4305,3679 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="60" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3687 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+            [FRAME] Frame 1940698856 [4305,3724 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 50 [4305,3733 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="50" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3742 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+            [FRAME] Frame 1940698851 [4305,3779 880x34] gap=8 layout=HORIZONTAL
+              [TEXT] 40 [4305,3787 30x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="40" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+              [VECTOR] Vector [4343,3796 842x0] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+          [FRAME] 列 [4323,3470 862x359] gap=18 layout=HORIZONTAL
+            [FRAME] Frame 1940698854 [4323,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4343,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第1周 [4329,3812 29x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第1周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698855 [4371,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4391,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第2周 [4375,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第2周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698856 [4420,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4440,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第3周 [4424,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第3周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698857 [4468,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4488,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第4周 [4472,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第4周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698858 [4516,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4536,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第5周 [4520,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第5周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698859 [4565,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4585,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第6周 [4569,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第6周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698860 [4613,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4633,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第7周 [4618,3812 31x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第7周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698861 [4661,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4681,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第8周 [4665,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第8周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698862 [4710,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4730,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第9周 [4714,3812 32x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第9周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698863 [4758,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4778,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第10周 [4760,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第10周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698864 [4807,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4827,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第11周 [4810,3812 34x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第11周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698865 [4855,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4875,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第12周 [4856,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第12周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698866 [4903,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4923,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第13周 [4905,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第13周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698867 [4952,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [4972,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第14周 [4953,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第14周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698868 [5000,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [5020,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第15周 [5001,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第15周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698869 [5048,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [5068,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第16周 [5050,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第16周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698870 [5097,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [5117,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第17周 [5099,3812 36x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第17周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+            [FRAME] Frame 1940698871 [5145,3470 40x359] gap=16 layout=VERTICAL
+              [VECTOR] Vector [5165,3470 0x326] strokes=[{"type":"SOLID","color":"#E5E6EB","weight":1}]
+              [TEXT] 第18周 [5147,3812 37x17] fills=[{"type":"SOLID","color":"#777777"}] TEXT="第18周" 12px/400 [{"type":"SOLID","color":"#777777"}] lh=16.799999237060547
+          [GROUP] 政治 [4343,3502 841x257]
+            [VECTOR] Vector 4025 [4343,3502 841x257] strokes=[{"type":"SOLID","color":"#027AFF","weight":1.5}]
+          [GROUP] 政治 [4343,3516 841x215]
+            [VECTOR] Vector 4025 [4343,3516 841x215] strokes=[{"type":"SOLID","color":"#FF55E3","weight":1.5}]
+          [GROUP] 历史 [4343,3532 841x201]
+            [VECTOR] Vector 4025 [4343,3532 841x201] strokes=[{"type":"SOLID","color":"#8B55FF","weight":1.5}]
+          [GROUP] 地理 [4343,3502 842x257]
+            [VECTOR] Vector 4025 [4343,3502 842x257] strokes=[{"type":"SOLID","color":"#0BAAFF","weight":1.5}]
+          [GROUP] 生物 [4343,3487 842x245]
+            [VECTOR] Vector 4025 [4343,3487 842x245] strokes=[{"type":"SOLID","color":"#28DCD1","weight":1.5}]
+          [GROUP] 化学 [4344,3516 841x215]
+            [VECTOR] Vector 4025 [4344,3516 841x215] strokes=[{"type":"SOLID","color":"#20DC68","weight":1.5}]
+          [GROUP] 物理 [4344,3532 841x201]
+            [VECTOR] Vector 4025 [4344,3532 841x201] strokes=[{"type":"SOLID","color":"#A3DC20","weight":1.5}]
+          [GROUP] 英语 [4343,3502 474x257]
+            [VECTOR] Vector 4025 [4343,3502 474x257] strokes=[{"type":"SOLID","color":"#FEE000","weight":1.5}]
+          [GROUP] 数学 [4343,3487 842x245]
+            [VECTOR] Vector 4025 [4343,3487 842x245] strokes=[{"type":"SOLID","color":"#FFAE00","weight":1.5}]
+          [GROUP] 语文 [4343,3506 842x189]
+            [VECTOR] Vector 4025 [4343,3506 842x189] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":1.5}]
+          [FRAME] Frame 1940700412 [4343,3598 842x17] gap=10 layout=HORIZONTAL
+            [VECTOR] Vector [4343,3607 808x0] strokes=[{"type":"SOLID","color":"#00B42A","weight":0.5}]
+            [TEXT] 良好 [5161,3598 24x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="良好" 12px/400 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+        [VECTOR] Vector [4433,3470 0x326] strokes=[{"type":"SOLID","color":"#555555","weight":0.5}]
+        [ELLIPSE] Ellipse 4382 [4429,3529 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":2}]
+        [ELLIPSE] Ellipse 4383 [4429,3559 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FFAE00","weight":2}]
+        [ELLIPSE] Ellipse 4384 [4429,3644 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FEE000","weight":2}]
+        [ELLIPSE] Ellipse 4385 [4429,3563 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#28DCD1","weight":2}]
+        [ELLIPSE] Ellipse 4386 [4429,3596 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#0CAAFE","weight":2}]
+        [ELLIPSE] Ellipse 4387 [4429,3638 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF55E3","weight":2}]
+        [ELLIPSE] Ellipse 4388 [4429,3662 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#20DC68","weight":2}]
+        [ELLIPSE] Ellipse 4389 [4429,3713 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#A3DC20","weight":2}]
+        [ELLIPSE] Ellipse 4390 [4429,3717 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#8B55FF","weight":2}]
+        [ELLIPSE] Ellipse 4391 [4429,3670 8x8] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#027AFF","weight":2}]
+        [FRAME] Frame 1940700346 [4453,3453 202x355] fills=[{"type":"SOLID","color":"#FFFFFF","opacity":0.800000011920929}] strokes=[{"type":"SOLID","color":"#FFFFFF","weight":0.5}] r=8 pad=15,15,15,15 gap=15 layout=VERTICAL
+          [FRAME] Frame 1940699942 [4468,3468 34x20] gap=10 layout=HORIZONTAL
+            [TEXT] Level Indicator L2 [4468,3468 34x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="第1周" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+          [FRAME] Frame 1940700398 [4468,3503 172x290] gap=10 layout=VERTICAL
+            [FRAME] Frame 1940700360 [4468,3503 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3503 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3506 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3503 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3503 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3503 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3503 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700368 [4468,3533 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3533 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3536 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3533 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3533 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3533 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3533 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700369 [4468,3563 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3563 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3566 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3563 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3563 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3563 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3563 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700370 [4468,3593 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3593 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3596 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3593 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3593 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3593 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3593 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700371 [4468,3623 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3623 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3626 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3623 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3623 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3623 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3623 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700372 [4468,3653 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3653 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3656 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3653 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3653 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3653 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3653 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700373 [4468,3683 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3683 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3686 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3683 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3683 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3683 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3683 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700374 [4468,3713 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3713 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3716 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3713 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3713 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3713 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3713 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700375 [4468,3743 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3743 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3746 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3743 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3743 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3743 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3743 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1940700376 [4468,3773 172x20] gap=5 layout=HORIZONTAL
+              [FRAME] Frame 1940700396 [4468,3773 150x20] gap=5 layout=HORIZONTAL
+                [ELLIPSE] Ellipse 4382 [4468,3776 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+                [FRAME] Frame 1940699002 [4487,3773 119x20] layout=HORIZONTAL
+                  [TEXT] 李涛 [4487,3773 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+                  [TEXT] （初二·语文） [4515,3773 91x20] fills=[{"type":"SOLID","color":"#777777"}] TEXT="（初二·语文）" 14px/400 [{"type":"SOLID","color":"#777777"}] lh=19.600000381469727
+              [TEXT] Level Indicator L2 [4623,3773 17x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+      [FRAME] Frame 1940698863 [4285,3859 920x22] gap=16 layout=HORIZONTAL
+        [FRAME] Heading 4 [4423,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4423,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF2A2A","weight":5}]
+          [TEXT] 李涛 [4441,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李涛" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 3 [4489,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4489,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FFAE00","weight":5}]
+          [TEXT] 王芳 [4507,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="王芳" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 2 [4555,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4555,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FEE000","weight":5}]
+          [TEXT] 张伟 [4573,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="张伟" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 5 [4621,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4621,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#A3DC20","weight":5}]
+          [TEXT] 刘婷 [4639,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="刘婷 " 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 6 [4687,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4687,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#20DC68","weight":5}]
+          [TEXT] 陈晨 [4705,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="陈晨" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 7 [4753,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4753,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#28DCD1","weight":5}]
+          [TEXT] 杨宇 [4771,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="杨宇" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 8 [4819,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4819,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#0BAAFF","weight":5}]
+          [TEXT] 赵静 [4837,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="赵静" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 11 [4885,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4885,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#027AFF","weight":5}]
+          [TEXT] 王伟 [4903,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="王伟" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 9 [4951,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [4951,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#8B55FF","weight":5}]
+          [TEXT] 李梅 [4969,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="李梅" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+        [FRAME] Heading 10 [5017,3859 50x22] gap=4 layout=HORIZONTAL
+          [ELLIPSE] Ellipse 4382 [5017,3863 14x14] fills=[{"type":"SOLID","color":"#FFFFFF"}] strokes=[{"type":"SOLID","color":"#FF55E3","weight":5}]
+          [TEXT] 陈涛 [5035,3859 32x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="陈涛" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+    [FRAME] Frame 1940699076 [4245,3901 1000x472] pad=40,40,undefined,undefined gap=10 layout=VERTICAL
+      [FRAME] Frame 1940699001 [4285,3901 104x22] gap=5 layout=HORIZONTAL
+        [RECTANGLE] Rectangle 34625643 [4285,3906 3x12] fills=[{"type":"SOLID","color":"#027AFF"}]
+        [TEXT] 核心指标对比 [4293,3901 96x22] fills=[{"type":"SOLID","color":"#333333"}] TEXT="核心指标对比" 16px/600 [{"type":"SOLID","color":"#333333"}] lh=22.399999618530273
+      [FRAME] Frame 1940700407 [4285,3933 920x440] gap=20 layout=VERTICAL
+        [FRAME] Frame 1940698999 [4285,3933 920x440] strokes=[{"type":"SOLID","color":"#F3F9FF","weight":1}] r=8 gap=20 layout=HORIZONTAL
+          [FRAME] Frame 1940698608 [4285,3933 920x440] layout=VERTICAL
+            [FRAME] Frame 1427325674 [4285,3933 920x40] fills=[{"type":"SOLID","color":"#F3F9FF"}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325675 [4295,3943 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 姓名 [4295,3943 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="姓名" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4358,3943 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 任教组合 [4358,3943 56x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="任教组合" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4434,3943 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 报告数 [4434,3943 42x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="报告数" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325664 [4497,3943 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 课堂时长 [4497,3943 56x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="课堂时长" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325676 [4599,3943 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 评分均分 [4599,3943 56x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="评分均分" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325677 [4672,3943 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 达标率 [4672,3943 42x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="达标率" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325678 [4735,3943 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 优秀率 [4735,3943 42x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="优秀率" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325679 [4797,3943 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 良好率 [4797,3943 42x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="良好率" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325680 [4860,3943 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 合格率 [4860,3943 42x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="合格率" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325681 [4922,3943 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 待改进率 [4922,3943 56x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="待改进率" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325682 [4995,3943 200x20] gap=10 layout=HORIZONTAL
+                [TEXT] 待改进率 [4995,3943 56x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="待改进率" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+            [FRAME] Frame 1427325673 [4285,3973 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,3983 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 徐娟 [4295,3983 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="徐娟" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,3983 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·化学 [4358,3983 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·化学" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,3983 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 26 [4434,3983 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="26" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,3983 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 19小时30分钟 [4497,3983 87x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="19小时30分钟" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,3983 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 75.2 [4599,3983 29x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="75.2" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,3983 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 100% [4672,3983 37x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="100%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,3983 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4735,3983 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,3983 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 50% [4797,3983 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="50%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,3983 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 50% [4860,3983 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="50%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,3983 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,3983 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,3983 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,3983 37x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,3984 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,3985 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 31 [5017,3983 15x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="31" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5042,3983 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5042,3984 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5045,3985 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 0 [5064,3983 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5083,3983 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5083,3984 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5086,3985 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 0 [5105,3983 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5124,3983 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5124,3984 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5127,3985 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 0 [5146,3983 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325675 [4285,4013 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4023 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 李强 [4295,4023 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="李强" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4023 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·数学 [4358,4023 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·数学" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4023 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 28 [4434,4023 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="28" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4023 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 20小时 [4497,4023 45x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="20小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4023 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 82.5 [4599,4023 30x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="82.5" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4023 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 95% [4672,4023 31x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="95%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4023 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 5% [4735,4023 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="5%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4023 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 60% [4797,4023 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="60%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4023 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 40% [4860,4023 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="40%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4023 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 1% [4922,4023 20x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="1%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4023 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4023 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4024 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4025 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 29 [5017,4023 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="29" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4023 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4024 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4025 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 3 [5066,4023 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="3" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4023 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4024 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4025 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 1 [5107,4023 6x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5123,4023 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5123,4024 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5126,4025 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 2 [5145,4023 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="2" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325676 [4285,4053 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4063 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 王芳 [4295,4063 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="王芳" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4063 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·英语 [4358,4063 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·英语" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4063 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 27 [4434,4063 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="27" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4063 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 18小时 [4497,4063 43x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="18小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4063 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 78.0 [4599,4063 29x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="78.0" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4063 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 90% [4672,4063 31x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="90%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4063 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 10% [4735,4063 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="10%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4063 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 30% [4797,4063 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="30%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4063 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 70% [4860,4063 30x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="70%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4063 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,4063 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4063 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4063 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4064 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4065 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 32 [5017,4063 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="32" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4063 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4064 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4065 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 1 [5066,4063 6x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5082,4063 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5082,4064 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5085,4065 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 0 [5104,4063 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5123,4063 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5123,4064 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5126,4065 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 1 [5145,4063 6x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325677 [4285,4093 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4103 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 张伟 [4295,4103 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="张伟" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4103 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·物理 [4358,4103 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·物理" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4103 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 30 [4434,4103 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="30" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4103 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 22小时 [4497,4103 45x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="22小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4103 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 85.0 [4599,4103 30x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="85.0" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4103 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 98% [4672,4103 31x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="98%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4103 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 2% [4735,4103 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="2%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4103 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 70% [4797,4103 30x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="70%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4103 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 30% [4860,4103 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="30%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4103 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,4103 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4103 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4103 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4104 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4105 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 30 [5017,4103 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="30" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4103 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4104 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [5047,4105 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 0 [5066,4103 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4103 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4104 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4105 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 0 [5107,4103 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5126,4103 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5126,4104 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5129,4105 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 0 [5148,4103 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325678 [4285,4133 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4143 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 陈琳 [4295,4143 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="陈琳" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4143 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·生物 [4358,4143 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·生物" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4143 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 26 [4434,4143 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="26" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4143 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 19小时 [4497,4143 87x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="19小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4143 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 76.5 [4599,4143 29x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="76.5" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4143 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 92% [4672,4143 37x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="92%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4143 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 8% [4735,4143 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="8%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4143 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 50% [4797,4143 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="50%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4143 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 50% [4860,4143 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="50%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4143 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,4143 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4143 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4143 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4144 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4145 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 30 [5017,4143 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="30" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4143 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4144 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4145 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 2 [5066,4143 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="2" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4143 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4144 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4145 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 1 [5107,4143 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5126,4143 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5126,4144 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5129,4145 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 0 [5148,4143 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325679 [4285,4173 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4183 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 刘洋 [4295,4183 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="刘洋" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4183 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·历史 [4358,4183 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·历史" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4183 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 29 [4434,4183 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="29" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4183 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 21小时 [4497,4183 87x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="21小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4183 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 80.5 [4599,4183 30x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="80.5" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4183 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 93% [4672,4183 37x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="93%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4183 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 7% [4735,4183 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="7%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4183 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 40% [4797,4183 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="40%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4183 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 60% [4860,4183 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="60%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4183 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 1% [4922,4183 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="1%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4183 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4183 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4184 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4185 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 28 [5017,4183 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="28" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4183 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4184 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4185 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 3 [5066,4183 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="3" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4183 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4184 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4185 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 1 [5107,4183 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5126,4183 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5126,4184 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5129,4185 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 1 [5148,4183 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325680 [4285,4213 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4223 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 赵云 [4295,4223 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="赵云" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4223 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·地理 [4358,4223 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·地理" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4223 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 25 [4434,4223 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="25" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4223 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 17小时30分钟 [4497,4223 87x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="17小时30分钟" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4223 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 74.0 [4599,4223 29x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="74.0" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4223 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 91% [4672,4223 29x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="91%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4223 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 9% [4735,4223 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="9%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4223 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 55% [4797,4223 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="55%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4223 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 45% [4860,4223 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="45%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4223 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,4223 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4223 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4223 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4224 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4225 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 32 [5017,4223 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="32" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4223 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4224 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4225 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 2 [5066,4223 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="2" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4223 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4224 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4225 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 1 [5107,4223 6x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5123,4223 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5123,4224 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5126,4225 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 0 [5145,4223 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325681 [4285,4253 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4263 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 孙磊 [4295,4263 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="孙磊" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4263 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·音乐 [4358,4263 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·音乐" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4263 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 31 [4434,4263 15x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="31" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4263 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 20小时 [4497,4263 45x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="20小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4263 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 77.2 [4599,4263 28x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="77.2" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4263 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 89% [4672,4263 31x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="89%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4263 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 11% [4735,4263 25x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="11%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4263 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 45% [4797,4263 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="45%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4263 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 55% [4860,4263 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="55%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4263 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,4263 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4263 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4263 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4264 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4265 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 29 [5017,4263 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="29" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4263 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4264 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4265 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 0 [5066,4263 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4263 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4264 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4265 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 0 [5107,4263 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5126,4263 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5126,4264 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5129,4265 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 1 [5148,4263 6x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325682 [4285,4293 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4303 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 周华 [4295,4303 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="周华" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4303 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·体育 [4358,4303 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·体育" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4303 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 32 [4434,4303 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="32" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4303 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 23小时 [4497,4303 45x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="23小时" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4303 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 88.5 [4599,4303 30x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="88.5" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4303 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 96% [4672,4303 31x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="96%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4303 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 4% [4735,4303 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="4%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4303 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 80% [4797,4303 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="80%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4303 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 20% [4860,4303 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="20%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4303 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 0% [4922,4303 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="0%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4303 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4303 37x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4304 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4305 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 31 [5017,4303 15x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="31" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5042,4303 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5042,4304 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [5045,4305 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 0 [5064,4303 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5083,4303 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5083,4304 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5086,4305 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 0 [5105,4303 9x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5124,4303 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5124,4304 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5127,4305 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 0 [5146,4303 9x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="0" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727
+            [FRAME] Frame 1427325683 [4285,4333 920x40] strokes=[{"type":"SOLID","color":"#F2F3F5","weight":1}] pad=10,10,10,10 gap=28 layout=HORIZONTAL
+              [FRAME] Frame 1427325664 [4295,4343 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 吴刚 [4295,4343 28x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="吴刚" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325670 [4358,4343 64x20] gap=10 layout=HORIZONTAL
+                [TEXT] 初二·政治 [4358,4343 63x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="初二·政治" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325671 [4434,4343 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 30 [4434,4343 17x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="30" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325672 [4497,4343 90x20] gap=10 layout=HORIZONTAL
+                [TEXT] 22小时30分钟 [4497,4343 90x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="22小时30分钟" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325673 [4599,4343 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 81.0 [4599,4343 27x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="81.0" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325674 [4672,4343 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 94% [4672,4343 31x20] fills=[{"type":"SOLID","color":"#333333"}] TEXT="94%" 14px/600 [{"type":"SOLID","color":"#333333"}] lh=19.600000381469727
+              [FRAME] Frame 1427325666 [4735,4343 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 6% [4735,4343 22x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="6%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1427325667 [4797,4343 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 65% [4797,4343 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="65%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700350 [4860,4343 50x20] gap=10 layout=HORIZONTAL
+                [TEXT] 35% [4860,4343 31x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="35%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700351 [4922,4343 60x20] gap=10 layout=HORIZONTAL
+                [TEXT] 1% [4922,4343 20x20] fills=[{"type":"SOLID","color":"#555555"}] TEXT="1%" 14px/400 [{"type":"SOLID","color":"#555555"}] lh=19.600000381469727
+              [FRAME] Frame 1940700353 [4995,4343 200x20] gap=10 layout=HORIZONTAL
+                [FRAME] Frame 1940700350 [4995,4343 39x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [4995,4344 18x18] fills=[{"type":"SOLID","color":"#F3FCF5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 优 [4998,4345 12x17] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="优" 12px/500 [{"type":"SOLID","color":"#00B42A"}] lh=16.799999237060547
+                  [TEXT] 30 [5017,4343 17x20] fills=[{"type":"SOLID","color":"#00B42A"}] TEXT="30" 14px/600 [{"type":"SOLID","color":"#00B42A"}] lh=19.600000381469727
+                [FRAME] Frame 1940700351 [5044,4343 31x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5044,4344 18x18] fills=[{"type":"SOLID","color":"#F3F9FF"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 良 [5047,4345 12x17] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="良" 12px/500 [{"type":"SOLID","color":"#027AFF"}] lh=16.799999237060547
+                  [TEXT] 2 [5066,4343 9x20] fills=[{"type":"SOLID","color":"#027AFF"}] TEXT="2" 14px/600 [{"type":"SOLID","color":"#027AFF"}] lh=19.600000381469727
+                [FRAME] Frame 1940700352 [5085,4343 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5085,4344 18x18] fills=[{"type":"SOLID","color":"#FFFBEE"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 合 [5088,4345 12x17] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="合" 12px/500 [{"type":"SOLID","color":"#FF6F00"}] lh=16.799999237060547
+                  [TEXT] 1 [5107,4343 6x20] fills=[{"type":"SOLID","color":"#FF6F00"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF6F00"}] lh=19.600000381469727
+                [FRAME] Frame 1940700353 [5123,4343 28x20] gap=4 layout=HORIZONTAL
+                  [FRAME] Frame 1940700349 [5123,4344 18x18] fills=[{"type":"SOLID","color":"#FFF5F5"}] r=2 pad=5,5,undefined,undefined gap=10 layout=VERTICAL
+                    [TEXT] 待 [5126,4345 12x17] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="待" 12px/500 [{"type":"SOLID","color":"#FF2A2A"}] lh=16.799999237060547
+                  [TEXT] 1 [5145,4343 6x20] fills=[{"type":"SOLID","color":"#FF2A2A"}] TEXT="1" 14px/600 [{"type":"SOLID","color":"#FF2A2A"}] lh=19.600000381469727

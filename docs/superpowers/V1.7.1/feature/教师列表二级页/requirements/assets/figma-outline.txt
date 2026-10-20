@@ -1,0 +1,583 @@
+[FRAME] 校长驾驶舱-教师列表 [3785,0 1920x1080] fills=["#F4F5F8"]
+  [VECTOR] 路径 2 [4252,-334 12x4] strokes=[{"c":"#979797","w":1}]
+  [GROUP] Object [3801,513 13x50]
+    [VECTOR] Clip 2 [3801,513 13x50] fills=["#000000"]
+  [FRAME] Frame 1940699024 [3985,1 1720x54] fills=["#FFFFFF"] L=HORIZONTAL gap=763 pad=16,16,12,12
+    [GROUP] Group 1940698633 [4001,16 90x25] r=1
+      [TEXT] 运营管理备份 2 [4001,16 71x25] fills=["#333333"] TEXT="运营管理" 18/400
+      [GROUP] arrow-down-3备份 3 [4079,27 12x6] r=1
+        [VECTOR] ↳ 🎨Color [4079,27 12x6] fills=["#8F92A1"] r=1
+    [FRAME] Frame 1940698830 [5333,13 356x30] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+      [FRAME] 返回 [5333,13 113x30] strokes=[{"c":"#333333","w":1}] r=34 L=HORIZONTAL gap=5 pad=12,12,5,5
+        [FRAME] icon [5345,21 14x14] r=20 L=VERTICAL gap=10 pad=3,3,4,5
+          [VECTOR] Stroke (Stroke) [5348,23 6x10] fills=["#333333"]
+        [FRAME] text [5364,18 70x20] L=HORIZONTAL gap=12 pad=undefined,undefined,undefined,undefined
+          [TEXT] placeholder [5364,18 70x20] fills=["#333333"] TEXT="返回工作台" 14/400
+      [GROUP] Group 1940698632 [5466,16 119x24]
+        [GROUP] 位图 [5466,16 24x24]
+          [ELLIPSE] 蒙版 [5466,16 24x24] fills=["#D8D8D8"]
+          [ELLIPSE] 蒙版 [5466,16 24x24] fills=["#D8D8D8"]
+          [RECTANGLE] 位图 [5465,16 26x26] fills=["IMAGE"]
+        [TEXT] 180****0923 [5500,18 85x20] fills=["#333333"] TEXT="180****0923" 14/400
+      [GROUP] Group 1940698631 [5605,17 84x22]
+        [RECTANGLE] 矩形备份 23 [5605,17 84x22] fills=["#F4F5F8"] r=5
+        [FRAME] 编组 6 [5613,18 68x20]
+          [TEXT] 管理员 [5629,18 42x20] fills=["#333333"] TEXT="管理员" 14/400
+          [GROUP] arrow-down-3备份 [5672,26 9x5] r=1
+          [GROUP] 编组 7备份 [5613,22 14x12]
+  [FRAME] Frame 1940699003 [3785,0 200x1080] fills=["#1A1F27"] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+    [FRAME] Frame 1940699021 [3785,0 200x279] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+      [FRAME] Frame 1940698844 [3785,0 200x80] L=VERTICAL gap=10 pad=26,17,10,10
+        [TEXT] 资源管理 [3811,28 90x25] fills=["#FFFFFF"] TEXT="新应用名称" 18/500
+      [FRAME] Frame 1940699023 [3785,80 200x199] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+        [GROUP] Group 1940698634 [3785,80 200x39]
+          [RECTANGLE] 矩形备份 9 [3785,80 200x39] fills=["GRADIENT_LINEAR"]
+          [TEXT] 课堂管理备份 [3849,90 41x20] fills=["#FFFFFF"] TEXT="AI课堂" 14/500
+          [VECTOR] ↳ 🎨Color备份 6 [3958,97 10x5] fills=["#FFFFFF"] r=1
+          [GROUP] 编组 24备份 4 [3811,89 21x21]
+        [FRAME] Frame 1940698834 [3785,119 200x160] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+          [FRAME] Frame 1940698831 [3785,119 200x40] fills=["GRADIENT_LINEAR"] L=VERTICAL gap=10 pad=56,56,undefined,undefined
+            [TEXT] 成员管理 [3841,129 84x20] fills=["#FFFFFF"] TEXT="课堂视频资源" 14/400
+          [FRAME] Frame 1940698840 [3785,119 200x40] fills=["GRADIENT_LINEAR"] L=VERTICAL gap=10 pad=56,56,undefined,undefined
+            [TEXT] 成员管理 [3841,129 70x20] fills=["#FFFFFF"] TEXT="校长驾驶舱" 14/400
+          [FRAME] Frame 1940698832 [3785,159 200x40] L=VERTICAL gap=10 pad=56,56,undefined,undefined
+            [TEXT] 成员管理 [3841,169 70x20] fills=["#FFFFFF"] TEXT="年级长概览" 14/400
+          [FRAME] Frame 1940698841 [3785,199 200x40] L=VERTICAL gap=10 pad=56,56,undefined,undefined
+            [TEXT] 成员管理 [3841,209 84x20] fills=["#FFFFFF"] TEXT="学科组长概览" 14/400
+          [FRAME] Frame 1940698842 [3785,239 200x40] L=VERTICAL gap=10 pad=56,56,undefined,undefined
+            [TEXT] 成员管理 [3841,249 84x20] fills=["#FFFFFF"] TEXT="备课组长概览" 14/400
+    [FRAME] Frame 1940699022 [3785,1020 200x60] L=HORIZONTAL gap=10 pad=20,20,20,20
+      [FRAME] 编组 17备份 2 [3945,1040 20x20] L=VERTICAL gap=10 pad=undefined,undefined,undefined,undefined
+        [GROUP] close-circle备份 20 [3946,1044 19x11]
+          [BOOLEAN_OPERATION] 🎨 Icon color [3946,1044 19x11] fills=["#BFCBD9"]
+          [BOOLEAN_OPERATION] 🎨 Icon color [3946,1044 19x11] fills=["#BFCBD9"]
+  [FRAME] Frame 1940700344 [4005,97 1680x963] L=VERTICAL gap=10 pad=undefined,undefined,undefined,undefined
+    [FRAME] Frame 1940699121 [4005,97 1680x963] fills=["#FFFFFF"] r=8 L=VERTICAL gap=20 pad=20,20,20,20
+      [FRAME] Frame 1940698005 [4025,117 1640x100] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,20
+        [FRAME] Frame 1940698002 [4025,117 1640x80] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+          [FRAME] Frame 1427325702 [4025,117 238x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 姓名 [4025,122 28x20] fills=["#333333"] TEXT="姓名" 14/400
+            [FRAME] Frame 1427325699 [4063,117 200x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=10 pad=10,10,5,5
+              [TEXT] 输入姓名关键词 [4073,122 98x20] fills=["#AAAAAA"] TEXT="输入姓名关键词" 14/400
+          [FRAME] Frame 1427325703 [4283,117 238x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 年级 [4283,122 28x20] fills=["#333333"] TEXT="年级" 14/400
+            [FRAME] Frame 1427325699 [4321,117 200x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=10 pad=10,10,5,5
+              [TEXT] 初二 [4331,122 28x20] fills=["#333333"] TEXT="初二" 14/400
+          [FRAME] Frame 1427325704 [4541,117 238x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 科目 [4541,122 28x20] fills=["#333333"] TEXT="科目" 14/400
+            [FRAME] Frame 1427325699 [4579,117 200x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=10 pad=10,10,5,5
+              [TEXT] 数学 [4589,122 28x20] fills=["#333333"] TEXT="数学" 14/400
+          [FRAME] Frame 1427325705 [4799,117 238x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 等级 [4799,122 28x20] fills=["#333333"] TEXT="等级" 14/400
+            [FRAME] Frame 1427325699 [4837,117 200x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=10 pad=10,10,5,5
+              [TEXT] 全部 [4847,122 28x20] fills=["#333333"] TEXT="全部" 14/400
+          [FRAME] Frame 1940698512 [5057,117 238x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 性别 [5057,122 28x20] fills=["#333333"] TEXT="性别" 14/400
+            [FRAME] Frame 1427325699 [5095,117 200x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=10 pad=10,10,5,5
+              [TEXT] 全部 [5105,122 28x20] fills=["#333333"] TEXT="全部" 14/400
+          [FRAME] Frame 1940698514 [5315,117 340x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 达标率范围 [5315,122 70x20] fills=["#333333"] TEXT="达标率范围" 14/400
+            [INSTANCE] Input Number [5395,117 100x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=6 pad=10,10,5,5
+              [TEXT] 0 [5405,122 17x20] fills=["#333333"] TEXT="68" 14/400
+            [INSTANCE] Input Number [5531,117 100x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=6 pad=10,10,5,5
+              [TEXT] 0 [5541,122 23x20] fills=["#333333"] TEXT="100" 14/400
+            [TEXT] % [5641,122 14x20] fills=["#333333"] TEXT="%" 14/400
+          [FRAME] Frame 1940698515 [4025,167 354x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+            [TEXT] 评分均分范围 [4025,172 84x20] fills=["#333333"] TEXT="评分均分范围" 14/400
+            [INSTANCE] Input Number [4119,167 100x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=6 pad=10,10,5,5
+              [TEXT] 0 [4129,172 17x20] fills=["#333333"] TEXT="68" 14/400
+            [INSTANCE] Input Number [4255,167 100x30] fills=["#F2F3F5"] r=4 L=HORIZONTAL gap=6 pad=10,10,5,5
+              [TEXT] 0 [4265,172 23x20] fills=["#333333"] TEXT="100" 14/400
+            [TEXT] % [4365,172 14x20] fills=["#333333"] TEXT="%" 14/400
+          [FRAME] Frame 1940698511 [4399,167 146x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+              [TEXT] 重置 [4419,172 28x20] fills=["#555555"] TEXT="重置" 14/400
+              [TEXT] 查询 [4497,172 28x20] fills=["#FFFFFF"] TEXT="查询" 14/600
+      [FRAME] Frame 1940700354 [4025,237 1640x36] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+        [FRAME] Frame 1940699591 [4025,237 304x36] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+          [TEXT] 排序 [4025,244 32x22] fills=["#333333"] TEXT="排序" 16/600
+          [FRAME] Frame 1427325699 [4077,237 252x36] fills=["#F2F3F5"] r=6 L=HORIZONTAL gap=undefined pad=3,3,3,3
+              [TEXT] 默认 [4100,245 28x20] fills=["#FFFFFF"] TEXT="默认" 14/600
+            [FRAME] Frame 1940698053 [4148,240 96x30] r=4 L=HORIZONTAL gap=5 pad=20,20,undefined,undefined
+              [TEXT] 评分均分 [4168,245 56x20] fills=["#777777"] TEXT="评分均分" 14/400
+            [FRAME] Frame 1940698053 [4244,240 82x30] r=4 L=HORIZONTAL gap=5 pad=20,20,undefined,undefined
+              [TEXT] 达标率 [4264,245 42x20] fills=["#777777"] TEXT="达标率" 14/400
+        [FRAME] Frame 1940698511 [5449,240 216x30] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+          [FRAME] addAfter [5469,248 14x15] L=VERTICAL gap=undefined pad=undefined,undefined,1,undefined
+          [FRAME] Frame 1940700410 [5449,245 138x20] L=HORIZONTAL gap=5 pad=undefined,undefined,undefined,undefined
+            [TEXT] 已选 [5449,245 28x20] fills=["#555555"] TEXT="已选" 14/400
+            [TEXT] 5/10 [5482,245 30x20] fills=["#555555"] TEXT="5/10" 14/400
+            [TEXT] 个任教组合 [5517,245 70x20] fills=["#555555"] TEXT="个任教组合" 14/400
+          [FRAME] Frame 1940698003 [5597,240 68x30] fills=["#027AFF"] r=4 L=HORIZONTAL gap=5 pad=20,20,5,5
+            [TEXT] 对比 [5617,245 28x20] fills=["#FFFFFF"] TEXT="对比" 14/600
+      [FRAME] Frame 1940700406 [4025,293 1640x724] L=VERTICAL gap=20 pad=undefined,undefined,undefined,undefined
+        [FRAME] Frame 1940698999 [4025,293 1640x672] strokes=[{"c":"#F3F9FF","w":1}] r=8 L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+          [FRAME] Frame 1940698608 [4025,293 1640x672] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+            [FRAME] Frame 1427325674 [4025,293 1640x42] fills=["#F3F9FF"] L=HORIZONTAL gap=28 pad=20,20,10,10
+                [TEXT] 选择 [4045,303 32x22] fills=["#333333"] TEXT="选择" 16/600
+              [FRAME] Frame 1427325679 [4125,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 教师 [4125,303 32x22] fills=["#333333"] TEXT="教师" 16/600
+              [FRAME] Frame 1427325680 [4255,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 性别 [4255,303 32x22] fills=["#333333"] TEXT="性别" 16/600
+              [FRAME] Frame 1427325673 [4385,304 100x20] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 年级 [4385,304 28x20] fills=["#333333"] TEXT="年级" 14/600
+              [FRAME] Frame 1427325674 [4515,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 科目 [4515,303 32x22] fills=["#333333"] TEXT="科目" 16/600
+              [FRAME] Frame 1427325664 [4645,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 报告数 [4645,303 48x22] fills=["#333333"] TEXT="报告数" 16/600
+              [FRAME] Frame 1427325681 [4775,303 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 课堂时长 [4775,303 64x22] fills=["#333333"] TEXT="课堂时长" 16/600
+              [FRAME] Frame 1427325676 [4955,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 评分均分 [4955,303 64x22] fills=["#333333"] TEXT="评分均分" 16/600
+              [FRAME] Frame 1427325677 [5085,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 达标率 [5085,303 48x22] fills=["#333333"] TEXT="达标率" 16/600
+              [FRAME] Frame 1427325678 [5215,303 300x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 等级分布 [5215,303 64x22] fills=["#333333"] TEXT="等级分布" 16/600
+              [FRAME] Frame 1427325682 [5545,303 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 操作 [5545,303 32x22] fills=["#333333"] TEXT="操作" 16/600
+            [FRAME] Frame 1427325673 [4025,335 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+                  [TEXT] 允许学生查看解析 [4066,348 112x20] fills=["#333333"] TEXT="允许学生查看解析" 14/400
+              [FRAME] Frame 1427325672 [4125,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 徐芳 [4125,345 32x22] fills=["#027AFF"] TEXT="徐芳" 16/600
+              [FRAME] Frame 1427325666 [4255,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,345 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初二 [4385,345 32x22] fills=["#555555"] TEXT="初二" 16/400
+              [FRAME] Frame 1427325674 [4515,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 化学 [4515,345 32x22] fills=["#555555"] TEXT="化学" 16/400
+              [FRAME] Frame 1427325675 [4645,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 28 [4645,345 20x22] fills=["#555555"] TEXT="28" 16/400
+              [FRAME] Frame 1427325667 [4775,345 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 18小时40分钟 [4775,345 100x22] fills=["#555555"] TEXT="18小时40分钟" 16/400
+              [FRAME] Frame 1427325668 [4955,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 44.4 [4955,345 34x22] fills=["#333333"] TEXT="44.4" 16/600
+              [FRAME] Frame 1427325669 [5085,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 79% [5085,345 34x22] fills=["#555555"] TEXT="79%" 16/400
+              [FRAME] Frame 1427325671 [5215,345 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,348 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 28 [5253,345 20x22] fills=["#00B42A"] TEXT="28" 16/600
+                    [TEXT] 良好 [5298,348 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,345 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,348 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,345 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,348 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5479,345 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,345 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,345 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325675 [4025,377 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+                  [TEXT] 允许学生查看解析 [4066,390 112x20] fills=["#333333"] TEXT="允许学生查看解析" 14/400
+              [FRAME] Frame 1427325672 [4125,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 李伟 [4125,387 32x22] fills=["#027AFF"] TEXT="李伟" 16/600
+              [FRAME] Frame 1427325666 [4255,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,387 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初三 [4385,387 32x22] fills=["#555555"] TEXT="初三" 16/400
+              [FRAME] Frame 1427325674 [4515,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 物理 [4515,387 32x22] fills=["#555555"] TEXT="物理" 16/400
+              [FRAME] Frame 1427325675 [4645,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 30 [4645,387 20x22] fills=["#555555"] TEXT="30" 16/400
+              [FRAME] Frame 1427325667 [4775,387 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 20小时 [4775,387 52x22] fills=["#555555"] TEXT="20小时" 16/400
+              [FRAME] Frame 1427325668 [4955,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 52.3 [4955,387 34x22] fills=["#333333"] TEXT="52.3" 16/600
+              [FRAME] Frame 1427325669 [5085,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 85% [5085,387 35x22] fills=["#555555"] TEXT="85%" 16/400
+              [FRAME] Frame 1427325671 [5215,387 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 良好 [5220,390 24x17] fills=["#00B42A"] TEXT="良好" 12/500
+                  [TEXT] 32 [5253,387 20x22] fills=["#00B42A"] TEXT="32" 16/600
+                    [TEXT] 优秀 [5298,390 24x17] fills=["#027AFF"] TEXT="优秀" 12/500
+                  [TEXT] 1 [5331,387 7x22] fills=["#027AFF"] TEXT="1" 16/600
+                    [TEXT] 合格 [5363,390 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 1 [5396,387 7x22] fills=["#FF6F00"] TEXT="1" 16/600
+                    [TEXT] 待改进 [5428,390 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5473,387 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,387 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,387 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325676 [4025,419 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+                  [TEXT] 允许学生查看解析 [4066,432 112x20] fills=["#333333"] TEXT="允许学生查看解析" 14/400
+              [FRAME] Frame 1427325672 [4125,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 张敏 [4125,429 32x22] fills=["#027AFF"] TEXT="张敏" 16/600
+              [FRAME] Frame 1427325666 [4255,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,429 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初二 [4385,429 32x22] fills=["#555555"] TEXT="初二" 16/400
+              [FRAME] Frame 1427325674 [4515,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 数学 [4515,429 32x22] fills=["#555555"] TEXT="数学" 16/400
+              [FRAME] Frame 1427325675 [4645,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 27 [4645,429 19x22] fills=["#555555"] TEXT="27" 16/400
+              [FRAME] Frame 1427325667 [4775,429 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 22小时 [4775,429 52x22] fills=["#555555"] TEXT="22小时" 16/400
+              [FRAME] Frame 1427325668 [4955,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 45.7 [4955,429 33x22] fills=["#333333"] TEXT="45.7" 16/600
+              [FRAME] Frame 1427325669 [5085,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 78% [5085,429 34x22] fills=["#555555"] TEXT="78%" 16/400
+              [FRAME] Frame 1427325671 [5215,429 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,432 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 30 [5253,429 20x22] fills=["#00B42A"] TEXT="30" 16/600
+                    [TEXT] 良好 [5298,432 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,429 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,432 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,429 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,432 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 1 [5479,429 7x22] fills=["#FF2A2A"] TEXT="1" 16/600
+              [FRAME] Frame 1427325670 [5545,429 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,429 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325677 [4025,461 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+                  [TEXT] 允许学生查看解析 [4066,474 112x20] fills=["#333333"] TEXT="允许学生查看解析" 14/400
+              [FRAME] Frame 1427325672 [4125,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 王雄 [4125,471 32x22] fills=["#027AFF"] TEXT="王雄" 16/600
+              [FRAME] Frame 1427325666 [4255,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,471 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初一 [4385,471 32x22] fills=["#555555"] TEXT="初一" 16/400
+              [FRAME] Frame 1427325674 [4515,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 生物 [4515,471 32x22] fills=["#555555"] TEXT="生物" 16/400
+              [FRAME] Frame 1427325675 [4645,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 26 [4645,471 20x22] fills=["#555555"] TEXT="26" 16/400
+              [FRAME] Frame 1427325667 [4775,471 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 19小时30分钟 [4775,471 100x22] fills=["#555555"] TEXT="19小时30分钟" 16/400
+              [FRAME] Frame 1427325668 [4955,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 40.5 [4955,471 34x22] fills=["#333333"] TEXT="40.5" 16/600
+              [FRAME] Frame 1427325669 [5085,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 82% [5085,471 35x22] fills=["#555555"] TEXT="82%" 16/400
+              [FRAME] Frame 1427325671 [5215,471 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 良好 [5220,474 24x17] fills=["#00B42A"] TEXT="良好" 12/500
+                  [TEXT] 25 [5253,471 20x22] fills=["#00B42A"] TEXT="25" 16/600
+                    [TEXT] 优秀 [5298,474 24x17] fills=["#027AFF"] TEXT="优秀" 12/500
+                  [TEXT] 0 [5331,471 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,474 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 1 [5399,471 7x22] fills=["#FF6F00"] TEXT="1" 16/600
+                    [TEXT] 待改进 [5431,474 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5476,471 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,471 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,471 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325678 [4025,503 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+                  [TEXT] 允许学生查看解析 [4066,516 112x20] fills=["#333333"] TEXT="允许学生查看解析" 14/400
+              [FRAME] Frame 1427325672 [4125,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 刘丽 [4125,513 32x22] fills=["#027AFF"] TEXT="刘丽" 16/600
+              [FRAME] Frame 1427325666 [4255,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,513 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初三 [4385,513 32x22] fills=["#555555"] TEXT="初三" 16/400
+              [FRAME] Frame 1427325674 [4515,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 英语 [4515,513 32x22] fills=["#555555"] TEXT="英语" 16/400
+              [FRAME] Frame 1427325675 [4645,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 29 [4645,513 20x22] fills=["#555555"] TEXT="29" 16/400
+              [FRAME] Frame 1427325667 [4775,513 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 21小时 [4775,513 49x22] fills=["#555555"] TEXT="21小时" 16/400
+              [FRAME] Frame 1427325668 [4955,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 54.5 [4955,513 34x22] fills=["#333333"] TEXT="54.5" 16/600
+              [FRAME] Frame 1427325669 [5085,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 88% [5085,513 35x22] fills=["#555555"] TEXT="88%" 16/400
+              [FRAME] Frame 1427325671 [5215,513 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,516 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 31 [5253,513 17x22] fills=["#00B42A"] TEXT="31" 16/600
+                    [TEXT] 良好 [5295,516 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5328,513 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5363,516 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5396,513 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5431,516 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5476,513 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,513 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,513 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325679 [4025,545 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 周强 [4125,555 32x22] fills=["#027AFF"] TEXT="周强" 16/600
+              [FRAME] Frame 1427325666 [4255,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,555 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初二 [4385,555 32x22] fills=["#555555"] TEXT="初二" 16/400
+              [FRAME] Frame 1427325674 [4515,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 地理 [4515,555 32x22] fills=["#555555"] TEXT="地理" 16/400
+              [FRAME] Frame 1427325675 [4645,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 28 [4645,555 20x22] fills=["#555555"] TEXT="28" 16/400
+              [FRAME] Frame 1427325667 [4775,555 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 18小时45分钟 [4775,555 100x22] fills=["#555555"] TEXT="18小时45分钟" 16/400
+              [FRAME] Frame 1427325668 [4955,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 47.2 [4955,555 33x22] fills=["#333333"] TEXT="47.2" 16/600
+              [FRAME] Frame 1427325669 [5085,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 80% [5085,555 35x22] fills=["#555555"] TEXT="80%" 16/400
+              [FRAME] Frame 1427325671 [5215,555 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,558 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 29 [5253,555 20x22] fills=["#00B42A"] TEXT="29" 16/600
+                    [TEXT] 良好 [5298,558 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,555 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,558 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,555 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,558 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 1 [5479,555 7x22] fills=["#FF2A2A"] TEXT="1" 16/600
+              [FRAME] Frame 1427325670 [5545,555 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,555 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325680 [4025,587 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 陈静 [4125,597 32x22] fills=["#027AFF"] TEXT="陈静" 16/600
+              [FRAME] Frame 1427325666 [4255,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,597 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初一 [4385,597 32x22] fills=["#555555"] TEXT="初一" 16/400
+              [FRAME] Frame 1427325674 [4515,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 历史 [4515,597 32x22] fills=["#555555"] TEXT="历史" 16/400
+              [FRAME] Frame 1427325675 [4645,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 27 [4645,597 19x22] fills=["#555555"] TEXT="27" 16/400
+              [FRAME] Frame 1427325667 [4775,597 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 20小时 [4775,597 52x22] fills=["#555555"] TEXT="20小时" 16/400
+              [FRAME] Frame 1427325668 [4955,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 46.3 [4955,597 34x22] fills=["#333333"] TEXT="46.3" 16/600
+              [FRAME] Frame 1427325669 [5085,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 83% [5085,597 35x22] fills=["#555555"] TEXT="83%" 16/400
+              [FRAME] Frame 1427325671 [5215,597 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 良好 [5220,600 24x17] fills=["#00B42A"] TEXT="良好" 12/500
+                  [TEXT] 28 [5253,597 20x22] fills=["#00B42A"] TEXT="28" 16/600
+                    [TEXT] 优秀 [5298,600 24x17] fills=["#027AFF"] TEXT="优秀" 12/500
+                  [TEXT] 0 [5331,597 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,600 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,597 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,600 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5479,597 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,597 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,597 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325681 [4025,629 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 杨帆 [4125,639 32x22] fills=["#027AFF"] TEXT="杨帆" 16/600
+              [FRAME] Frame 1427325666 [4255,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,639 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初三 [4385,639 32x22] fills=["#555555"] TEXT="初三" 16/400
+              [FRAME] Frame 1427325674 [4515,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 音乐 [4515,639 32x22] fills=["#555555"] TEXT="音乐" 16/400
+              [FRAME] Frame 1427325675 [4645,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 31 [4645,639 17x22] fills=["#555555"] TEXT="31" 16/400
+              [FRAME] Frame 1427325667 [4775,639 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 23小时 [4775,639 52x22] fills=["#555555"] TEXT="23小时" 16/400
+              [FRAME] Frame 1427325668 [4955,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 58.1 [4955,639 31x22] fills=["#333333"] TEXT="58.1" 16/600
+              [FRAME] Frame 1427325669 [5085,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 90% [5085,639 35x22] fills=["#555555"] TEXT="90%" 16/400
+              [FRAME] Frame 1427325671 [5215,639 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,642 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 33 [5253,639 20x22] fills=["#00B42A"] TEXT="33" 16/600
+                    [TEXT] 良好 [5298,642 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,639 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,642 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,639 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,642 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 1 [5479,639 7x22] fills=["#FF2A2A"] TEXT="1" 16/600
+              [FRAME] Frame 1427325670 [5545,639 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,639 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325682 [4025,671 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 郑丽 [4125,681 32x22] fills=["#027AFF"] TEXT="郑丽" 16/600
+              [FRAME] Frame 1427325666 [4255,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,681 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初二 [4385,681 32x22] fills=["#555555"] TEXT="初二" 16/400
+              [FRAME] Frame 1427325674 [4515,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 美术 [4515,681 32x22] fills=["#555555"] TEXT="美术" 16/400
+              [FRAME] Frame 1427325675 [4645,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 30 [4645,681 20x22] fills=["#555555"] TEXT="30" 16/400
+              [FRAME] Frame 1427325667 [4775,681 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 25小时 [4775,681 52x22] fills=["#555555"] TEXT="25小时" 16/400
+              [FRAME] Frame 1427325668 [4955,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 60.0 [4955,681 34x22] fills=["#333333"] TEXT="60.0" 16/600
+              [FRAME] Frame 1427325669 [5085,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 92% [5085,681 35x22] fills=["#555555"] TEXT="92%" 16/400
+              [FRAME] Frame 1427325671 [5215,681 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,684 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 34 [5253,681 20x22] fills=["#00B42A"] TEXT="34" 16/600
+                    [TEXT] 良好 [5298,684 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,681 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,684 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,681 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,684 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5479,681 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,681 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,681 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325683 [4025,713 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 马强 [4125,723 32x22] fills=["#027AFF"] TEXT="马强" 16/600
+              [FRAME] Frame 1427325666 [4255,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,723 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初一 [4385,723 32x22] fills=["#555555"] TEXT="初一" 16/400
+              [FRAME] Frame 1427325674 [4515,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 体育 [4515,723 32x22] fills=["#555555"] TEXT="体育" 16/400
+              [FRAME] Frame 1427325675 [4645,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 25 [4645,723 20x22] fills=["#555555"] TEXT="25" 16/400
+              [FRAME] Frame 1427325667 [4775,723 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 15小时 [4775,723 49x22] fills=["#555555"] TEXT="15小时" 16/400
+              [FRAME] Frame 1427325668 [4955,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 39.2 [4955,723 34x22] fills=["#333333"] TEXT="39.2" 16/600
+              [FRAME] Frame 1427325669 [5085,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 75% [5085,723 34x22] fills=["#555555"] TEXT="75%" 16/400
+              [FRAME] Frame 1427325671 [5215,723 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 良好 [5220,726 24x17] fills=["#00B42A"] TEXT="良好" 12/500
+                  [TEXT] 26 [5253,723 20x22] fills=["#00B42A"] TEXT="26" 16/600
+                    [TEXT] 优秀 [5298,726 24x17] fills=["#027AFF"] TEXT="优秀" 12/500
+                  [TEXT] 1 [5331,723 7x22] fills=["#027AFF"] TEXT="1" 16/600
+                    [TEXT] 合格 [5363,726 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 1 [5396,723 7x22] fills=["#FF6F00"] TEXT="1" 16/600
+                    [TEXT] 待改进 [5428,726 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5473,723 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,723 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,723 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325684 [4025,755 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 冯晓 [4125,765 32x22] fills=["#027AFF"] TEXT="冯晓" 16/600
+              [FRAME] Frame 1427325666 [4255,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,765 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初三 [4385,765 32x22] fills=["#555555"] TEXT="初三" 16/400
+              [FRAME] Frame 1427325674 [4515,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 科学 [4515,765 32x22] fills=["#555555"] TEXT="科学" 16/400
+              [FRAME] Frame 1427325675 [4645,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 28 [4645,765 20x22] fills=["#555555"] TEXT="28" 16/400
+              [FRAME] Frame 1427325667 [4775,765 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 22小时 [4775,765 52x22] fills=["#555555"] TEXT="22小时" 16/400
+              [FRAME] Frame 1427325668 [4955,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 53.2 [4955,765 34x22] fills=["#333333"] TEXT="53.2" 16/600
+              [FRAME] Frame 1427325669 [5085,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 84% [5085,765 35x22] fills=["#555555"] TEXT="84%" 16/400
+              [FRAME] Frame 1427325671 [5215,765 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,768 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 30 [5253,765 20x22] fills=["#00B42A"] TEXT="30" 16/600
+                    [TEXT] 良好 [5298,768 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,765 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,768 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,765 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,768 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 1 [5479,765 7x22] fills=["#FF2A2A"] TEXT="1" 16/600
+              [FRAME] Frame 1427325670 [5545,765 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,765 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325685 [4025,797 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 杨磊 [4125,807 32x22] fills=["#027AFF"] TEXT="杨磊" 16/600
+              [FRAME] Frame 1427325666 [4255,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,807 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初二 [4385,807 32x22] fills=["#555555"] TEXT="初二" 16/400
+              [FRAME] Frame 1427325674 [4515,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 语文 [4515,807 32x22] fills=["#555555"] TEXT="语文" 16/400
+              [FRAME] Frame 1427325675 [4645,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 29 [4645,807 20x22] fills=["#555555"] TEXT="29" 16/400
+              [FRAME] Frame 1427325667 [4775,807 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 21小时30分钟 [4775,807 100x22] fills=["#555555"] TEXT="21小时30分钟" 16/400
+              [FRAME] Frame 1427325668 [4955,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 51.8 [4955,807 31x22] fills=["#333333"] TEXT="51.8" 16/600
+              [FRAME] Frame 1427325669 [5085,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 87% [5085,807 34x22] fills=["#555555"] TEXT="87%" 16/400
+              [FRAME] Frame 1427325671 [5215,807 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,810 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 32 [5253,807 20x22] fills=["#00B42A"] TEXT="32" 16/600
+                    [TEXT] 良好 [5298,810 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,807 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,810 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,807 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,810 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5479,807 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,807 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,807 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325686 [4025,839 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 赵媛 [4125,849 32x22] fills=["#027AFF"] TEXT="赵媛" 16/600
+              [FRAME] Frame 1427325666 [4255,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,849 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初三 [4385,849 32x22] fills=["#555555"] TEXT="初三" 16/400
+              [FRAME] Frame 1427325674 [4515,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 化学 [4515,849 32x22] fills=["#555555"] TEXT="化学" 16/400
+              [FRAME] Frame 1427325675 [4645,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 30 [4645,849 20x22] fills=["#555555"] TEXT="30" 16/400
+              [FRAME] Frame 1427325667 [4775,849 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 18小时 [4775,849 49x22] fills=["#555555"] TEXT="18小时" 16/400
+              [FRAME] Frame 1427325668 [4955,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 55.9 [4955,849 34x22] fills=["#333333"] TEXT="55.9" 16/600
+              [FRAME] Frame 1427325669 [5085,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 89% [5085,849 35x22] fills=["#555555"] TEXT="89%" 16/400
+              [FRAME] Frame 1427325671 [5215,849 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,852 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 33 [5253,849 20x22] fills=["#00B42A"] TEXT="33" 16/600
+                    [TEXT] 良好 [5298,852 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5331,849 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,852 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5399,849 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5434,852 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 1 [5479,849 7x22] fills=["#FF2A2A"] TEXT="1" 16/600
+              [FRAME] Frame 1427325670 [5545,849 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,849 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325687 [4025,881 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 孙亮 [4125,891 32x22] fills=["#027AFF"] TEXT="孙亮" 16/600
+              [FRAME] Frame 1427325666 [4255,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 男 [4255,891 16x22] fills=["#555555"] TEXT="男" 16/400
+              [FRAME] Frame 1427325673 [4385,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初一 [4385,891 32x22] fills=["#555555"] TEXT="初一" 16/400
+              [FRAME] Frame 1427325674 [4515,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 物理 [4515,891 32x22] fills=["#555555"] TEXT="物理" 16/400
+              [FRAME] Frame 1427325675 [4645,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 26 [4645,891 20x22] fills=["#555555"] TEXT="26" 16/400
+              [FRAME] Frame 1427325667 [4775,891 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 19小时 [4775,891 49x22] fills=["#555555"] TEXT="19小时" 16/400
+              [FRAME] Frame 1427325668 [4955,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 42.0 [4955,891 34x22] fills=["#333333"] TEXT="42.0" 16/600
+              [FRAME] Frame 1427325669 [5085,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 80% [5085,891 35x22] fills=["#555555"] TEXT="80%" 16/400
+              [FRAME] Frame 1427325671 [5215,891 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 良好 [5220,894 24x17] fills=["#00B42A"] TEXT="良好" 12/500
+                  [TEXT] 29 [5253,891 20x22] fills=["#00B42A"] TEXT="29" 16/600
+                    [TEXT] 优秀 [5298,894 24x17] fills=["#027AFF"] TEXT="优秀" 12/500
+                  [TEXT] 0 [5331,891 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5366,894 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 1 [5399,891 7x22] fills=["#FF6F00"] TEXT="1" 16/600
+                    [TEXT] 待改进 [5431,894 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5476,891 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,891 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,891 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+            [FRAME] Frame 1427325688 [4025,923 1640x42] strokes=[{"c":"#F2F3F5","w":1}] L=HORIZONTAL gap=28 pad=20,20,10,10
+              [FRAME] Frame 1427325672 [4125,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 杜敏 [4125,933 32x22] fills=["#027AFF"] TEXT="杜敏" 16/600
+              [FRAME] Frame 1427325666 [4255,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 女 [4255,933 16x22] fills=["#555555"] TEXT="女" 16/400
+              [FRAME] Frame 1427325673 [4385,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 初二 [4385,933 32x22] fills=["#555555"] TEXT="初二" 16/400
+              [FRAME] Frame 1427325674 [4515,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 数学 [4515,933 32x22] fills=["#555555"] TEXT="数学" 16/400
+              [FRAME] Frame 1427325675 [4645,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 29 [4645,933 20x22] fills=["#555555"] TEXT="29" 16/400
+              [FRAME] Frame 1427325667 [4775,933 150x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 20小时25分钟 [4775,933 103x22] fills=["#555555"] TEXT="20小时25分钟" 16/400
+              [FRAME] Frame 1427325668 [4955,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 49.3 [4955,933 34x22] fills=["#333333"] TEXT="49.3" 16/600
+              [FRAME] Frame 1427325669 [5085,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 82% [5085,933 35x22] fills=["#555555"] TEXT="82%" 16/400
+              [FRAME] Frame 1427325671 [5215,933 300x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+                    [TEXT] 优秀 [5220,936 24x17] fills=["#00B42A"] TEXT="优秀" 12/500
+                  [TEXT] 31 [5253,933 17x22] fills=["#00B42A"] TEXT="31" 16/600
+                    [TEXT] 良好 [5295,936 24x17] fills=["#027AFF"] TEXT="良好" 12/500
+                  [TEXT] 0 [5328,933 10x22] fills=["#027AFF"] TEXT="0" 16/600
+                    [TEXT] 合格 [5363,936 24x17] fills=["#FF6F00"] TEXT="合格" 12/500
+                  [TEXT] 0 [5396,933 10x22] fills=["#FF6F00"] TEXT="0" 16/600
+                    [TEXT] 待改进 [5431,936 36x17] fills=["#FF2A2A"] TEXT="待改进" 12/500
+                  [TEXT] 0 [5476,933 10x22] fills=["#FF2A2A"] TEXT="0" 16/600
+              [FRAME] Frame 1427325670 [5545,933 100x22] L=HORIZONTAL gap=10 pad=undefined,undefined,undefined,undefined
+                [TEXT] 查看详情 [5545,933 64x22] fills=["#027AFF"] TEXT="查看详情" 16/600
+        [FRAME] pagination [4025,985 1640x32] L=HORIZONTAL gap=8 pad=undefined,undefined,undefined,undefined
+          [FRAME] showTotal [4696,991 42x20] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+            [TEXT] text [4696,991 42x20] fills=["#333333"] TEXT="共17条" 14/400
+          [FRAME] Frame 1427325657 [4746,985 152x32] L=HORIZONTAL gap=8 pad=undefined,undefined,undefined,undefined
+              [TEXT] number [4790,989 24x24] fills=["#FFFFFF"] TEXT="1" 14/400
+              [TEXT] number [4830,989 24x24] fills=["#333333"] TEXT="2" 14/400
+          [FRAME] showTotal [4906,991 28x20] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+            [TEXT] text [4906,991 28x20] fills=["#333333"] TEXT="前往" 14/400
+          [FRAME] 选项 [4942,986 30x30] fills=["#333333"] r=2 L=HORIZONTAL gap=4 pad=12,12,4,4
+              [TEXT] title [4954,991 6x20] fills=["#333333"] TEXT="1" 14/400
+          [FRAME] showTotal [4980,991 14x20] L=VERTICAL gap=undefined pad=undefined,undefined,undefined,undefined
+            [TEXT] text [4980,991 14x20] fills=["#333333"] TEXT="页" 14/400
+          [FRAME] Jump- wrapper [4385,985 76x32] L=HORIZONTAL gap=8 pad=undefined,undefined,undefined,undefined
+              [TEXT] text [4385,990 80x22] fills=["#86909C"] TEXT="前往" 14/400
+              [FRAME] wrapper [4433,990 196x22] L=HORIZONTAL gap=undefined pad=undefined,undefined,undefined,undefined
+                [TEXT] placeholder [4433,990 81x22] fills=["#86909C"] TEXT="Please enter" 14/400
+  [FRAME] Frame 1940700409 [4005,65 384x22] L=HORIZONTAL gap=20 pad=undefined,undefined,undefined,undefined
+    [FRAME] Frame 1940700408 [4005,65 57x22] L=HORIZONTAL gap=5 pad=undefined,undefined,undefined,undefined
+      [INSTANCE] mr-direction-arrow left [4005,66 20x20]
+        [VECTOR] Vector [4007,70 16x12] fills=["#777777"]
+      [TEXT] 返回 / 上传教学资源 [4030,65 32x22] fills=["#777777"] TEXT="返回" 16/400
+    [TEXT] 返回 / 上传教学资源 [4082,65 307x22] fills=["#333333"] TEXT="教师列表（2025–2026 下学期 · A 校区）" 16/600
